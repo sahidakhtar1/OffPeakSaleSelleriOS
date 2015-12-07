@@ -14,6 +14,11 @@
 		4A0AD1C71C14118800F6737B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A0AD1C61C14118800F6737B /* Assets.xcassets */; };
 		4A0AD1CA1C14118800F6737B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A0AD1C81C14118800F6737B /* LaunchScreen.storyboard */; };
 		4A0AD1D51C14118800F6737B /* OffPeakSellerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A0AD1D41C14118800F6737B /* OffPeakSellerTests.m */; };
+		B66903B51C156AFE002C9470 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B66903B41C156AFE002C9470 /* MobileCoreServices.framework */; };
+		B66903B71C156B09002C9470 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B66903B61C156B09002C9470 /* SystemConfiguration.framework */; };
+		B66903B91C156B17002C9470 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B66903B81C156B17002C9470 /* CoreLocation.framework */; };
+		B66903BB1C156B1D002C9470 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B66903BA1C156B1D002C9470 /* Security.framework */; };
+		BABCCAC03C145EA62BDECC37 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 37B570EC782319AFA7F1F419 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,6 +32,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		37B570EC782319AFA7F1F419 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A0AD1B71C14118700F6737B /* OffPeakSeller.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OffPeakSeller.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A0AD1BB1C14118700F6737B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		4A0AD1BD1C14118700F6737B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -40,6 +46,13 @@
 		4A0AD1D01C14118800F6737B /* OffPeakSellerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OffPeakSellerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A0AD1D41C14118800F6737B /* OffPeakSellerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OffPeakSellerTests.m; sourceTree = "<group>"; };
 		4A0AD1D61C14118800F6737B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A6C84C38CBAE7E550EB9521D /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		B66903B41C156AFE002C9470 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		B66903B61C156B09002C9470 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		B66903B81C156B17002C9470 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		B66903BA1C156B1D002C9470 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		B66903C31C156CF0002C9470 /* OffPeakSeller-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "OffPeakSeller-Prefix.pch"; sourceTree = "<group>"; };
+		C1CA657DEDD9EF4D9E2CC11A /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +60,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B66903BB1C156B1D002C9470 /* Security.framework in Frameworks */,
+				B66903B91C156B17002C9470 /* CoreLocation.framework in Frameworks */,
+				B66903B71C156B09002C9470 /* SystemConfiguration.framework in Frameworks */,
+				B66903B51C156AFE002C9470 /* MobileCoreServices.framework in Frameworks */,
+				BABCCAC03C145EA62BDECC37 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,12 +78,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0E6E4F45C949F15E0C2C34AD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C1CA657DEDD9EF4D9E2CC11A /* Pods.debug.xcconfig */,
+				A6C84C38CBAE7E550EB9521D /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		4A0AD1AE1C14118700F6737B = {
 			isa = PBXGroup;
 			children = (
+				B66903BA1C156B1D002C9470 /* Security.framework */,
+				B66903B81C156B17002C9470 /* CoreLocation.framework */,
+				B66903B61C156B09002C9470 /* SystemConfiguration.framework */,
+				B66903B41C156AFE002C9470 /* MobileCoreServices.framework */,
 				4A0AD1B91C14118700F6737B /* OffPeakSeller */,
 				4A0AD1D31C14118800F6737B /* OffPeakSellerTests */,
 				4A0AD1B81C14118700F6737B /* Products */,
+				0E6E4F45C949F15E0C2C34AD /* Pods */,
+				8F44A470EA37DC1A7D31CF08 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -85,6 +118,7 @@
 				4A0AD1BE1C14118700F6737B /* AppDelegate.m */,
 				4A0AD1C01C14118700F6737B /* ViewController.h */,
 				4A0AD1C11C14118800F6737B /* ViewController.m */,
+				B66903C31C156CF0002C9470 /* OffPeakSeller-Prefix.pch */,
 				4A0AD1C31C14118800F6737B /* Main.storyboard */,
 				4A0AD1C61C14118800F6737B /* Assets.xcassets */,
 				4A0AD1C81C14118800F6737B /* LaunchScreen.storyboard */,
@@ -111,6 +145,14 @@
 			path = OffPeakSellerTests;
 			sourceTree = "<group>";
 		};
+		8F44A470EA37DC1A7D31CF08 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				37B570EC782319AFA7F1F419 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -118,9 +160,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4A0AD1D91C14118800F6737B /* Build configuration list for PBXNativeTarget "OffPeakSeller" */;
 			buildPhases = (
+				D6E5F9762E305F8D25EDB8B5 /* Check Pods Manifest.lock */,
 				4A0AD1B31C14118700F6737B /* Sources */,
 				4A0AD1B41C14118700F6737B /* Frameworks */,
 				4A0AD1B51C14118700F6737B /* Resources */,
+				FD526ADB51E7D4D36099F529 /* Embed Pods Frameworks */,
+				1DA48BEE59D863B51DCCC499 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -205,6 +250,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1DA48BEE59D863B51DCCC499 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D6E5F9762E305F8D25EDB8B5 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		FD526ADB51E7D4D36099F529 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		4A0AD1B31C14118700F6737B /* Sources */ = {
@@ -337,10 +430,15 @@
 		};
 		4A0AD1DA1C14118800F6737B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C1CA657DEDD9EF4D9E2CC11A /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = "OffPeakSeller/OffPeakSeller-Prefix.pch";
 				INFOPLIST_FILE = OffPeakSeller/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.offpeaksale.OffPeakSeller;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -348,10 +446,15 @@
 		};
 		4A0AD1DB1C14118800F6737B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A6C84C38CBAE7E550EB9521D /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = "OffPeakSeller/OffPeakSeller-Prefix.pch";
 				INFOPLIST_FILE = OffPeakSeller/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.offpeaksale.OffPeakSeller;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -400,6 +503,7 @@
 				4A0AD1DB1C14118800F6737B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4A0AD1DC1C14118800F6737B /* Build configuration list for PBXNativeTarget "OffPeakSellerTests" */ = {
 			isa = XCConfigurationList;
@@ -408,6 +512,7 @@
 				4A0AD1DE1C14118800F6737B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
