@@ -14,6 +14,16 @@
 		4A0AD1C71C14118800F6737B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A0AD1C61C14118800F6737B /* Assets.xcassets */; };
 		4A0AD1CA1C14118800F6737B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A0AD1C81C14118800F6737B /* LaunchScreen.storyboard */; };
 		4A0AD1D51C14118800F6737B /* OffPeakSellerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A0AD1D41C14118800F6737B /* OffPeakSellerTests.m */; };
+		4A55504F1C15F53500872392 /* AASideMenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A55504C1C15F53500872392 /* AASideMenuCell.m */; settings = {ASSET_TAGS = (); }; };
+		4A5550501C15F53500872392 /* AASideMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A55504E1C15F53500872392 /* AASideMenuViewController.m */; settings = {ASSET_TAGS = (); }; };
+		4A5550531C15F56500872392 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A5550521C15F56500872392 /* SWRevealViewController.m */; settings = {ASSET_TAGS = (); }; };
+		4A5550571C15F5CC00872392 /* AAConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A5550561C15F5CC00872392 /* AAConfig.m */; settings = {ASSET_TAGS = (); }; };
+		4A55505A1C15F5D700872392 /* AAMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A5550591C15F5D700872392 /* AAMenuItem.m */; settings = {ASSET_TAGS = (); }; };
+		4A55505D1C15F70B00872392 /* AAAppGlobals.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A55505C1C15F70B00872392 /* AAAppGlobals.m */; settings = {ASSET_TAGS = (); }; };
+		4A5550621C15FB0500872392 /* SellerAccountVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A5550611C15FB0500872392 /* SellerAccountVC.m */; settings = {ASSET_TAGS = (); }; };
+		4A5550681C15FC2200872392 /* AAHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A5550661C15FC2200872392 /* AAHeaderView.m */; settings = {ASSET_TAGS = (); }; };
+		4A5550691C15FC2200872392 /* AAHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A5550671C15FC2200872392 /* AAHeaderView.xib */; settings = {ASSET_TAGS = (); }; };
+		4A55506C1C15FC6000872392 /* AAThemeLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A55506B1C15FC6000872392 /* AAThemeLabel.m */; settings = {ASSET_TAGS = (); }; };
 		B66903B51C156AFE002C9470 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B66903B41C156AFE002C9470 /* MobileCoreServices.framework */; };
 		B66903B71C156B09002C9470 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B66903B61C156B09002C9470 /* SystemConfiguration.framework */; };
 		B66903B91C156B17002C9470 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B66903B81C156B17002C9470 /* CoreLocation.framework */; };
@@ -46,6 +56,25 @@
 		4A0AD1D01C14118800F6737B /* OffPeakSellerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OffPeakSellerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A0AD1D41C14118800F6737B /* OffPeakSellerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OffPeakSellerTests.m; sourceTree = "<group>"; };
 		4A0AD1D61C14118800F6737B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4A55504B1C15F53500872392 /* AASideMenuCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AASideMenuCell.h; path = Classes/AASideMenuCell.h; sourceTree = "<group>"; };
+		4A55504C1C15F53500872392 /* AASideMenuCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AASideMenuCell.m; path = Classes/AASideMenuCell.m; sourceTree = "<group>"; };
+		4A55504D1C15F53500872392 /* AASideMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AASideMenuViewController.h; path = Classes/AASideMenuViewController.h; sourceTree = "<group>"; };
+		4A55504E1C15F53500872392 /* AASideMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AASideMenuViewController.m; path = Classes/AASideMenuViewController.m; sourceTree = "<group>"; };
+		4A5550511C15F56500872392 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SWRevealViewController.h; path = Classes/SWRevealViewController.h; sourceTree = "<group>"; };
+		4A5550521C15F56500872392 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWRevealViewController.m; path = Classes/SWRevealViewController.m; sourceTree = "<group>"; };
+		4A5550551C15F5CC00872392 /* AAConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AAConfig.h; path = Classes/AAConfig.h; sourceTree = "<group>"; };
+		4A5550561C15F5CC00872392 /* AAConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AAConfig.m; path = Classes/AAConfig.m; sourceTree = "<group>"; };
+		4A5550581C15F5D700872392 /* AAMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AAMenuItem.h; path = Classes/AAMenuItem.h; sourceTree = "<group>"; };
+		4A5550591C15F5D700872392 /* AAMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AAMenuItem.m; path = Classes/AAMenuItem.m; sourceTree = "<group>"; };
+		4A55505B1C15F70B00872392 /* AAAppGlobals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AAAppGlobals.h; path = Classes/AAAppGlobals.h; sourceTree = "<group>"; };
+		4A55505C1C15F70B00872392 /* AAAppGlobals.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AAAppGlobals.m; path = Classes/AAAppGlobals.m; sourceTree = "<group>"; };
+		4A5550601C15FB0500872392 /* SellerAccountVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SellerAccountVC.h; path = Classes/SellerAccountVC.h; sourceTree = "<group>"; };
+		4A5550611C15FB0500872392 /* SellerAccountVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SellerAccountVC.m; path = Classes/SellerAccountVC.m; sourceTree = "<group>"; };
+		4A5550651C15FC2200872392 /* AAHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AAHeaderView.h; path = Classes/Custom/AAHeaderView.h; sourceTree = "<group>"; };
+		4A5550661C15FC2200872392 /* AAHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AAHeaderView.m; path = Classes/Custom/AAHeaderView.m; sourceTree = "<group>"; };
+		4A5550671C15FC2200872392 /* AAHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AAHeaderView.xib; path = Classes/Custom/AAHeaderView.xib; sourceTree = "<group>"; };
+		4A55506A1C15FC6000872392 /* AAThemeLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AAThemeLabel.h; path = Classes/Custom/AAThemeLabel.h; sourceTree = "<group>"; };
+		4A55506B1C15FC6000872392 /* AAThemeLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AAThemeLabel.m; path = Classes/Custom/AAThemeLabel.m; sourceTree = "<group>"; };
 		A6C84C38CBAE7E550EB9521D /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		B66903B41C156AFE002C9470 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		B66903B61C156B09002C9470 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
@@ -114,6 +143,10 @@
 		4A0AD1B91C14118700F6737B /* OffPeakSeller */ = {
 			isa = PBXGroup;
 			children = (
+				4A5550631C15FC0A00872392 /* Custom */,
+				4A55505E1C15FAC100872392 /* ViewControllers */,
+				4A5550541C15F5BE00872392 /* Helper */,
+				4A55504A1C15F45800872392 /* SideMenu */,
 				4A0AD1BD1C14118700F6737B /* AppDelegate.h */,
 				4A0AD1BE1C14118700F6737B /* AppDelegate.m */,
 				4A0AD1C01C14118700F6737B /* ViewController.h */,
@@ -143,6 +176,69 @@
 				4A0AD1D61C14118800F6737B /* Info.plist */,
 			);
 			path = OffPeakSellerTests;
+			sourceTree = "<group>";
+		};
+		4A55504A1C15F45800872392 /* SideMenu */ = {
+			isa = PBXGroup;
+			children = (
+				4A5550581C15F5D700872392 /* AAMenuItem.h */,
+				4A5550591C15F5D700872392 /* AAMenuItem.m */,
+				4A5550511C15F56500872392 /* SWRevealViewController.h */,
+				4A5550521C15F56500872392 /* SWRevealViewController.m */,
+				4A55504B1C15F53500872392 /* AASideMenuCell.h */,
+				4A55504C1C15F53500872392 /* AASideMenuCell.m */,
+				4A55504D1C15F53500872392 /* AASideMenuViewController.h */,
+				4A55504E1C15F53500872392 /* AASideMenuViewController.m */,
+			);
+			name = SideMenu;
+			sourceTree = "<group>";
+		};
+		4A5550541C15F5BE00872392 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				4A55505B1C15F70B00872392 /* AAAppGlobals.h */,
+				4A55505C1C15F70B00872392 /* AAAppGlobals.m */,
+				4A5550551C15F5CC00872392 /* AAConfig.h */,
+				4A5550561C15F5CC00872392 /* AAConfig.m */,
+			);
+			name = Helper;
+			sourceTree = "<group>";
+		};
+		4A55505E1C15FAC100872392 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				4A55505F1C15FACF00872392 /* SellerAccount */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		4A55505F1C15FACF00872392 /* SellerAccount */ = {
+			isa = PBXGroup;
+			children = (
+				4A5550601C15FB0500872392 /* SellerAccountVC.h */,
+				4A5550611C15FB0500872392 /* SellerAccountVC.m */,
+			);
+			name = SellerAccount;
+			sourceTree = "<group>";
+		};
+		4A5550631C15FC0A00872392 /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+				4A5550641C15FC1300872392 /* Header */,
+			);
+			name = Custom;
+			sourceTree = "<group>";
+		};
+		4A5550641C15FC1300872392 /* Header */ = {
+			isa = PBXGroup;
+			children = (
+				4A55506A1C15FC6000872392 /* AAThemeLabel.h */,
+				4A55506B1C15FC6000872392 /* AAThemeLabel.m */,
+				4A5550651C15FC2200872392 /* AAHeaderView.h */,
+				4A5550661C15FC2200872392 /* AAHeaderView.m */,
+				4A5550671C15FC2200872392 /* AAHeaderView.xib */,
+			);
+			name = Header;
 			sourceTree = "<group>";
 		};
 		8F44A470EA37DC1A7D31CF08 /* Frameworks */ = {
@@ -239,6 +335,7 @@
 				4A0AD1CA1C14118800F6737B /* LaunchScreen.storyboard in Resources */,
 				4A0AD1C71C14118800F6737B /* Assets.xcassets in Resources */,
 				4A0AD1C51C14118800F6737B /* Main.storyboard in Resources */,
+				4A5550691C15FC2200872392 /* AAHeaderView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -305,8 +402,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				4A0AD1C21C14118800F6737B /* ViewController.m in Sources */,
+				4A5550621C15FB0500872392 /* SellerAccountVC.m in Sources */,
+				4A5550681C15FC2200872392 /* AAHeaderView.m in Sources */,
 				4A0AD1BF1C14118700F6737B /* AppDelegate.m in Sources */,
 				4A0AD1BC1C14118700F6737B /* main.m in Sources */,
+				4A5550571C15F5CC00872392 /* AAConfig.m in Sources */,
+				4A55506C1C15FC6000872392 /* AAThemeLabel.m in Sources */,
+				4A55504F1C15F53500872392 /* AASideMenuCell.m in Sources */,
+				4A55505A1C15F5D700872392 /* AAMenuItem.m in Sources */,
+				4A5550501C15F53500872392 /* AASideMenuViewController.m in Sources */,
+				4A55505D1C15F70B00872392 /* AAAppGlobals.m in Sources */,
+				4A5550531C15F56500872392 /* SWRevealViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -435,7 +541,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				GCC_PREFIX_HEADER = "OffPeakSeller/OffPeakSeller-Prefix.pch";
 				INFOPLIST_FILE = OffPeakSeller/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "$(inherited)";
@@ -451,7 +557,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				GCC_PREFIX_HEADER = "OffPeakSeller/OffPeakSeller-Prefix.pch";
 				INFOPLIST_FILE = OffPeakSeller/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "$(inherited)";

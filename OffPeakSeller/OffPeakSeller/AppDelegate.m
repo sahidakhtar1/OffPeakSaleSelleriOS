@@ -8,6 +8,9 @@
 
 #import "AppDelegate.h"
 
+#import "SellerAccountVC.h"
+#import "AASideMenuViewController.h"
+
 @interface AppDelegate ()
 
 @end
@@ -18,6 +21,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    [self showMainScreen];
     return YES;
 }
 
@@ -42,5 +46,26 @@
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
-
+-(void)showMainScreen
+{
+    UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    //    AAHomeViewController* mainViewController = [storyboard instantiateViewControllerWithIdentifier:@"AAHomeViewController"];
+    SellerAccountVC *eshopVC = [storyboard instantiateViewControllerWithIdentifier:@"SellerAccountVC"];
+    
+    AASideMenuViewController *sideMenuVC = [storyboard instantiateViewControllerWithIdentifier:@"AASideMenuVC"];
+    
+    UINavigationController *frontNavigationController = [[UINavigationController alloc] initWithRootViewController:eshopVC];
+    UINavigationController *rearNavigationController = [[UINavigationController alloc] initWithRootViewController:sideMenuVC];
+    
+    self.revealController = [[SWRevealViewController alloc] initWithRearViewController:rearNavigationController frontViewController:frontNavigationController];
+    self.revealController.delegate = self;
+    
+    [frontNavigationController setNavigationBarHidden:YES];
+    [rearNavigationController setNavigationBarHidden:YES];
+    self.window.rootViewController = self.revealController ;
+    [self.window makeKeyAndVisible];
+}
+-(void)openSideMenu{
+    [self.revealController revealToggle:self];
+}
 @end
