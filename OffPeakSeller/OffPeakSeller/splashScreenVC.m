@@ -7,6 +7,7 @@
 //
 
 #import "splashScreenVC.h"
+#import "loginVC.h"
 
 @interface splashScreenVC ()
 
@@ -26,6 +27,17 @@
     
     self.poweredByLabel.text=@"Powered by:";
     self.urlLinkLabel.text=@"http://www.smartcommerce.asia";
+    
+    [self performSelector:@selector(callLoginView) withObject:nil afterDelay:3.0];
+}
+
+-(void)callLoginView
+{
+    
+    UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    //    AAHomeViewController* mainViewController = [storyboard instantiateViewControllerWithIdentifier:@"AAHomeViewController"];
+    loginVC *splashVC = [storyboard instantiateViewControllerWithIdentifier:@"loginID"];
+    [self.navigationController pushViewController:splashVC animated:NO];
 }
 
 - (void)didReceiveMemoryWarning {

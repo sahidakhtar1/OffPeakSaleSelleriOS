@@ -29,6 +29,7 @@
 		B66903B91C156B17002C9470 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B66903B81C156B17002C9470 /* CoreLocation.framework */; };
 		B66903BB1C156B1D002C9470 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B66903BA1C156B1D002C9470 /* Security.framework */; };
 		B67B3C4F1C16B4E10008A088 /* splashScreenVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B67B3C4E1C16B4E10008A088 /* splashScreenVC.m */; };
+		B67B3C521C16E5760008A088 /* loginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B67B3C511C16E5760008A088 /* loginVC.m */; };
 		BABCCAC03C145EA62BDECC37 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 37B570EC782319AFA7F1F419 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -84,6 +85,8 @@
 		B66903C31C156CF0002C9470 /* OffPeakSeller-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "OffPeakSeller-Prefix.pch"; sourceTree = "<group>"; };
 		B67B3C4D1C16B4E10008A088 /* splashScreenVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = splashScreenVC.h; sourceTree = "<group>"; };
 		B67B3C4E1C16B4E10008A088 /* splashScreenVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = splashScreenVC.m; sourceTree = "<group>"; };
+		B67B3C501C16E5760008A088 /* loginVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = loginVC.h; sourceTree = "<group>"; };
+		B67B3C511C16E5760008A088 /* loginVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = loginVC.m; sourceTree = "<group>"; };
 		C1CA657DEDD9EF4D9E2CC11A /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -222,6 +225,8 @@
 				4A5550611C15FB0500872392 /* SellerAccountVC.m */,
 				B67B3C4D1C16B4E10008A088 /* splashScreenVC.h */,
 				B67B3C4E1C16B4E10008A088 /* splashScreenVC.m */,
+				B67B3C501C16E5760008A088 /* loginVC.h */,
+				B67B3C511C16E5760008A088 /* loginVC.m */,
 			);
 			name = SellerAccount;
 			sourceTree = "<group>";
@@ -408,6 +413,7 @@
 			files = (
 				B67B3C4F1C16B4E10008A088 /* splashScreenVC.m in Sources */,
 				4A0AD1C21C14118800F6737B /* ViewController.m in Sources */,
+				B67B3C521C16E5760008A088 /* loginVC.m in Sources */,
 				4A5550621C15FB0500872392 /* SellerAccountVC.m in Sources */,
 				4A5550681C15FC2200872392 /* AAHeaderView.m in Sources */,
 				4A0AD1BF1C14118700F6737B /* AppDelegate.m in Sources */,
