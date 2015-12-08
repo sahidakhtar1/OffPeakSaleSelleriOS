@@ -10,6 +10,7 @@
 
 #import "SellerAccountVC.h"
 #import "AASideMenuViewController.h"
+#import "splashScreenVC.h"
 
 @interface AppDelegate ()
 
@@ -21,7 +22,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    [self showMainScreen];
+   // [self showMainScreen];
+    [self showSplashScreen];
     return YES;
 }
 
@@ -46,6 +48,19 @@
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
+
+-(void)showSplashScreen
+{
+   // splashScreenID
+    
+    UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    //    AAHomeViewController* mainViewController = [storyboard instantiateViewControllerWithIdentifier:@"AAHomeViewController"];
+    splashScreenVC *splashVC = [storyboard instantiateViewControllerWithIdentifier:@"splashScreenID"];
+    UINavigationController *splashController=[[UINavigationController alloc]initWithRootViewController:splashVC];
+    [self.window setRootViewController:splashController];
+    
+}
+
 -(void)showMainScreen
 {
     UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
