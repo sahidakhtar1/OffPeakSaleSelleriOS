@@ -15,16 +15,7 @@ NSString* const RETAILER_ID = @"MerchantA1";
 NSString* const DESFAULT_DISCOUNT_TYPE = @"Percentage";//@"UC003343434";
 NSString* const KEY_IS_LOGGED_IN = @"kLoggedIn";
 NSString* const API_KEY=@"AIzaSyDAIb7josxX55yT-aam9XpCnbPgKWjwIjs";
-#ifdef DEV
-//NSString* const BASE_URL = @"http://223.25.237.175/appwizlive/";
-NSString* const BASE_URL = @"http://inceptionlive.com/"
-#elif LIVE
-//NSString* const BASE_URL = @"http://appwizlive.com/";
-//NSString* const BASE_URL = @"http://appwiz.cloudapp.net/";
-//NSString* const BASE_URL = @"http://inceptionlive.com//";
 NSString* const BASE_URL = @"http://119.81.207.44/";
-//NSString* const BASE_URL = @"http://119.81.207.36/";
-#endif
 NSString* const ITUNES_URL = @"https://itunes.apple.com/app/id793924538?ls=1&mt=8";
 
 

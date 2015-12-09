@@ -247,6 +247,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="imgSplash" destination="8sL-8E-8mj" id="D5V-xx-Wba"/>
                         <outlet property="poweredByLabel" destination="8ut-zF-nF9" id="Bpa-Un-RRA"/>
                         <outlet property="urlLinkLabel" destination="LQ7-0t-JmM" id="r34-vW-Ghx"/>
                     </connections>

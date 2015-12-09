@@ -13,5 +13,6 @@
 @property (nonatomic,retain) IBOutlet UILabel *poweredByLabel;
 @property (nonatomic,retain) IBOutlet UILabel *urlLinkLabel;
 
+@property (nonatomic, strong) NSMutableDictionary *imageDownloadsInProgress;
 
 @end

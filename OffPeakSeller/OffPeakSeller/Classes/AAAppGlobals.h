@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-
+#import "AARetailer.h"
 @class AAEarliestSchedule;
 @interface AAAppGlobals : NSObject
 
@@ -24,6 +24,7 @@ extern NSString* const USER_DEFAULTS_ADD_PUBLISHER_ID_KEY;
 extern NSString* const GOOGLE_MAPS_API_KEY;
 
 
+@property (nonatomic,strong) AARetailer *retailer;
 @property (nonatomic,strong) NSArray* paymentTypes;
 
 @property (nonatomic,strong) dispatch_queue_t backgroundQueue;

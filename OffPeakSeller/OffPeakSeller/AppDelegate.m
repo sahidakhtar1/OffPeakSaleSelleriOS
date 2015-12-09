@@ -12,6 +12,7 @@
 #import "AASideMenuViewController.h"
 #import "splashScreenVC.h"
 #import "AALoginDailogView.h"
+#import "AARetailerInfoHelper.h"
 
 @interface AppDelegate ()
 
@@ -25,6 +26,22 @@
     // Override point for customization after application launch.
 //    [self showMainScreen];
     [self showSplashScreen];
+    [[AAAppGlobals sharedInstance] loadDataFromUserDefaults];
+    [AARetailerInfoHelper processRetailerInformationWithCompletionBlock:^{
+        
+        [self showSplashScreen];
+        
+    } andFailure:^(NSString *error) {
+        if([AAAppGlobals sharedInstance].retailer)
+        {
+            
+            [self showSplashScreen];
+        }
+        else
+        {
+            
+        }
+    }];
     return YES;
 }
 
