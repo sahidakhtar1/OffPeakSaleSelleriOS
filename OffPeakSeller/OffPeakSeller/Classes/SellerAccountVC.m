@@ -32,7 +32,6 @@
     [progressView setProgress:0.6 animated:YES];
     [circularProgressView addSubview:progressView];
 
-    
     companyDetailsTableView.rowHeight=companyDetailsTableView.frame.size.height/5-5;
     companyDetailsTableView.backgroundColor=[UIColor clearColor];
     
@@ -43,6 +42,25 @@
     headerView.showBack = false;
   //  headerView.delegate = self;
     [headerView setMenuIcons];
+    
+    UILabel *titleLabel=[[UILabel alloc]initWithFrame:CGRectMake(3*headerView.frame.size.width/10,20,4*headerView.frame.size.width/10,40)];
+    titleLabel.text=@"Seller Account";
+    titleLabel.font=[UIFont systemFontOfSize:17.0];
+    titleLabel.textAlignment=NSTextAlignmentCenter;
+    [headerView addSubview:titleLabel];
+    
+    UIButton *closeButton=[UIButton buttonWithType:UIButtonTypeCustom];
+    closeButton.backgroundColor=[UIColor clearColor];
+    closeButton.frame=CGRectMake(headerView.frame.size.width-65,20,60,40);
+    [closeButton setTitle: @"close" forState: UIControlStateNormal];
+    [closeButton setTitleColor:[UIColor greenColor] forState:UIControlStateNormal];
+    [closeButton addTarget:self action:@selector(closeButtonAction) forControlEvents:UIControlEventTouchUpInside];
+    [headerView addSubview:closeButton];
+}
+
+-(void)closeButtonAction
+{
+    
 }
 
 #pragma mark - TableView
