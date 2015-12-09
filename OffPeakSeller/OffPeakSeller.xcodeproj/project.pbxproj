@@ -28,6 +28,7 @@
 		B66903B71C156B09002C9470 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B66903B61C156B09002C9470 /* SystemConfiguration.framework */; };
 		B66903B91C156B17002C9470 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B66903B81C156B17002C9470 /* CoreLocation.framework */; };
 		B66903BB1C156B1D002C9470 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B66903BA1C156B1D002C9470 /* Security.framework */; };
+		B66FA2771C184233009891A1 /* DACircularProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = B66FA2761C184233009891A1 /* DACircularProgressView.m */; };
 		B67B3C4F1C16B4E10008A088 /* splashScreenVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B67B3C4E1C16B4E10008A088 /* splashScreenVC.m */; };
 		B67B3C521C16E5760008A088 /* loginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B67B3C511C16E5760008A088 /* loginVC.m */; };
 		BABCCAC03C145EA62BDECC37 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 37B570EC782319AFA7F1F419 /* libPods.a */; };
@@ -83,6 +84,8 @@
 		B66903B81C156B17002C9470 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		B66903BA1C156B1D002C9470 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		B66903C31C156CF0002C9470 /* OffPeakSeller-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "OffPeakSeller-Prefix.pch"; sourceTree = "<group>"; };
+		B66FA2751C184233009891A1 /* DACircularProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DACircularProgressView.h; path = ../../../../../Downloads/CircularProgress/CircularProgress/DACircularProgressView.h; sourceTree = "<group>"; };
+		B66FA2761C184233009891A1 /* DACircularProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DACircularProgressView.m; path = ../../../../../Downloads/CircularProgress/CircularProgress/DACircularProgressView.m; sourceTree = "<group>"; };
 		B67B3C4D1C16B4E10008A088 /* splashScreenVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = splashScreenVC.h; sourceTree = "<group>"; };
 		B67B3C4E1C16B4E10008A088 /* splashScreenVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = splashScreenVC.m; sourceTree = "<group>"; };
 		B67B3C501C16E5760008A088 /* loginVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = loginVC.h; sourceTree = "<group>"; };
@@ -149,6 +152,8 @@
 		4A0AD1B91C14118700F6737B /* OffPeakSeller */ = {
 			isa = PBXGroup;
 			children = (
+				B66FA2751C184233009891A1 /* DACircularProgressView.h */,
+				B66FA2761C184233009891A1 /* DACircularProgressView.m */,
 				4A5550631C15FC0A00872392 /* Custom */,
 				4A55505E1C15FAC100872392 /* ViewControllers */,
 				4A5550541C15F5BE00872392 /* Helper */,
@@ -421,6 +426,7 @@
 				4A5550571C15F5CC00872392 /* AAConfig.m in Sources */,
 				4A55506C1C15FC6000872392 /* AAThemeLabel.m in Sources */,
 				4A55504F1C15F53500872392 /* AASideMenuCell.m in Sources */,
+				B66FA2771C184233009891A1 /* DACircularProgressView.m in Sources */,
 				4A55505A1C15F5D700872392 /* AAMenuItem.m in Sources */,
 				4A5550501C15F53500872392 /* AASideMenuViewController.m in Sources */,
 				4A55505D1C15F70B00872392 /* AAAppGlobals.m in Sources */,
