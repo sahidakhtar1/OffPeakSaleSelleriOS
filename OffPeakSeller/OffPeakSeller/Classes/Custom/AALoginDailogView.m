@@ -8,8 +8,11 @@
 
 #import "AALoginDailogView.h"
 #import "AALoginHelper.h"
+#import "AACountriesHelper.h"
 
 static NSString* const JSON_RETAILER_ID_KEY = @"retailerId";
+static NSString* const COUNTRY_CODE_KEY = @"countryCode";
+static NSString* const COUNTRY_NAME_KEY = @"countryName";
 @implementation AALoginDailogView
 
 @synthesize delegate;
@@ -34,6 +37,7 @@ static NSString* const JSON_RETAILER_ID_KEY = @"retailerId";
 -(void)viewDidLoad{
     [super viewDidLoad];
     [self refreshView];
+    [self populateCountries];
 }
 
 -(void)refreshView{
@@ -158,6 +162,13 @@ static NSString* const JSON_RETAILER_ID_KEY = @"retailerId";
     }
     
 }
+-(BOOL)textFieldShouldBeginEditing:(UITextField *)textField{
+    if (textField == self.tfCountry) {
+        [self showCountriesDropDownMenu];
+        return false;
+    }
+    return true;
+}
 -(void)textFieldDidBeginEditing:(UITextField *)textField{
 //    CGRect rect = [UIScreen mainScreen].bounds;
 //    if (textField == self.tfemailaddress || textField == self.tfPassword) {
@@ -261,5 +272,50 @@ static NSString* const JSON_RETAILER_ID_KEY = @"retailerId";
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     [self.tfemailaddress resignFirstResponder];
     [self.tfPassword resignFirstResponder];
+    [self.dropDownScrollViewCountries removeFromSuperview];
 }
+
+-(void)populateCountries
+{
+    
+    if([[NSUserDefaults standardUserDefaults] objectForKey:@"countries"])
+    {
+        self.arrCountries = [[NSUserDefaults standardUserDefaults] objectForKey:@"countries"];
+    }
+    else
+    {
+        [AACountriesHelper getCountriesFromServerWithCompletionBlock:^(NSMutableArray * countries) {
+            self.arrCountries = countries;
+            [[NSUserDefaults standardUserDefaults] setObject:self.arrCountries forKey:@"countries"];
+        } andFailure:^(NSString * errorMessage) {
+            
+        }];
+    }
+    
+}
+-(void)showCountriesDropDownMenu
+{
+    if ([self.arrCountries count]==0) {
+        return;
+    }
+    CGRect frame;
+    frame = self.tfCountry.frame;
+    
+    self.dropDownScrollViewCountries = [[AAFilterDropDownScrollView alloc] initWithFrame:CGRectMake(frame.origin.x, frame.origin.y + frame.size.height + 2,frame.size.width,90)];
+    [self.dropDownScrollViewCountries setItemHeight:30];
+    self.dropDownScrollViewCountries.dropDownDelegate = self;
+    [self.dropDownScrollViewCountries setItems:[self.arrCountries valueForKey:COUNTRY_NAME_KEY]];
+    [self.dropDownScrollViewCountries refreshScrollView];
+    [self.view addSubview:self.dropDownScrollViewCountries];
+    [self.scrollViewFieldsContainter scrollRectToVisible:self.dropDownScrollViewCountries.frame animated:YES];
+    [self.dropDownScrollViewCountries.hiddenTexfield becomeFirstResponder];
+}
+#pragma mark - Scroll view delegate callbacks
+-(void)onDropDownMenuItemSelected:(id)dropDownScrollView withItemName:(NSString *)itemName
+{
+    self.tfCountry.text = itemName;
+    [dropDownScrollView removeFromSuperview];
+    
+}
+
 @end

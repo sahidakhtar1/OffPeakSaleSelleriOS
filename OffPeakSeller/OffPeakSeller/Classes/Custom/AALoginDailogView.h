@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "AAThemeGlossyButton.h"
 #import "AAThemeValidationTextField.h"
+#import "AAFilterDropDownScrollView.h"
 @protocol AALoginDailogDelegate <NSObject>
 
 -(void)loginButtonTappedwithemailId:(NSString*)email andPassword:(NSString*)password;
@@ -44,6 +45,9 @@ typedef enum FormType{
 @property (weak, nonatomic) IBOutlet UIButton *btnFBLogin;
 - (IBAction)btnGetPawwordTapped:(id)sender;
 - (IBAction)btnFbTapped:(id)sender;
+@property (nonatomic,strong) NSMutableArray* arrCountries;
+@property (nonatomic, strong) AAFilterDropDownScrollView *dropDownScrollViewCountries;
+@property (nonatomic, weak) IBOutlet UIScrollView *scrollViewFieldsContainter;
 
 
 - (IBAction)btnNeedHelpTapped:(id)sender;
