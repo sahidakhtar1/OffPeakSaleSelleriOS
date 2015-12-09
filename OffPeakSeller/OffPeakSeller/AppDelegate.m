@@ -23,8 +23,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    [self showMainScreen];
-    //[self showSplashScreen];
+//    [self showMainScreen];
+    [self showSplashScreen];
     return YES;
 }
 

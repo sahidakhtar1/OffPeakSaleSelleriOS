@@ -31,6 +31,10 @@ static NSString* const JSON_RETAILER_ID_KEY = @"retailerId";
     // Drawing code
 }
 */
+-(void)viewDidLoad{
+    [super viewDidLoad];
+    [self refreshView];
+}
 
 -(void)refreshView{
     CGRect rect = [UIScreen mainScreen].bounds;
@@ -43,13 +47,15 @@ static NSString* const JSON_RETAILER_ID_KEY = @"retailerId";
     self.tfemailaddress.leftViewMode = UITextFieldViewModeAlways;
     self.tfPassword.leftView = [self getLeftImageViewWithImage:@"password_black"];
     self.tfPassword.leftViewMode = UITextFieldViewModeAlways;
+    self.tfCountry.leftView = [self getLeftImageViewWithImage:@"country"];
+    self.tfCountry.leftViewMode = UITextFieldViewModeAlways;
     
     _btnFBLogin.layer.cornerRadius = 4.0f;
 }
 -(UIView*)getLeftImageViewWithImage:(NSString*)imageName{
     UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake(5, 0, 20, 20)];
     [imgView setImage:[UIImage imageNamed:imageName]];
-    UIView *leftView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 25, 20)];
+    UIView *leftView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 30, 20)];
     [leftView addSubview:imgView];
     return leftView;
 }
@@ -80,7 +86,7 @@ static NSString* const JSON_RETAILER_ID_KEY = @"retailerId";
     }
 }
 
-- (IBAction)btnNewuserTapped:(id)sender {
+- (IBAction)btnNeedHelpTapped:(id)sender {
     
 }
 
@@ -124,9 +130,6 @@ static NSString* const JSON_RETAILER_ID_KEY = @"retailerId";
     
 }
 
-- (IBAction)btnCloseTapped:(id)sender {
-    [[[UIAlertView alloc] initWithTitle:@"Login error" message:@"Registration required." delegate:nil cancelButtonTitle:@"Okay" otherButtonTitles:nil] show];
-}
 -(void)showLoginPopup{
     [self clearfileds];
     [UIView animateWithDuration:1
@@ -202,14 +205,15 @@ static NSString* const JSON_RETAILER_ID_KEY = @"retailerId";
 }
 -(void)setFormType:(FormType)formType{
     _formType = formType;
-    [UIView animateWithDuration:1
+    [UIView animateWithDuration:.3
                      animations:^{
                             switch (_formType) {
                                 case FormTypeLogin:
                                 {
-                                    self.lblFormTitle.text = @"Login";
+                                    self.lblFormTitle.text = @"Seller Login";
                                     [self.btnLogin setTitle:@"Login" forState:UIControlStateNormal];
                                     self.tfPassword.hidden = false;
+                                    self.tfCountry.hidden = false;
                                     [self.btnForgotPassword setTitle:@"Forgot Password" forState:UIControlStateNormal];
                                 }
                                     break;
@@ -219,6 +223,7 @@ static NSString* const JSON_RETAILER_ID_KEY = @"retailerId";
                                     [self.btnLogin setTitle:@"Send Email" forState:UIControlStateNormal];
                                     
                                     self.tfPassword.hidden = true;
+                                    self.tfCountry.hidden = true;
                                     [self.btnForgotPassword setTitle:@"Back to login" forState:UIControlStateNormal];;
                                 }
                                     break;
@@ -238,23 +243,23 @@ static NSString* const JSON_RETAILER_ID_KEY = @"retailerId";
                             float yCod = self.tfemailaddress.frame.origin.y+self.tfemailaddress.frame.size.height+8;
                             CGRect frame ;
                             if (formType == FormTypeLogin) {
-                               yCod = self.tfPassword.frame.origin.y+self.tfemailaddress.frame.size.height+8;
+                               yCod = self.tfCountry.frame.origin.y+self.tfCountry.frame.size.height+8;
+                                self.tfCountry.hidden = false;
+                            }else{
+                                yCod = self.tfemailaddress.frame.origin.y+self.tfemailaddress.frame.size.height+8;
+                                self.tfCountry.hidden = true;
                             }
-                            frame = self.vwBtncontainer.frame;
+                            frame = self.btnLogin.frame;
                             frame.origin.y = yCod;
-                            self.vwBtncontainer.frame = frame;
+                            self.btnLogin.frame = frame;
                             yCod += (frame.size.height+15);
                             
-//                            frame = self.btnForgotPassword.frame;
-//                            frame.origin.y = yCod;
-//                            self.btnForgotPassword.frame = frame;
-//                            yCod += (frame.size.height+15);
-//                            
-//                            frame = self.btnNewUser.frame;
-//                            frame.origin.y = yCod;
-//                            self.btnNewUser.frame = frame;
                      }
                      completion:nil];
     
+}
+-(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    [self.tfemailaddress resignFirstResponder];
+    [self.tfPassword resignFirstResponder];
 }
 @end

@@ -26,7 +26,8 @@ typedef enum FormType{
 @property (nonatomic) FormType formType;
 @property (strong, nonatomic) IBOutlet AAThemeValidationTextField *tfemailaddress;
 @property (strong, nonatomic) IBOutlet AAThemeValidationTextField *tfPassword;
-@property (strong, nonatomic) IBOutlet UIButton *btnNewUser;
+@property (strong, nonatomic) IBOutlet AAThemeValidationTextField *tfCountry;
+@property (strong, nonatomic) IBOutlet UIButton *btnNeedHelp;
 @property (strong, nonatomic) IBOutlet AAThemeGlossyButton *btnLogin;
 @property (strong, nonatomic) IBOutlet UIView *vwHeaderView;
 @property (strong, nonatomic) IBOutlet UILabel *lblHeaderText;
@@ -45,7 +46,7 @@ typedef enum FormType{
 - (IBAction)btnFbTapped:(id)sender;
 
 
-- (IBAction)btnNewuserTapped:(id)sender;
+- (IBAction)btnNeedHelpTapped:(id)sender;
 - (IBAction)btnLogintapped:(id)sender;
 - (IBAction)btnForgotPasswordTapped:(id)sender;
 - (IBAction)btnCloseTapped:(id)sender;

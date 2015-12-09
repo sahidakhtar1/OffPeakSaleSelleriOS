@@ -6,6 +6,13 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AALoginDailogView">
             <connections>
+                <outlet property="btnForgotPassword" destination="8d1-dv-IEd" id="vA1-mt-0UR"/>
+                <outlet property="btnLogin" destination="8WN-HY-ILA" id="07j-8E-qL7"/>
+                <outlet property="btnNeedHelp" destination="nrY-fy-Bbn" id="RJz-0Z-cF1"/>
+                <outlet property="lblFormTitle" destination="rYS-Wu-6Us" id="dse-Bf-Lzm"/>
+                <outlet property="tfCountry" destination="6Yv-60-BuT" id="K36-ep-Dmh"/>
+                <outlet property="tfPassword" destination="bUG-VW-CMs" id="6Gl-vG-GG4"/>
+                <outlet property="tfemailaddress" destination="kF8-e4-3df" id="1XN-ch-Cjp"/>
                 <outlet property="view" destination="baz-cd-Ayl" id="bCb-md-n7V"/>
             </connections>
         </placeholder>
@@ -19,36 +26,68 @@
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <subviews>
                         <view contentMode="scaleToFill" id="pzt-0p-SqU">
-                            <rect key="frame" x="15" y="200" width="290" height="359"/>
+                            <rect key="frame" x="15" y="210" width="290" height="359"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
-                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-Mail Address" minimumFontSize="17" id="kF8-e4-3df" customClass="AAThemeValidationTextField">
-                                    <rect key="frame" x="0.0" y="46" width="290" height="30"/>
+                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="E-Mail Address" minimumFontSize="17" id="kF8-e4-3df" customClass="AAThemeValidationTextField">
+                                    <rect key="frame" x="0.0" y="10" width="290" height="35"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                     <animations/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <textInputTraits key="textInputTraits"/>
+                                    <connections>
+                                        <outlet property="delegate" destination="-1" id="pva-fa-KC9"/>
+                                    </connections>
                                 </textField>
-                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" id="bUG-VW-CMs" customClass="AAThemeValidationTextField">
-                                    <rect key="frame" x="0.0" y="85" width="290" height="30"/>
+                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Password" minimumFontSize="17" id="bUG-VW-CMs" customClass="AAThemeValidationTextField">
+                                    <rect key="frame" x="0.0" y="54" width="290" height="35"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                     <animations/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                    <connections>
+                                        <outlet property="delegate" destination="-1" id="3Ir-L3-Enq"/>
+                                    </connections>
                                 </textField>
+                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Country" minimumFontSize="17" id="6Yv-60-BuT" customClass="AAThemeValidationTextField">
+                                    <rect key="frame" x="0.0" y="97" width="290" height="35"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                    <animations/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                    <connections>
+                                        <outlet property="delegate" destination="-1" id="Umi-7V-DMR"/>
+                                    </connections>
+                                </textField>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="8WN-HY-ILA" customClass="AAThemeGlossyButton">
+                                    <rect key="frame" x="1" y="141" width="288" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                    <animations/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                    <state key="normal" title="Login">
+                                        <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="btnLogintapped:" destination="-1" eventType="touchUpInside" id="pRw-ey-BGj"/>
+                                    </connections>
+                                </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="nrY-fy-Bbn">
-                                    <rect key="frame" x="168" y="312" width="114" height="39"/>
+                                    <rect key="frame" x="168" y="303" width="114" height="39"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                                     <animations/>
                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                     <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="2" maxY="0.0"/>
-                                    <state key="normal" title="Sign up">
+                                    <state key="normal" title="Need help">
                                         <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                     </state>
+                                    <connections>
+                                        <action selector="btnNeedHelpTapped:" destination="-1" eventType="touchUpInside" id="dGA-VT-rVU"/>
+                                    </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="8d1-dv-IEd">
-                                    <rect key="frame" x="2" y="316" width="137" height="34"/>
+                                    <rect key="frame" x="2" y="307" width="137" height="34"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <animations/>
                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
@@ -56,32 +95,10 @@
                                     <state key="normal" title="Forgot Password">
                                         <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     </state>
+                                    <connections>
+                                        <action selector="btnForgotPasswordTapped:" destination="-1" eventType="touchUpInside" id="1ah-nB-vVl"/>
+                                    </connections>
                                 </button>
-                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="rYS-Wu-6Us">
-                                    <rect key="frame" x="19" y="9" width="235" height="26"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                    <animations/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                                <view contentMode="scaleToFill" id="D0p-yR-7vl">
-                                    <rect key="frame" x="0.0" y="123" width="289" height="58"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                    <subviews>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="8WN-HY-ILA" customClass="AAThemeGlossyButton">
-                                            <rect key="frame" x="0.0" y="0.0" width="288" height="44"/>
-                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                            <animations/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                            <state key="normal" title="Login">
-                                                <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                            </state>
-                                        </button>
-                                    </subviews>
-                                    <animations/>
-                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </view>
                             </subviews>
                             <animations/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -91,11 +108,19 @@
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <animations/>
                         </imageView>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icon-60" id="hdg-QC-Z5r">
-                            <rect key="frame" x="120" y="60" width="80" height="80"/>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="app_logo" id="hdg-QC-Z5r">
+                            <rect key="frame" x="110" y="53" width="100" height="100"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <animations/>
                         </imageView>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Seller Login" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="rYS-Wu-6Us">
+                            <rect key="frame" x="50" y="159" width="235" height="26"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <animations/>
+                            <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
                     </subviews>
                     <animations/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -105,7 +130,7 @@
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="239" y="95"/>
+            <point key="canvasLocation" x="-221" y="41"/>
         </view>
         <view contentMode="scaleToFill" id="BQU-MZ-Xtd">
             <rect key="frame" x="0.0" y="0.0" width="280" height="148"/>
@@ -162,7 +187,7 @@
         </view>
     </objects>
     <resources>
-        <image name="Icon-60" width="60" height="60"/>
+        <image name="app_logo" width="256" height="256"/>
         <image name="login_top_bg" width="360" height="200"/>
     </resources>
 </document>
