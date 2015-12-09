@@ -27,13 +27,13 @@
     
     self.poweredByLabel.text=@"Powered by:";
     self.urlLinkLabel.text=@"http://www.smartcommerce.asia";
+    self.urlLinkLabel.textColor=[UIColor blueColor];
     
     [self performSelector:@selector(callLoginView) withObject:nil afterDelay:3.0];
 }
 
 -(void)callLoginView
 {
-    
     UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     //    AAHomeViewController* mainViewController = [storyboard instantiateViewControllerWithIdentifier:@"AAHomeViewController"];
     loginVC *splashVC = [storyboard instantiateViewControllerWithIdentifier:@"loginID"];
