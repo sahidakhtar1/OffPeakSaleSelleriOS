@@ -8,7 +8,7 @@
 
 #import "splashScreenVC.h"
 #import "loginVC.h"
-
+#import "AppDelegate.h"
 @interface splashScreenVC ()
 
 @end
@@ -33,11 +33,12 @@
 
 -(void)callLoginView
 {
-    
-    UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    //    AAHomeViewController* mainViewController = [storyboard instantiateViewControllerWithIdentifier:@"AAHomeViewController"];
-    loginVC *splashVC = [storyboard instantiateViewControllerWithIdentifier:@"loginID"];
-    [self.navigationController pushViewController:splashVC animated:NO];
+    AppDelegate *appDelegate = (AppDelegate*)[UIApplication sharedApplication].delegate;
+    [appDelegate splashFinished];
+//    UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+//    //    AAHomeViewController* mainViewController = [storyboard instantiateViewControllerWithIdentifier:@"AAHomeViewController"];
+//    loginVC *splashVC = [storyboard instantiateViewControllerWithIdentifier:@"loginID"];
+//    [self.navigationController pushViewController:splashVC animated:NO];
 }
 
 - (void)didReceiveMemoryWarning {

@@ -13,6 +13,7 @@
 @property (strong, nonatomic) UIWindow *window;
 
 -(void)openSideMenu;
+-(void)splashFinished;
 @property (nonatomic, strong)SWRevealViewController *revealController;
 @end
 

@@ -11,6 +11,7 @@
 #import "SellerAccountVC.h"
 #import "AASideMenuViewController.h"
 #import "splashScreenVC.h"
+#import "AALoginDailogView.h"
 
 @interface AppDelegate ()
 
@@ -79,6 +80,10 @@
     [rearNavigationController setNavigationBarHidden:YES];
     self.window.rootViewController = self.revealController ;
     [self.window makeKeyAndVisible];
+}
+-(void)splashFinished{
+    AALoginDailogView *loginView = [[AALoginDailogView alloc] initWithNibName:nil bundle:nil];
+    [self.window setRootViewController:loginView];
 }
 -(void)openSideMenu{
     [self.revealController revealToggle:self];
