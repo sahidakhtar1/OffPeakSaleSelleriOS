@@ -9,6 +9,7 @@
 #import "AALoginDailogView.h"
 #import "AALoginHelper.h"
 #import "AACountriesHelper.h"
+#import "AppDelegate.h"
 
 static NSString* const JSON_RETAILER_ID_KEY = @"retailerId";
 static NSString* const COUNTRY_CODE_KEY = @"countryCode";
@@ -91,7 +92,8 @@ static NSString* const COUNTRY_NAME_KEY = @"countryName";
 }
 
 - (IBAction)btnNeedHelpTapped:(id)sender {
-    
+    AppDelegate *appDelegate = (AppDelegate*)[UIApplication sharedApplication].delegate;
+    [appDelegate showMainScreen];
 }
 
 - (IBAction)btnLogintapped:(id)sender {

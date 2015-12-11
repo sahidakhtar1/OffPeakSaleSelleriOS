@@ -26,7 +26,7 @@
     [self.menuView addSubview:headerView];
     [headerView setTitle:self.title];
     headerView.showCart = false;
-    headerView.showBack = false;
+    headerView.showBack = true;
     //  headerView.delegate = self;
     [headerView setMenuIcons];
     

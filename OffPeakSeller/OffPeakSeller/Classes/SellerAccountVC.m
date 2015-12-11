@@ -9,6 +9,7 @@
 #import "SellerAccountVC.h"
 #import "AAHeaderView.h"
 #import "DACircularProgressView.h"
+#import "redeemVoucherVC.h"
 
 @interface SellerAccountVC ()
 @end
@@ -32,7 +33,7 @@
     [progressView setProgress:0.6 animated:YES];
     [circularProgressView addSubview:progressView];
 
-    companyDetailsTableView.rowHeight=companyDetailsTableView.frame.size.height/5-5;
+//    companyDetailsTableView.rowHeight=companyDetailsTableView.frame.size.height/5-5;
     companyDetailsTableView.backgroundColor=[UIColor clearColor];
     
     AAHeaderView *headerView = [[AAHeaderView alloc] initWithFrame:self.menuView.frame];
@@ -108,5 +109,9 @@
 */
 
 - (IBAction)activateQRCode:(id)sender {
+   
+    //    AAHomeViewController* mainViewController = [storyboard instantiateViewControllerWithIdentifier:@"AAHomeViewController"];
+    redeemVoucherVC *redeemVC = [self.storyboard instantiateViewControllerWithIdentifier:@"redeemVoucherVC"];
+    [self.navigationController pushViewController:redeemVC animated:YES];
 }
 @end

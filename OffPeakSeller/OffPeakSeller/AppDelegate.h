@@ -14,6 +14,7 @@
 
 -(void)openSideMenu;
 -(void)splashFinished;
+-(void)showMainScreen;
 @property (nonatomic, strong)SWRevealViewController *revealController;
 @end
 

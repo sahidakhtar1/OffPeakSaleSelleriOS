@@ -26,25 +26,23 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
-//    [self showMainScreen];
-    [self showMainScreen];
-//    [[AAAppGlobals sharedInstance] loadDataFromUserDefaults];
-//    [AARetailerInfoHelper processRetailerInformationWithCompletionBlock:^{
-//        
-//        [self showSplashScreen];
-//        
-//    } andFailure:^(NSString *error) {
-//        if([AAAppGlobals sharedInstance].retailer)
-//        {
-//            
-//            [self showSplashScreen];
-//        }
-//        else
-//        {
-//            
-//        }
-//    }];
+
+    [[AAAppGlobals sharedInstance] loadDataFromUserDefaults];
+    [AARetailerInfoHelper processRetailerInformationWithCompletionBlock:^{
+        
+        [self showSplashScreen];
+        
+    } andFailure:^(NSString *error) {
+        if([AAAppGlobals sharedInstance].retailer)
+        {
+            
+            [self showSplashScreen];
+        }
+        else
+        {
+            
+        }
+    }];
     return YES;
 }
 
@@ -74,11 +72,7 @@
 {
     // splashScreenID
     
-    UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    //    AAHomeViewController* mainViewController = [storyboard instantiateViewControllerWithIdentifier:@"AAHomeViewController"];
-    loginVC *splashVC = [storyboard instantiateViewControllerWithIdentifier:@"loginID"];
-    UINavigationController *splashController=[[UINavigationController alloc]initWithRootViewController:splashVC];
-    [self.window setRootViewController:splashController];
+    
     
 }
 
