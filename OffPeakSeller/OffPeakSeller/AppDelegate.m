@@ -13,6 +13,7 @@
 #import "splashScreenVC.h"
 #import "AALoginDailogView.h"
 #import "AARetailerInfoHelper.h"
+#import "redeemVoucherVC.h"
 
 @interface AppDelegate ()
 
@@ -25,23 +26,23 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
 //    [self showMainScreen];
-    [self showSplashScreen];
-    [[AAAppGlobals sharedInstance] loadDataFromUserDefaults];
-    [AARetailerInfoHelper processRetailerInformationWithCompletionBlock:^{
-        
-        [self showSplashScreen];
-        
-    } andFailure:^(NSString *error) {
-        if([AAAppGlobals sharedInstance].retailer)
-        {
-            
-            [self showSplashScreen];
-        }
-        else
-        {
-            
-        }
-    }];
+    [self showRedeemVoucher];
+//    [[AAAppGlobals sharedInstance] loadDataFromUserDefaults];
+//    [AARetailerInfoHelper processRetailerInformationWithCompletionBlock:^{
+//        
+//        [self showSplashScreen];
+//        
+//    } andFailure:^(NSString *error) {
+//        if([AAAppGlobals sharedInstance].retailer)
+//        {
+//            
+//            [self showSplashScreen];
+//        }
+//        else
+//        {
+//            
+//        }
+//    }];
     return YES;
 }
 
@@ -65,6 +66,18 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+-(void)showRedeemVoucher
+{
+    // splashScreenID
+    
+    UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    //    AAHomeViewController* mainViewController = [storyboard instantiateViewControllerWithIdentifier:@"AAHomeViewController"];
+    splashScreenVC *splashVC = [storyboard instantiateViewControllerWithIdentifier:@"RedeemVoucherID"];
+    UINavigationController *splashController=[[UINavigationController alloc]initWithRootViewController:splashVC];
+    [self.window setRootViewController:splashController];
+    
 }
 
 -(void)showSplashScreen
