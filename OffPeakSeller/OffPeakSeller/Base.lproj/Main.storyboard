@@ -387,6 +387,7 @@
                     <navigationItem key="navigationItem" id="nz0-sj-Cfy" customClass="new"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
+                        <outlet property="menuView" destination="r40-my-7SV" id="7ve-Pw-pqn"/>
                         <outlet property="orderIdField" destination="bCF-LT-gdI" id="bNz-ar-xRg"/>
                     </connections>
                 </viewController>

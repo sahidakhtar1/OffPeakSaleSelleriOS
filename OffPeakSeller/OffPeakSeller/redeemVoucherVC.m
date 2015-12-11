@@ -7,6 +7,7 @@
 //
 
 #import "redeemVoucherVC.h"
+#import "AAHeaderView.h"
 
 @interface redeemVoucherVC ()
 
@@ -18,6 +19,23 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    self.navigationController.navigationBarHidden=YES;
+    
+    AAHeaderView *headerView = [[AAHeaderView alloc] initWithFrame:self.menuView.frame];
+    [self.menuView addSubview:headerView];
+    [headerView setTitle:self.title];
+    headerView.showCart = false;
+    headerView.showBack = false;
+    //  headerView.delegate = self;
+    [headerView setMenuIcons];
+    
+    UILabel *titleLabel=[[UILabel alloc]initWithFrame:CGRectMake(2.5*headerView.frame.size.width/10,20,5*headerView.frame.size.width/10,40)];
+    titleLabel.text=@"Redeem Voucher";
+    titleLabel.font=[UIFont systemFontOfSize:16.0];
+    titleLabel.textAlignment=NSTextAlignmentCenter;
+    [headerView addSubview:titleLabel];
+    
 }
 
 - (void)didReceiveMemoryWarning {

@@ -11,5 +11,6 @@
 @interface redeemVoucherVC : UIViewController<UITextFieldDelegate>
 
 @property (nonatomic,retain) IBOutlet UITextField *orderIdField;
+@property (nonatomic,retain) IBOutlet UIView *menuView;
 
 @end
