@@ -28,7 +28,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
 //    [self showMainScreen];
-    [self showRedeemVoucher];
+    [self showMainScreen];
 //    [[AAAppGlobals sharedInstance] loadDataFromUserDefaults];
 //    [AARetailerInfoHelper processRetailerInformationWithCompletionBlock:^{
 //        

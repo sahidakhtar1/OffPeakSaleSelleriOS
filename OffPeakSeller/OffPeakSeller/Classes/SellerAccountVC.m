@@ -55,7 +55,7 @@
     [closeButton setTitle: @"close" forState: UIControlStateNormal];
     [closeButton setTitleColor:[UIColor greenColor] forState:UIControlStateNormal];
     [closeButton addTarget:self action:@selector(closeButtonAction) forControlEvents:UIControlEventTouchUpInside];
-    [headerView addSubview:closeButton];
+   // [headerView addSubview:closeButton];
 }
 
 -(void)closeButtonAction
