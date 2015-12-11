@@ -44,6 +44,7 @@
 		4A5550691C15FC2200872392 /* AAHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A5550671C15FC2200872392 /* AAHeaderView.xib */; };
 		4A55506C1C15FC6000872392 /* AAThemeLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A55506B1C15FC6000872392 /* AAThemeLabel.m */; };
 		8465312F1C1AE13E0023871D /* redeemVoucherVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8465312E1C1AE13E0023871D /* redeemVoucherVC.m */; };
+		846531621C1AFD3E0023871D /* invalidVoucherVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 846531611C1AFD3E0023871D /* invalidVoucherVC.m */; };
 		B66903B51C156AFE002C9470 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B66903B41C156AFE002C9470 /* MobileCoreServices.framework */; };
 		B66903B71C156B09002C9470 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B66903B61C156B09002C9470 /* SystemConfiguration.framework */; };
 		B66903B91C156B17002C9470 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B66903B81C156B17002C9470 /* CoreLocation.framework */; };
@@ -139,6 +140,8 @@
 		4A55506B1C15FC6000872392 /* AAThemeLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AAThemeLabel.m; path = Classes/Custom/AAThemeLabel.m; sourceTree = "<group>"; };
 		8465312D1C1AE13E0023871D /* redeemVoucherVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = redeemVoucherVC.h; sourceTree = "<group>"; };
 		8465312E1C1AE13E0023871D /* redeemVoucherVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = redeemVoucherVC.m; sourceTree = "<group>"; };
+		846531601C1AFD3E0023871D /* invalidVoucherVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = invalidVoucherVC.h; sourceTree = "<group>"; };
+		846531611C1AFD3E0023871D /* invalidVoucherVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = invalidVoucherVC.m; sourceTree = "<group>"; };
 		A6C84C38CBAE7E550EB9521D /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		B66903B41C156AFE002C9470 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		B66903B61C156B09002C9470 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
@@ -329,6 +332,8 @@
 				B67B3C511C16E5760008A088 /* loginVC.m */,
 				8465312D1C1AE13E0023871D /* redeemVoucherVC.h */,
 				8465312E1C1AE13E0023871D /* redeemVoucherVC.m */,
+				846531601C1AFD3E0023871D /* invalidVoucherVC.h */,
+				846531611C1AFD3E0023871D /* invalidVoucherVC.m */,
 			);
 			name = SellerAccount;
 			sourceTree = "<group>";
@@ -566,6 +571,7 @@
 				4A1A88691C18933300011510 /* AARetailer.m in Sources */,
 				4A55504F1C15F53500872392 /* AASideMenuCell.m in Sources */,
 				4A55505A1C15F5D700872392 /* AAMenuItem.m in Sources */,
+				846531621C1AFD3E0023871D /* invalidVoucherVC.m in Sources */,
 				4A5550501C15F53500872392 /* AASideMenuViewController.m in Sources */,
 				4A1A886F1C18962900011510 /* AANetworkHandler.m in Sources */,
 				4A55505D1C15F70B00872392 /* AAAppGlobals.m in Sources */,
