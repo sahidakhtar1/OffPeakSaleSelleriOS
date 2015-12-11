@@ -15,6 +15,7 @@
 #import "AARetailerInfoHelper.h"
 #import "redeemVoucherVC.h"
 #import "invalidVoucherVC.h"
+#import "loginVC.h"
 
 @interface AppDelegate ()
 
@@ -75,7 +76,7 @@
     
     UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     //    AAHomeViewController* mainViewController = [storyboard instantiateViewControllerWithIdentifier:@"AAHomeViewController"];
-    invalidVoucherVC *splashVC = [storyboard instantiateViewControllerWithIdentifier:@"InvalidVoucherID"];
+    loginVC *splashVC = [storyboard instantiateViewControllerWithIdentifier:@"loginID"];
     UINavigationController *splashController=[[UINavigationController alloc]initWithRootViewController:splashVC];
     [self.window setRootViewController:splashController];
     
