@@ -74,6 +74,7 @@
                 if ( ![frontVC.topViewController isKindOfClass:[SellerAccountVC class]] )
                 {
                     SellerAccountVC *activity = [self.storyboard instantiateViewControllerWithIdentifier:@"SellerAccountVC"];
+                    activity.pageTitle = menuItem.itemName;
                     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:activity];
                     navigationController.navigationBarHidden=YES;
                     [self.revealViewController pushFrontViewController:navigationController     animated:YES];

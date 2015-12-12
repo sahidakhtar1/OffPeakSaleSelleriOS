@@ -134,10 +134,10 @@
     if (self == [DACircularProgressView class]) {
         DACircularProgressView *circularProgressViewAppearance = [DACircularProgressView appearance];
         [circularProgressViewAppearance setTrackTintColor:[[UIColor whiteColor] colorWithAlphaComponent:0.3f]];
-        [circularProgressViewAppearance setProgressTintColor:[UIColor orangeColor]];
+        [circularProgressViewAppearance setProgressTintColor:[AAColor sharedInstance].retailerThemeBackgroundColor];
         [circularProgressViewAppearance setInnerTintColor:nil];
         [circularProgressViewAppearance setBackgroundColor:[UIColor clearColor]];
-        [circularProgressViewAppearance setThicknessRatio:0.3f];
+        [circularProgressViewAppearance setThicknessRatio:0.25f];
         [circularProgressViewAppearance setRoundedCorners:NO];
         [circularProgressViewAppearance setClockwiseProgress:YES];
         

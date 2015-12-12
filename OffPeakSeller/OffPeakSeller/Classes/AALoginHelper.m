@@ -15,8 +15,10 @@ static NSString* const JSON_DATA_KEY = @"data";
 
 +(void)processForgotPaswordWithCompletionBlock : (void(^)(NSString*))success andFailure : (void(^)(NSString*)) failure withParams:(NSDictionary*)params{
     
+    [[UIApplication sharedApplication] beginIgnoringInteractionEvents];
     AANetworkHandler *networkHandler = [[AANetworkHandler alloc] init];
     [networkHandler sendJSONRequestToServerWithEndpoint:@"api_forgot_password.php" withParams:params withSuccessBlock:^(NSDictionary *response) {
+        [[UIApplication sharedApplication] endIgnoringInteractionEvents];
         if([response objectForKey:JSON_ERROR_CODE_KEY])
         {
             if([[response objectForKey:JSON_ERROR_CODE_KEY] integerValue]==1)
@@ -35,6 +37,7 @@ static NSString* const JSON_DATA_KEY = @"data";
         
         
     } withFailureBlock:^(NSError *error) {
+        [[UIApplication sharedApplication] endIgnoringInteractionEvents];
         failure(error.description);
     }];
    

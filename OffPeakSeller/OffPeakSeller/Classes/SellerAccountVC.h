@@ -11,7 +11,7 @@
 @interface SellerAccountVC : UIViewController<UITableViewDelegate,UITableViewDataSource>
 {
     NSMutableArray *companyKeyArray;
-    NSMutableArray *companyValueArray;
+    NSMutableArray *dictioanaryKeys;
 }
 
 @property (nonatomic,retain) IBOutlet UILabel *titleLabel;
@@ -21,5 +21,7 @@
 @property (nonatomic,retain) IBOutlet UILabel *UnitsSoldValueLabel;
 @property (nonatomic,retain) IBOutlet UIView *circularProgressView;
 - (IBAction)activateQRCode:(id)sender;
+
+@property (nonatomic, strong) NSString *pageTitle;
 
 @end

@@ -24,15 +24,15 @@
     
     AAHeaderView *headerView = [[AAHeaderView alloc] initWithFrame:self.menuView.frame];
     [self.menuView addSubview:headerView];
-    [headerView setTitle:self.title];
+    [headerView setTitle:@"Redeem Voucher"];
     headerView.showCart = false;
-    headerView.showBack = false;
-    //  headerView.delegate = self;
+    headerView.showBack = true;
+    headerView.delegate = self;
     [headerView setMenuIcons];
     
-    UILabel *titleLabel1=[[UILabel alloc]initWithFrame:CGRectMake(3*headerView.frame.size.width/10,20,4*headerView.frame.size.width/10,40)];
-    titleLabel1=titleLabel;
-    [headerView addSubview:titleLabel1];
+//    UILabel *titleLabel1=[[UILabel alloc]initWithFrame:CGRectMake(3*headerView.frame.size.width/10,20,4*headerView.frame.size.width/10,40)];
+//    titleLabel1=titleLabel;
+//    [headerView addSubview:titleLabel1];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -64,14 +64,9 @@
     return YES;
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+-(void)backButtonTapped{
+    [self.navigationController popViewControllerAnimated:YES];
 }
-*/
+
 
 @end

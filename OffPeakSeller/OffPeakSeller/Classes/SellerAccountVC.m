@@ -11,8 +11,10 @@
 #import "DACircularProgressView.h"
 #import "redeemVoucherVC.h"
 #import "AAThemeLabel.h"
-
+#import "SellerDashBoardHelper.h"
 @interface SellerAccountVC ()
+@property (nonatomic, strong) NSDictionary *sellerInfoDict;
+@property (nonatomic, strong) DACircularProgressView *progressView;
 @end
 
 @implementation SellerAccountVC
@@ -23,31 +25,27 @@
     // Do any additional setup after loading the view.
     
     companyKeyArray=[[NSMutableArray alloc]initWithObjects:@"Company Name",@"Contact",@"Email",@"Location",@"Start Date",@"End Date", nil];
-    companyValueArray=[[NSMutableArray alloc]initWithObjects:@"hello cafe",@"84848484",@"contact@gmail.com",@"India",@"10 Dec,2015",@"15 Dec,2015", nil];
+    dictioanaryKeys=[[NSMutableArray alloc]initWithObjects:@"company_name",@"phone_num",@"email",@"country", nil];
     
     circularProgressView.backgroundColor=[UIColor clearColor];
     
-    DACircularProgressView *progressView = [[DACircularProgressView alloc] initWithFrame:CGRectMake(0, 0, circularProgressView.frame.size.width, circularProgressView.frame.size.height)];
-    progressView.roundedCorners = NO;
-    progressView.hidden = NO;
-    progressView.trackTintColor = [UIColor lightGrayColor];
-    [progressView setProgress:0.6 animated:YES];
-    [circularProgressView addSubview:progressView];
+    self.progressView = [[DACircularProgressView alloc] initWithFrame:CGRectMake(0, 0, circularProgressView.frame.size.width, circularProgressView.frame.size.height)];
+    self.progressView.roundedCorners = NO;
+    self.progressView.hidden = NO;
+    self.progressView.trackTintColor = [UIColor lightGrayColor];
+    [self.progressView setProgress:0.0 animated:YES];
+    [circularProgressView addSubview:self.progressView];
 
 //    companyDetailsTableView.rowHeight=companyDetailsTableView.frame.size.height/5-5;
     companyDetailsTableView.backgroundColor=[UIColor clearColor];
     
     AAHeaderView *headerView = [[AAHeaderView alloc] initWithFrame:self.menuView.frame];
     [self.menuView addSubview:headerView];
-    [headerView setTitle:self.title];
+    [headerView setTitle:self.pageTitle];
     headerView.showCart = false;
     headerView.showBack = false;
   //  headerView.delegate = self;
     [headerView setMenuIcons];
-    
-    UILabel *titleLabel1=[[UILabel alloc]initWithFrame:CGRectMake(3*headerView.frame.size.width/10,20,4*headerView.frame.size.width/10,40)];
-    titleLabel1=titleLabel;
-    [headerView addSubview:titleLabel1];
     
     UIButton *closeButton=[UIButton buttonWithType:UIButtonTypeCustom];
     closeButton.backgroundColor=[UIColor clearColor];
@@ -55,9 +53,22 @@
     [closeButton setTitle: @"close" forState: UIControlStateNormal];
     [closeButton setTitleColor:[UIColor greenColor] forState:UIControlStateNormal];
     [closeButton addTarget:self action:@selector(closeButtonAction) forControlEvents:UIControlEventTouchUpInside];
-   // [headerView addSubview:closeButton];
 }
-
+-(void)viewWillAppear:(BOOL)animated{
+    [SellerDashBoardHelper getSellerInfoEmailId:[[NSUserDefaults standardUserDefaults] objectForKey:KEY_EMAIL] withCompletionBlock:^(NSDictionary *dict) {
+        self.sellerInfoDict = dict;
+//        [self.companyDetailsTableView setDataSource:self];
+//        [self.companyDetailsTableView reloadData];
+        float redeemed = [[self.sellerInfoDict valueForKey:@"orders_redeemed"] floatValue];
+        float sold = [[self.sellerInfoDict valueForKey:@"orders_sold"] floatValue];
+        self.RedeemedValueLabel.text = [self.sellerInfoDict valueForKey:@"orders_redeemed"];
+        self.UnitsSoldValueLabel.text = [self.sellerInfoDict valueForKey:@"orders_sold"];
+        float percentage = redeemed/sold;
+        [self.progressView setProgress:percentage animated:YES];
+    } andFailure:^(NSString *msg) {
+        
+    }];
+}
 -(void)closeButtonAction
 {
     
@@ -77,7 +88,11 @@
     UILabel *companyValueLabel = (UILabel *)[cell viewWithTag:201];
     
     companyKeyLabel.text=[companyKeyArray objectAtIndex:indexPath.row];
-    companyValueLabel.text=[companyValueArray objectAtIndex:indexPath.row];
+    if ([dictioanaryKeys count]>indexPath.row) {
+       NSString *key = [dictioanaryKeys objectAtIndex:indexPath.row];
+       companyValueLabel.text=[self.sellerInfoDict valueForKey:key];
+    }
+    
     
     return cell;
 }

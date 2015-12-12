@@ -100,7 +100,7 @@
     UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     //    AAHomeViewController* mainViewController = [storyboard instantiateViewControllerWithIdentifier:@"AAHomeViewController"];
     SellerAccountVC *eshopVC = [storyboard instantiateViewControllerWithIdentifier:@"SellerAccountVC"];
-    
+    eshopVC.pageTitle = @"Seller Account";
     AASideMenuViewController *sideMenuVC = [storyboard instantiateViewControllerWithIdentifier:@"AASideMenuVC"];
     
     UINavigationController *frontNavigationController = [[UINavigationController alloc] initWithRootViewController:eshopVC];
