@@ -13,6 +13,7 @@
 #define TITLE_FONTSIZE 17
 #define BUTTON_FONTSIZE 16
 #define MENU_ITEM_FONTSIZE 17
+#define CONATCT_FIELD_TEXT_SIZE 13
 
 #define SCREEN_WIDTH [[UIScreen mainScreen] bounds].size.width
 #define SCREEN_HEIGHT [[UIScreen mainScreen] bounds].size.height

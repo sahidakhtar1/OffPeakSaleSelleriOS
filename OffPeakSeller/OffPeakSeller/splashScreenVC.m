@@ -130,6 +130,7 @@
     CGFloat labelWidth = self.poweredByLabel.frame.size.width;
     
     CGSize lblRetailerPoweredBySize = [AAUtils getTextSizeWithFont:self.urlLinkLabel.font andText:[AAAppGlobals sharedInstance].retailer.retailerPoweredBy andMaxWidth:self.view.frame.size.width];
+    
     CGFloat totalWidth = labelWidth + lblRetailerPoweredBySize.width;
     
     CGFloat originX = ceilf((self.view.frame.size.width - totalWidth)/2);

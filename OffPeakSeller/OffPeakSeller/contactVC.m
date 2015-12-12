@@ -7,19 +7,54 @@
 //
 
 #import "contactVC.h"
+#import "AAConfig.h"
+#import "AAHeaderView.h"
+#import "AAConfig.h"
 
 @interface contactVC ()
 
 @end
 
 @implementation contactVC
-@synthesize nameTextFiled,emailTextField,subjectTextfield,messageTextView,addressLabel,phoneNumberLabel;
+@synthesize nameTextFiled,emailTextField,subjectTextfield,messageTextView,addressLabel,phoneNumberLabel,titleLabel;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
     self.navigationController.navigationBarHidden=YES;
+    
+    AAHeaderView *headerView = [[AAHeaderView alloc] initWithFrame:self.menuView.frame];
+    [self.menuView addSubview:headerView];
+    [headerView setTitle:self.title];
+    headerView.showCart = false;
+    headerView.showBack = false;
+    //  headerView.delegate = self;
+    [headerView setMenuIcons];
+    
+    UILabel *titleLabel1=[[UILabel alloc]initWithFrame:CGRectMake(3*headerView.frame.size.width/10,20,4*headerView.frame.size.width/10,40)];
+    titleLabel1=titleLabel;
+    [headerView addSubview:titleLabel1];
+    
+    
+     CGSize lblRetailerPoweredBySize = [AAUtils getTextSizeWithFont:self.addressLabel.font andText:@"oi;aSFIOas ajsbfa;NO OIAsfb ;oAFS OIBNFIO;AF O;Ibbo ;IASGS Oa sfgAOS OIKasfglo;AS" andMaxWidth:addressLabel.frame.size.width];
+    
+     addressLabel.font=[UIFont fontWithName:[AAAppGlobals sharedInstance].normalFont size:lblRetailerPoweredBySize.height];
+    
+
+  /*  addressLabel.font=[UIFont fontWithName:[AAAppGlobals sharedInstance].normalFont size:13];
+    
+    self.addressLabel.font = [UIFont fontWithName:[AAAppGlobals sharedInstance].normalFont size:CONATCT_FIELD_TEXT_SIZE];
+    
+    self.phoneNumberLabel.font = [UIFont fontWithName:[AAAppGlobals sharedInstance].normalFont size:CONATCT_FIELD_TEXT_SIZE];
+    
+    self.nameTextFiled.font = [UIFont fontWithName:[AAAppGlobals sharedInstance].normalFont size:CONATCT_FIELD_TEXT_SIZE];
+    
+    self.emailTextField.font = [UIFont fontWithName:[AAAppGlobals sharedInstance].normalFont size:CONATCT_FIELD_TEXT_SIZE];
+    
+     self.subjectTextfield.font = [UIFont fontWithName:[AAAppGlobals sharedInstance].normalFont size:CONATCT_FIELD_TEXT_SIZE];
+    
+     self.messageTextView.font = [UIFont fontWithName:[AAAppGlobals sharedInstance].normalFont size:CONATCT_FIELD_TEXT_SIZE];*/
 }
 
 - (void)didReceiveMemoryWarning {

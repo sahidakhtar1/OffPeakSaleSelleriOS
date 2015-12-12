@@ -19,4 +19,7 @@
 @property (nonatomic,retain) IBOutlet UILabel *phoneNumberLabel;
 - (IBAction)submitButton:(id)sender;
 
+@property (nonatomic,retain) IBOutlet UILabel *titleLabel;
+@property (nonatomic,retain) IBOutlet UIView *menuView;
+
 @end
