@@ -10,6 +10,7 @@
 #import "AAHeaderView.h"
 #import "AAOrderHistoryHelper.h"
 #import "AAOrderDetailViewController.h"
+#import "invalidVoucherVC.h"
 
 @interface redeemVoucherVC ()
 
@@ -58,10 +59,21 @@
                            merchantEmail : @""
                                   orderId:voucherCode
                       withCompletionBlock:^(NSDictionary *orderDetail) {
-                          AAOrderDetailViewController *orderDetailVC = [self.storyboard instantiateViewControllerWithIdentifier:@"AAOrderDetailViewController"];
-                          orderDetailVC.pageTitle= @"Valid Voucher";
-                          [orderDetailVC setOrderObj:orderDetail];
-                          [self.navigationController pushViewController:orderDetailVC animated:YES];
+                          if ([[orderDetail objectForKey:@"errorCode"] isEqualToString:@"1"]) {
+                              AAOrderDetailViewController *orderDetailVC = [self.storyboard instantiateViewControllerWithIdentifier:@"AAOrderDetailViewController"];
+                              orderDetailVC.pageTitle= @"Valid Voucher";
+                              [orderDetailVC setOrderObj:[orderDetail objectForKey:@"data"]];
+                              [self.navigationController pushViewController:orderDetailVC animated:YES];
+                          }else{
+                              NSString *errorMessage = [orderDetail valueForKey:@"errorMessage"];
+                              NSString *usedOn = [orderDetail valueForKey:@"usedOn"];
+                              invalidVoucherVC *orderDetailVC = [self.storyboard instantiateViewControllerWithIdentifier:@"invalidVoucherVC"];
+                              orderDetailVC.pageTitle= @"Invalid Voucher";
+                              orderDetailVC.dateMsg =[orderDetail objectForKey:@"errorMessage"];
+                              orderDetailVC.dateMsg =[orderDetail objectForKey:@"usedOn"];
+                              [self.navigationController pushViewController:orderDetailVC animated:YES];
+                          }
+                          
                           
                       } andFailure:^(NSString *error) {
                           

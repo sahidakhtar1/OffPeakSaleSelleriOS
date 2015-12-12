@@ -27,49 +27,46 @@ static NSString* const JSON_DATA_KEY = @"data";
      sendJSONRequestToServerWithEndpoint:@"validateOrder.php"
      withParams:params
      withSuccessBlock:^(NSDictionary *response) {
-         if([response objectForKey:JSON_ERROR_CODE_KEY])
-         {
-             if([[response objectForKey:JSON_ERROR_CODE_KEY] integerValue]==1)
-             {
-                 
-                 if([response objectForKey:JSON_DATA_KEY] )
-                 {
-                     NSDictionary *obj = [response objectForKey:JSON_DATA_KEY];
-                     success(obj);
-                 }
-                 else
-                 {
-                    failure(@"Invalid input");
-                     
-                 }
-             }
-             else
-             {
-                 
-                     failure(@"Invalid input");
-                 
-             }
-             
-         }else
-         {
-             if([[NSUserDefaults standardUserDefaults] objectForKey:orderId])
-             {
-                 NSData *data = [[NSUserDefaults standardUserDefaults] objectForKey:orderId];
-                 NSDictionary *obj = [NSKeyedUnarchiver unarchiveObjectWithData:data];
-                 success(obj);
-             }else{
-                 failure(@"Invalid input");
-             }
-         }
+         success(response);
+//         if([response objectForKey:JSON_ERROR_CODE_KEY])
+//         {
+//             
+//             if([[response objectForKey:JSON_ERROR_CODE_KEY] integerValue]==1)
+//             {
+//                 
+//                 if([response objectForKey:JSON_DATA_KEY] )
+//                 {
+//                     NSDictionary *obj = [response objectForKey:JSON_DATA_KEY];
+//                     success(obj);
+//                 }
+//                 else
+//                 {
+//                    failure(@"Invalid input");
+//                     
+//                 }
+//             }
+//             else
+//             {
+//                 
+//                     failure(@"Invalid input");
+//                 
+//             }
+//             
+//         }else
+//         {
+//             if([[NSUserDefaults standardUserDefaults] objectForKey:orderId])
+//             {
+//                 NSData *data = [[NSUserDefaults standardUserDefaults] objectForKey:orderId];
+//                 NSDictionary *obj = [NSKeyedUnarchiver unarchiveObjectWithData:data];
+//                 success(obj);
+//             }else{
+//                 failure(@"Invalid input");
+//             }
+//         }
      } withFailureBlock:^(NSError *error) {
-         if([[NSUserDefaults standardUserDefaults] objectForKey:orderId])
-         {
-             NSData *data = [[NSUserDefaults standardUserDefaults] objectForKey:orderId];
-             NSDictionary *obj = [NSKeyedUnarchiver unarchiveObjectWithData:data];
-             success(obj);
-         }else{
+         
              failure(error.description);
-         }
+         
          
      }];
 }

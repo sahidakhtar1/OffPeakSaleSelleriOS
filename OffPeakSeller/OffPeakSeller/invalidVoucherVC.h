@@ -14,5 +14,9 @@
 @property (nonatomic,retain) IBOutlet UIView *menuView;
 @property (nonatomic,retain) IBOutlet UILabel *voucherUsedLabel;
 @property (nonatomic,retain) IBOutlet UILabel *voucherDateLabel;
+@property (nonatomic) BOOL isSucess;
+@property (nonatomic, strong) NSString *msg;
+@property (nonatomic, strong) NSString *dateMsg;
+@property (nonatomic, strong) NSString *pageTitle;
 
 @end

@@ -25,15 +25,17 @@
     
     AAHeaderView *headerView = [[AAHeaderView alloc] initWithFrame:self.menuView.frame];
     [self.menuView addSubview:headerView];
-    [headerView setTitle:self.title];
+    [headerView setTitle:self.pageTitle];
     headerView.showCart = false;
-    headerView.showBack = false;
-    //  headerView.delegate = self;
+    headerView.showBack = true;
+    headerView.delegate = self;
     [headerView setMenuIcons];
     
-    UILabel *titleLabel1=[[UILabel alloc]initWithFrame:CGRectMake(3*headerView.frame.size.width/10,20,4*headerView.frame.size.width/10,40)];
-    titleLabel1=titleLabel;
-    [headerView addSubview:titleLabel1];
+//    UILabel *titleLabel1=[[UILabel alloc]initWithFrame:CGRectMake(3*headerView.frame.size.width/10,20,4*headerView.frame.size.width/10,40)];
+//    titleLabel1=titleLabel;
+//    [headerView addSubview:titleLabel1];
+    self.voucherUsedLabel.text = self.msg;
+    self.voucherDateLabel.text = [NSString stringWithFormat:@"On %@",self.dateMsg];
     
 }
 - (IBAction)Ok:(id)sender {
@@ -53,5 +55,8 @@
     // Pass the selected object to the new view controller.
 }
 */
+-(void)backButtonTapped{
+    [self.navigationController popViewControllerAnimated:YES];
+}
 
 @end
