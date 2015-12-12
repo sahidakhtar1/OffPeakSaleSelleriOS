@@ -34,13 +34,13 @@
 -(void)initValues
 {
 //    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(changeTheme) name:NOTIFICATION_THEME_CHANGED object:nil];
-//    [self setTextColor:[AAColor sharedInstance].retailerThemeTextColor];
+    [self setTextColor:[AAColor sharedInstance].retailerThemeTextColor];
     
 }
 
 -(void)updateTheme
 {
-//    [self setTextColor:[AAColor sharedInstance].retailerThemeTextColor];
+    [self setTextColor:[AAColor sharedInstance].retailerThemeTextColor];
 }
 
 -(void)changeTheme
