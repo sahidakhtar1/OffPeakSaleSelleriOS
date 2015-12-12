@@ -69,6 +69,7 @@
                               NSString *usedOn = [orderDetail valueForKey:@"usedOn"];
                               invalidVoucherVC *orderDetailVC = [self.storyboard instantiateViewControllerWithIdentifier:@"invalidVoucherVC"];
                               orderDetailVC.pageTitle= @"Invalid Voucher";
+                              orderDetailVC.isSucess = false;
                               orderDetailVC.dateMsg =[orderDetail objectForKey:@"errorMessage"];
                               orderDetailVC.dateMsg =[orderDetail objectForKey:@"usedOn"];
                               [self.navigationController pushViewController:orderDetailVC animated:YES];
