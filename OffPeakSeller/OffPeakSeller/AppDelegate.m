@@ -16,6 +16,7 @@
 #import "redeemVoucherVC.h"
 #import "invalidVoucherVC.h"
 #import "loginVC.h"
+#import "contactVC.h"
 
 @interface AppDelegate ()
 
@@ -24,9 +25,12 @@
 @implementation AppDelegate
 
 
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
+    self.window.backgroundColor=[UIColor whiteColor];
+    
+  //  [self showRedeemVoucher];
+    
     [[AAAppGlobals sharedInstance] loadDataFromUserDefaults];
     [AARetailerInfoHelper processRetailerInformationWithCompletionBlock:^{
         
@@ -70,9 +74,13 @@
 
 -(void)showRedeemVoucher
 {
-    // splashScreenID
+    // splashScreenID  contactVC
     
-    
+    UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    //    AAHomeViewController* mainViewController = [storyboard instantiateViewControllerWithIdentifier:@"AAHomeViewController"];
+    contactVC *splashVC = [storyboard instantiateViewControllerWithIdentifier:@"contactVC"];
+    UINavigationController *splashController=[[UINavigationController alloc]initWithRootViewController:splashVC];
+    [self.window setRootViewController:splashController];
     
 }
 
