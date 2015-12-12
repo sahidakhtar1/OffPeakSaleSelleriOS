@@ -93,6 +93,7 @@
                     if ( ![frontVC.topViewController isKindOfClass:[contactVC class]] )
                     {
                         contactVC *activity = [self.storyboard instantiateViewControllerWithIdentifier:@"contactVC"];
+                        activity.pageTitle = menuItem.itemName;
                         UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:activity];
                         navigationController.navigationBarHidden=YES;
                         [self.revealViewController pushFrontViewController:navigationController     animated:YES];

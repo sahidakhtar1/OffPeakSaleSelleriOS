@@ -115,8 +115,14 @@
     [self.window makeKeyAndVisible];
 }
 -(void)splashFinished{
-    AALoginDailogView *loginView = [[AALoginDailogView alloc] initWithNibName:nil bundle:nil];
-    [self.window setRootViewController:loginView];
+    NSString *emilId = [[NSUserDefaults standardUserDefaults] objectForKey:KEY_EMAIL];
+    if (emilId == nil || [emilId isEqualToString:@""]) {
+        AALoginDailogView *loginView = [[AALoginDailogView alloc] initWithNibName:nil bundle:nil];
+        [self.window setRootViewController:loginView];
+    }else{
+        [self showMainScreen];
+    }
+    
 }
 -(void)openSideMenu{
     [self.revealController revealToggle:self];

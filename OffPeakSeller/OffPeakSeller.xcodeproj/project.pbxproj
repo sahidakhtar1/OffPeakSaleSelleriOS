@@ -42,6 +42,11 @@
 		4A5550681C15FC2200872392 /* AAHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A5550661C15FC2200872392 /* AAHeaderView.m */; };
 		4A5550691C15FC2200872392 /* AAHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A5550671C15FC2200872392 /* AAHeaderView.xib */; };
 		4A55506C1C15FC6000872392 /* AAThemeLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A55506B1C15FC6000872392 /* AAThemeLabel.m */; };
+		4AEBA3A81C1C7A8D0029A4BE /* contactVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AEBA3A71C1C7A8D0029A4BE /* contactVC.m */; };
+		4AEBA3AB1C1C7A9D0029A4BE /* AAContactHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AEBA3AA1C1C7A9D0029A4BE /* AAContactHelper.m */; };
+		4AEBA3AE1C1C7AF80029A4BE /* AAThemeValidationTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AEBA3AD1C1C7AF80029A4BE /* AAThemeValidationTextView.m */; };
+		4AEBA3B21C1C7B330029A4BE /* AAValidationTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AEBA3B01C1C7B330029A4BE /* AAValidationTextView.m */; };
+		4AEBA3B51C1C7DA50029A4BE /* LoginHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AEBA3B41C1C7DA50029A4BE /* LoginHelper.m */; };
 		844CF3241C1C0A8700E11759 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 844CF3231C1C0A8700E11759 /* Main.storyboard */; };
 		844CF3271C1C112400E11759 /* AAThemeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 844CF3261C1C112400E11759 /* AAThemeView.m */; };
 		8465312F1C1AE13E0023871D /* redeemVoucherVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8465312E1C1AE13E0023871D /* redeemVoucherVC.m */; };
@@ -138,6 +143,17 @@
 		4A5550671C15FC2200872392 /* AAHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AAHeaderView.xib; path = Classes/Custom/AAHeaderView.xib; sourceTree = "<group>"; };
 		4A55506A1C15FC6000872392 /* AAThemeLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AAThemeLabel.h; path = Classes/Custom/AAThemeLabel.h; sourceTree = "<group>"; };
 		4A55506B1C15FC6000872392 /* AAThemeLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AAThemeLabel.m; path = Classes/Custom/AAThemeLabel.m; sourceTree = "<group>"; };
+		4AEBA3A61C1C7A8D0029A4BE /* contactVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = contactVC.h; path = Classes/contactVC.h; sourceTree = "<group>"; };
+		4AEBA3A71C1C7A8D0029A4BE /* contactVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = contactVC.m; path = Classes/contactVC.m; sourceTree = "<group>"; };
+		4AEBA3A91C1C7A9D0029A4BE /* AAContactHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AAContactHelper.h; path = Classes/AAContactHelper.h; sourceTree = "<group>"; };
+		4AEBA3AA1C1C7A9D0029A4BE /* AAContactHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AAContactHelper.m; path = Classes/AAContactHelper.m; sourceTree = "<group>"; };
+		4AEBA3AC1C1C7AF80029A4BE /* AAThemeValidationTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AAThemeValidationTextView.h; path = Classes/Custom/AAThemeValidationTextView.h; sourceTree = "<group>"; };
+		4AEBA3AD1C1C7AF80029A4BE /* AAThemeValidationTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AAThemeValidationTextView.m; path = Classes/Custom/AAThemeValidationTextView.m; sourceTree = "<group>"; };
+		4AEBA3AF1C1C7B330029A4BE /* AAValidationTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AAValidationTextView.h; path = Classes/Custom/AAValidationTextView.h; sourceTree = "<group>"; };
+		4AEBA3B01C1C7B330029A4BE /* AAValidationTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AAValidationTextView.m; path = Classes/Custom/AAValidationTextView.m; sourceTree = "<group>"; };
+		4AEBA3B11C1C7B330029A4BE /* AAValidationTextViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AAValidationTextViewDelegate.h; path = Classes/Custom/AAValidationTextViewDelegate.h; sourceTree = "<group>"; };
+		4AEBA3B31C1C7DA50029A4BE /* LoginHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginHelper.h; path = Classes/LoginHelper.h; sourceTree = "<group>"; };
+		4AEBA3B41C1C7DA50029A4BE /* LoginHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginHelper.m; path = Classes/LoginHelper.m; sourceTree = "<group>"; };
 		844CF3231C1C0A8700E11759 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		844CF3251C1C112400E11759 /* AAThemeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAThemeView.h; sourceTree = "<group>"; };
 		844CF3261C1C112400E11759 /* AAThemeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AAThemeView.m; sourceTree = "<group>"; };
@@ -278,10 +294,14 @@
 		4A1A88661C1892F800011510 /* DataHelper */ = {
 			isa = PBXGroup;
 			children = (
+				4AEBA3A91C1C7A9D0029A4BE /* AAContactHelper.h */,
+				4AEBA3AA1C1C7A9D0029A4BE /* AAContactHelper.m */,
 				4A1A88731C18A14800011510 /* AACountriesHelper.h */,
 				4A1A88741C18A14800011510 /* AACountriesHelper.m */,
 				4A1A886A1C18933F00011510 /* AARetailerInfoHelper.h */,
 				4A1A886B1C18933F00011510 /* AARetailerInfoHelper.m */,
+				4AEBA3B31C1C7DA50029A4BE /* LoginHelper.h */,
+				4AEBA3B41C1C7DA50029A4BE /* LoginHelper.m */,
 			);
 			name = DataHelper;
 			sourceTree = "<group>";
@@ -327,6 +347,8 @@
 		4A55505F1C15FACF00872392 /* SellerAccount */ = {
 			isa = PBXGroup;
 			children = (
+				4AEBA3A61C1C7A8D0029A4BE /* contactVC.h */,
+				4AEBA3A71C1C7A8D0029A4BE /* contactVC.m */,
 				4A5550601C15FB0500872392 /* SellerAccountVC.h */,
 				4A5550611C15FB0500872392 /* SellerAccountVC.m */,
 				B67B3C4D1C16B4E10008A088 /* splashScreenVC.h */,
@@ -353,6 +375,11 @@
 		4A5550641C15FC1300872392 /* Custom Control */ = {
 			isa = PBXGroup;
 			children = (
+				4AEBA3AF1C1C7B330029A4BE /* AAValidationTextView.h */,
+				4AEBA3B01C1C7B330029A4BE /* AAValidationTextView.m */,
+				4AEBA3B11C1C7B330029A4BE /* AAValidationTextViewDelegate.h */,
+				4AEBA3AC1C1C7AF80029A4BE /* AAThemeValidationTextView.h */,
+				4AEBA3AD1C1C7AF80029A4BE /* AAThemeValidationTextView.m */,
 				844CF3251C1C112400E11759 /* AAThemeView.h */,
 				844CF3261C1C112400E11759 /* AAThemeView.m */,
 				4A1A887D1C18A25700011510 /* AADropDownScrollItemView.h */,
@@ -552,6 +579,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B67B3C4F1C16B4E10008A088 /* splashScreenVC.m in Sources */,
+				4AEBA3B51C1C7DA50029A4BE /* LoginHelper.m in Sources */,
 				4A0AD1C21C14118800F6737B /* ViewController.m in Sources */,
 				4A1A88751C18A14800011510 /* AACountriesHelper.m in Sources */,
 				B67B3C521C16E5760008A088 /* loginVC.m in Sources */,
@@ -564,10 +592,13 @@
 				4A1A884A1C18797F00011510 /* AALoginHelper.m in Sources */,
 				844CF3271C1C112400E11759 /* AAThemeView.m in Sources */,
 				4A1A88591C187B8100011510 /* AAThemeValidationTextField.m in Sources */,
+				4AEBA3B21C1C7B330029A4BE /* AAValidationTextView.m in Sources */,
 				4A1A887C1C18A22700011510 /* AADropDownScrollView.m in Sources */,
 				4A0AD1BF1C14118700F6737B /* AppDelegate.m in Sources */,
+				4AEBA3A81C1C7A8D0029A4BE /* contactVC.m in Sources */,
 				4A1A88501C187A3100011510 /* AAColor.m in Sources */,
 				4A0AD1BC1C14118700F6737B /* main.m in Sources */,
+				4AEBA3AE1C1C7AF80029A4BE /* AAThemeValidationTextView.m in Sources */,
 				4A1A886C1C18933F00011510 /* AARetailerInfoHelper.m in Sources */,
 				4A1A88641C18861200011510 /* DACircularProgressView.m in Sources */,
 				4A1A88461C1878C600011510 /* AALoginDailogView.m in Sources */,
@@ -579,6 +610,7 @@
 				4A55505A1C15F5D700872392 /* AAMenuItem.m in Sources */,
 				846531621C1AFD3E0023871D /* invalidVoucherVC.m in Sources */,
 				4A5550501C15F53500872392 /* AASideMenuViewController.m in Sources */,
+				4AEBA3AB1C1C7A9D0029A4BE /* AAContactHelper.m in Sources */,
 				4A1A886F1C18962900011510 /* AANetworkHandler.m in Sources */,
 				4A55505D1C15F70B00872392 /* AAAppGlobals.m in Sources */,
 				4A5550531C15F56500872392 /* SWRevealViewController.m in Sources */,

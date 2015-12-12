@@ -92,8 +92,7 @@ static NSString* const COUNTRY_NAME_KEY = @"countryName";
 }
 
 - (IBAction)btnNeedHelpTapped:(id)sender {
-    AppDelegate *appDelegate = (AppDelegate*)[UIApplication sharedApplication].delegate;
-    [appDelegate showMainScreen];
+    
 }
 
 - (IBAction)btnLogintapped:(id)sender {
@@ -108,12 +107,14 @@ static NSString* const COUNTRY_NAME_KEY = @"countryName";
                 message = @"Please Enter Valid Email Address.";
             }else if ([self.tfPassword.text isEqualToString:@""]){
                 message = @"Please Enter Password.";
+            }else if([self.tfCountry.text isEqualToString:@""]){
+                message = @"Please Select Country.";
             }
             if (message != nil) {
                 UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil message:message delegate:nil cancelButtonTitle:@"Okay" otherButtonTitles:nil];
                 [alert show];
             }else{
-                NSDictionary* params = [[NSDictionary alloc] initWithObjectsAndKeys:RETAILER_ID,JSON_RETAILER_ID_KEY,self.tfemailaddress.text,@"email",self.tfPassword.text,@"password", nil];
+                NSDictionary* params = [[NSDictionary alloc] initWithObjectsAndKeys:RETAILER_ID,JSON_RETAILER_ID_KEY,self.tfemailaddress.text,@"email",self.tfPassword.text,@"password",[self getCountryCodeWithCountryName:self.tfCountry.text],@"country", nil];
                 [AALoginHelper processLoginWithCompletionBlock: ^{
 
                     [self userLoginSucessfully];
@@ -210,11 +211,8 @@ static NSString* const COUNTRY_NAME_KEY = @"countryName";
     return YES;
 }
 -(void)userLoginSucessfully{
-//    [AAAppGlobals sharedInstance].customerEmailID = self.tfemailaddress.text;
-//    [AAAppGlobals sharedInstance].customerPassword = self.tfPassword.text;
-    if (self.delegate != nil && [self.delegate respondsToSelector:@selector(logionSucessful)]) {
-        [self.delegate logionSucessful];
-    }
+    AppDelegate *appDelegate = (AppDelegate*)[UIApplication sharedApplication].delegate;
+    [appDelegate showMainScreen];
 }
 -(void)setFormType:(FormType)formType{
     _formType = formType;
@@ -318,6 +316,30 @@ static NSString* const COUNTRY_NAME_KEY = @"countryName";
     self.tfCountry.text = itemName;
     [dropDownScrollView removeFromSuperview];
     
+}
+-(NSString*)getCountryCodeWithCountryName:(NSString*)countryName
+{
+    for(NSDictionary* dictCountry in self.arrCountries)
+    {
+        if ([[dictCountry objectForKey:COUNTRY_NAME_KEY] isEqualToString:countryName]) {
+            NSString* countryCode = [dictCountry objectForKey:COUNTRY_CODE_KEY];
+            return countryCode;
+        }
+    }
+    
+    return nil;
+}
+-(NSString*)getCountryNameWithCountryCode:(NSString*)countryCode
+{
+    for(NSDictionary* dictCountry in self.arrCountries)
+    {
+        if ([[dictCountry objectForKey:COUNTRY_CODE_KEY] isEqualToString:countryCode]) {
+            NSString* countryName = [dictCountry objectForKey:COUNTRY_NAME_KEY];
+            return countryName;
+        }
+    }
+    
+    return nil;
 }
 
 @end

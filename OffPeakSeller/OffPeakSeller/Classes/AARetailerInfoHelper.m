@@ -261,6 +261,19 @@ static NSString* const JSON_PRODUCT_SHORT_DESCRIPTION_KEY = @"short_desc";
                     retailer.deliveryHours = [dictRetailer objectForKey:@"deliveryHours"];
                 }
     
+                if([dictRetailer objectForKey:@"button_color"])
+                {
+                    retailer.button_color = [dictRetailer objectForKey:@"button_color"];
+                }
+                if([dictRetailer objectForKey:@"contactAddr"])
+                {
+                    retailer.contactAddr = [dictRetailer objectForKey:@"contactAddr"];
+                }
+                if([dictRetailer objectForKey:@"contactPhone"])
+                {
+                    retailer.contactPhone = [dictRetailer objectForKey:@"contactPhone"];
+                }
+    
     
     //added new fields
                 if([dictRetailer objectForKey:JSON_RETAILER_SPLASH_SCREEN_KEY])

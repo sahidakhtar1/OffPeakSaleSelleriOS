@@ -54,6 +54,9 @@ extern NSString* const STOP_TIMER;
 @property (nonatomic, copy) NSString* enableGiftWrap;
 @property (nonatomic, copy) NSString* gift_price;
 @property (nonatomic, copy) NSString* enableDiscovery;
+@property (nonatomic, copy) NSString *contactAddr;
+@property (nonatomic, copy) NSString *contactPhone;
+@property (nonatomic,copy) NSString* button_color;
 
 
 @property (nonatomic, copy) NSString* instagramUrl;

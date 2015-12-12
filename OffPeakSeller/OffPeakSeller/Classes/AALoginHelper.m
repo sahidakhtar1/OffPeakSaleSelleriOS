@@ -15,53 +15,61 @@ static NSString* const JSON_DATA_KEY = @"data";
 
 +(void)processForgotPaswordWithCompletionBlock : (void(^)(NSString*))success andFailure : (void(^)(NSString*)) failure withParams:(NSDictionary*)params{
     
-//    [[AAAppGlobals sharedInstance].networkHandler sendJSONRequestToServerWithEndpoint:@"api_forgot_password.php" withParams:params withSuccessBlock:^(NSDictionary *response) {
-//        if([response objectForKey:JSON_ERROR_CODE_KEY])
-//        {
-//            if([[response objectForKey:JSON_ERROR_CODE_KEY] integerValue]==1)
-//            {
-//                success([response objectForKey:@"errorMessage"] );
-//            }
-//            else
-//            {
-//                failure([response objectForKey:@"errorMessage"]);
-//            }
-//        }
-//        else
-//        {
-//            failure(@"Invalid input");
-//        }
-//        
-//        
-//    } withFailureBlock:^(NSError *error) {
-//        failure(error.description);
-//    }];
+    AANetworkHandler *networkHandler = [[AANetworkHandler alloc] init];
+    [networkHandler sendJSONRequestToServerWithEndpoint:@"api_forgot_password.php" withParams:params withSuccessBlock:^(NSDictionary *response) {
+        if([response objectForKey:JSON_ERROR_CODE_KEY])
+        {
+            if([[response objectForKey:JSON_ERROR_CODE_KEY] integerValue]==1)
+            {
+                success([response objectForKey:@"errorMessage"] );
+            }
+            else
+            {
+                failure([response objectForKey:@"errorMessage"]);
+            }
+        }
+        else
+        {
+            failure(@"Invalid input");
+        }
+        
+        
+    } withFailureBlock:^(NSError *error) {
+        failure(error.description);
+    }];
    
 }
 +(void)processLoginWithCompletionBlock : (void(^)(void))success andFailure : (void(^)(NSString*)) failure withParams:(NSDictionary*)params{
     
-//    [[AAAppGlobals sharedInstance].networkHandler sendJSONRequestToServerWithEndpoint:@"consumer_login.php" withParams:params withSuccessBlock:^(NSDictionary *response) {
-//        if([response objectForKey:JSON_ERROR_CODE_KEY])
-//        {
-//            if([[response objectForKey:JSON_ERROR_CODE_KEY] integerValue]==1)
-//            {
-//                [AALoginHelper processProfileData:response];
-//                success();
-//            }
-//            else
-//            {
-//                failure([response objectForKey:@"errorMessage"]);
-//            }
-//        }
-//        else
-//        {
-//            failure(@"Invalid input");
-//        }
-//        
-//        
-//    } withFailureBlock:^(NSError *error) {
-//        failure(error.description);
-//    }];
+    AANetworkHandler *networkHandler = [[AANetworkHandler alloc] init];
+    [networkHandler sendJSONRequestToServerWithEndpoint:@"seller_login.php" withParams:params withSuccessBlock:^(NSDictionary *response) {
+        if([response objectForKey:JSON_ERROR_CODE_KEY])
+        {
+            if([[response objectForKey:JSON_ERROR_CODE_KEY] integerValue]==1)
+            {
+                if ([response objectForKey:@"data"]) {
+                    NSDictionary *data = [response objectForKey:@"data"];
+                    NSString *emailId = [data valueForKey:@"email"];
+                    [[NSUserDefaults standardUserDefaults] setObject:emailId forKey:KEY_EMAIL];
+                    [[NSUserDefaults standardUserDefaults] synchronize];
+                    success();
+                }
+                
+            }
+            else
+            {
+                failure([response objectForKey:@"errorMessage"]);
+            }
+        }
+        else
+        {
+            failure(@"Invalid input");
+        }
+        
+        
+    } withFailureBlock:^(NSError *error) {
+        failure(error.description);
+    }];
     
 }
 +(void)processProfileData:(NSDictionary*)response{
