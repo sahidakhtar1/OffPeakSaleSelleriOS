@@ -10,19 +10,20 @@
 #import "AAHeaderView.h"
 #import "DACircularProgressView.h"
 #import "redeemVoucherVC.h"
+#import "AAThemeLabel.h"
 
 @interface SellerAccountVC ()
 @end
 
 @implementation SellerAccountVC
-@synthesize menuView,circularProgressView,RedeemedValueLabel,companyDetailsTableView,UnitsSoldValueLabel;
+@synthesize menuView,circularProgressView,RedeemedValueLabel,companyDetailsTableView,UnitsSoldValueLabel,titleLabel;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    companyKeyArray=[[NSMutableArray alloc]initWithObjects:@"Company Name",@"Contact",@"Email",@"Location",@"Month", nil];
-    companyValueArray=[[NSMutableArray alloc]initWithObjects:@"hello cafe",@"84848484",@"contact@gmail.com",@"India",@"Dec,2015", nil];
+    companyKeyArray=[[NSMutableArray alloc]initWithObjects:@"Company Name",@"Contact",@"Email",@"Location",@"Start Date",@"End Date", nil];
+    companyValueArray=[[NSMutableArray alloc]initWithObjects:@"hello cafe",@"84848484",@"contact@gmail.com",@"India",@"10 Dec,2015",@"15 Dec,2015", nil];
     
     circularProgressView.backgroundColor=[UIColor clearColor];
     
@@ -44,11 +45,9 @@
   //  headerView.delegate = self;
     [headerView setMenuIcons];
     
-    UILabel *titleLabel=[[UILabel alloc]initWithFrame:CGRectMake(3*headerView.frame.size.width/10,20,4*headerView.frame.size.width/10,40)];
-    titleLabel.text=@"Seller Account";
-    titleLabel.font=[UIFont systemFontOfSize:17.0];
-    titleLabel.textAlignment=NSTextAlignmentCenter;
-    [headerView addSubview:titleLabel];
+    UILabel *titleLabel1=[[UILabel alloc]initWithFrame:CGRectMake(3*headerView.frame.size.width/10,20,4*headerView.frame.size.width/10,40)];
+    titleLabel1=titleLabel;
+    [headerView addSubview:titleLabel1];
     
     UIButton *closeButton=[UIButton buttonWithType:UIButtonTypeCustom];
     closeButton.backgroundColor=[UIColor clearColor];

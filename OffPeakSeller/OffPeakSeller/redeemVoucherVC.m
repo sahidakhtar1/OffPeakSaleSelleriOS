@@ -14,7 +14,7 @@
 @end
 
 @implementation redeemVoucherVC
-@synthesize orderIdField;
+@synthesize orderIdField,titleLabel;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -26,16 +26,13 @@
     [self.menuView addSubview:headerView];
     [headerView setTitle:self.title];
     headerView.showCart = false;
-    headerView.showBack = true;
+    headerView.showBack = false;
     //  headerView.delegate = self;
     [headerView setMenuIcons];
     
-    UILabel *titleLabel=[[UILabel alloc]initWithFrame:CGRectMake(2.5*headerView.frame.size.width/10,20,5*headerView.frame.size.width/10,40)];
-    titleLabel.text=@"Redeem Voucher";
-    titleLabel.font=[UIFont systemFontOfSize:16.0];
-    titleLabel.textAlignment=NSTextAlignmentCenter;
-    [headerView addSubview:titleLabel];
-    
+    UILabel *titleLabel1=[[UILabel alloc]initWithFrame:CGRectMake(3*headerView.frame.size.width/10,20,4*headerView.frame.size.width/10,40)];
+    titleLabel1=titleLabel;
+    [headerView addSubview:titleLabel1];
 }
 
 - (void)didReceiveMemoryWarning {

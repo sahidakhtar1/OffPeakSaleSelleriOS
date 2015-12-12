@@ -10,6 +10,7 @@
 
 @interface invalidVoucherVC : UIViewController
 
+@property (nonatomic,retain) IBOutlet UILabel *titleLabel;
 @property (nonatomic,retain) IBOutlet UIView *menuView;
 @property (nonatomic,retain) IBOutlet UILabel *voucherUsedLabel;
 @property (nonatomic,retain) IBOutlet UILabel *voucherDateLabel;

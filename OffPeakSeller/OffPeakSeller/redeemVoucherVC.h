@@ -10,6 +10,7 @@
 
 @interface redeemVoucherVC : UIViewController<UITextFieldDelegate>
 
+@property (nonatomic,retain) IBOutlet UILabel *titleLabel;
 @property (nonatomic,retain) IBOutlet UITextField *orderIdField;
 @property (nonatomic,retain) IBOutlet UIView *menuView;
 

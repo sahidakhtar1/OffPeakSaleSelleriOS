@@ -14,6 +14,7 @@
     NSMutableArray *companyValueArray;
 }
 
+@property (nonatomic,retain) IBOutlet UILabel *titleLabel;
 @property (nonatomic,retain) IBOutlet UIView *menuView;
 @property (nonatomic,retain) IBOutlet UITableView *companyDetailsTableView;
 @property (nonatomic,retain) IBOutlet UILabel *RedeemedValueLabel;

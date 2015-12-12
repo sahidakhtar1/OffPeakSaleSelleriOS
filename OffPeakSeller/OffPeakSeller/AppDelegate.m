@@ -29,7 +29,7 @@
 
     self.window.backgroundColor=[UIColor whiteColor];
     
-  //  [self showRedeemVoucher];
+   // [self showRedeemVoucher];
     
     [[AAAppGlobals sharedInstance] loadDataFromUserDefaults];
     [AARetailerInfoHelper processRetailerInformationWithCompletionBlock:^{
@@ -78,7 +78,7 @@
     
     UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     //    AAHomeViewController* mainViewController = [storyboard instantiateViewControllerWithIdentifier:@"AAHomeViewController"];
-    contactVC *splashVC = [storyboard instantiateViewControllerWithIdentifier:@"contactVC"];
+    invalidVoucherVC *splashVC = [storyboard instantiateViewControllerWithIdentifier:@"invalidVoucherVC"];
     UINavigationController *splashController=[[UINavigationController alloc]initWithRootViewController:splashVC];
     [self.window setRootViewController:splashController];
     

@@ -10,7 +10,6 @@
 		4A0AD1BC1C14118700F6737B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A0AD1BB1C14118700F6737B /* main.m */; };
 		4A0AD1BF1C14118700F6737B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A0AD1BE1C14118700F6737B /* AppDelegate.m */; };
 		4A0AD1C21C14118800F6737B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A0AD1C11C14118800F6737B /* ViewController.m */; };
-		4A0AD1C51C14118800F6737B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A0AD1C31C14118800F6737B /* Main.storyboard */; };
 		4A0AD1C71C14118800F6737B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A0AD1C61C14118800F6737B /* Assets.xcassets */; };
 		4A0AD1CA1C14118800F6737B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A0AD1C81C14118800F6737B /* LaunchScreen.storyboard */; };
 		4A0AD1D51C14118800F6737B /* OffPeakSellerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A0AD1D41C14118800F6737B /* OffPeakSellerTests.m */; };
@@ -44,6 +43,8 @@
 		4A5550691C15FC2200872392 /* AAHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A5550671C15FC2200872392 /* AAHeaderView.xib */; };
 		4A55506C1C15FC6000872392 /* AAThemeLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A55506B1C15FC6000872392 /* AAThemeLabel.m */; };
 		844CF31F1C1BE8CD00E11759 /* contactVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 844CF31E1C1BE8CD00E11759 /* contactVC.m */; };
+		844CF3241C1C0A8700E11759 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 844CF3231C1C0A8700E11759 /* Main.storyboard */; };
+		844CF3271C1C112400E11759 /* AAThemeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 844CF3261C1C112400E11759 /* AAThemeView.m */; };
 		8465312F1C1AE13E0023871D /* redeemVoucherVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8465312E1C1AE13E0023871D /* redeemVoucherVC.m */; };
 		846531621C1AFD3E0023871D /* invalidVoucherVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 846531611C1AFD3E0023871D /* invalidVoucherVC.m */; };
 		B66903B51C156AFE002C9470 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B66903B41C156AFE002C9470 /* MobileCoreServices.framework */; };
@@ -73,7 +74,6 @@
 		4A0AD1BE1C14118700F6737B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		4A0AD1C01C14118700F6737B /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		4A0AD1C11C14118800F6737B /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		4A0AD1C41C14118800F6737B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4A0AD1C61C14118800F6737B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4A0AD1C91C14118800F6737B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4A0AD1CB1C14118800F6737B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -141,6 +141,9 @@
 		4A55506B1C15FC6000872392 /* AAThemeLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AAThemeLabel.m; path = Classes/Custom/AAThemeLabel.m; sourceTree = "<group>"; };
 		844CF31D1C1BE8CD00E11759 /* contactVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = contactVC.h; sourceTree = "<group>"; };
 		844CF31E1C1BE8CD00E11759 /* contactVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = contactVC.m; sourceTree = "<group>"; };
+		844CF3231C1C0A8700E11759 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		844CF3251C1C112400E11759 /* AAThemeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAThemeView.h; sourceTree = "<group>"; };
+		844CF3261C1C112400E11759 /* AAThemeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AAThemeView.m; sourceTree = "<group>"; };
 		8465312D1C1AE13E0023871D /* redeemVoucherVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = redeemVoucherVC.h; sourceTree = "<group>"; };
 		8465312E1C1AE13E0023871D /* redeemVoucherVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = redeemVoucherVC.m; sourceTree = "<group>"; };
 		846531601C1AFD3E0023871D /* invalidVoucherVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = invalidVoucherVC.h; sourceTree = "<group>"; };
@@ -228,8 +231,8 @@
 				4A0AD1C01C14118700F6737B /* ViewController.h */,
 				4A0AD1C11C14118800F6737B /* ViewController.m */,
 				B66903C31C156CF0002C9470 /* OffPeakSeller-Prefix.pch */,
-				4A0AD1C31C14118800F6737B /* Main.storyboard */,
 				4A0AD1C61C14118800F6737B /* Assets.xcassets */,
+				844CF3231C1C0A8700E11759 /* Main.storyboard */,
 				4A0AD1C81C14118800F6737B /* LaunchScreen.storyboard */,
 				4A0AD1CB1C14118800F6737B /* Info.plist */,
 				4A0AD1BA1C14118700F6737B /* Supporting Files */,
@@ -355,6 +358,8 @@
 		4A5550641C15FC1300872392 /* Custom Control */ = {
 			isa = PBXGroup;
 			children = (
+				844CF3251C1C112400E11759 /* AAThemeView.h */,
+				844CF3261C1C112400E11759 /* AAThemeView.m */,
 				4A1A887D1C18A25700011510 /* AADropDownScrollItemView.h */,
 				4A1A887E1C18A25700011510 /* AADropDownScrollItemView.m */,
 				4A1A88791C18A22700011510 /* AADropDownScrollView.h */,
@@ -482,9 +487,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				4A1A88471C1878C600011510 /* AALoginDailogView.xib in Resources */,
+				844CF3241C1C0A8700E11759 /* Main.storyboard in Resources */,
 				4A0AD1CA1C14118800F6737B /* LaunchScreen.storyboard in Resources */,
 				4A0AD1C71C14118800F6737B /* Assets.xcassets in Resources */,
-				4A0AD1C51C14118800F6737B /* Main.storyboard in Resources */,
 				4A5550691C15FC2200872392 /* AAHeaderView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -563,6 +568,7 @@
 				8465312F1C1AE13E0023871D /* redeemVoucherVC.m in Sources */,
 				4A1A88531C187A8B00011510 /* AAGlossyButton.m in Sources */,
 				4A1A884A1C18797F00011510 /* AALoginHelper.m in Sources */,
+				844CF3271C1C112400E11759 /* AAThemeView.m in Sources */,
 				4A1A88591C187B8100011510 /* AAThemeValidationTextField.m in Sources */,
 				4A1A887C1C18A22700011510 /* AADropDownScrollView.m in Sources */,
 				4A0AD1BF1C14118700F6737B /* AppDelegate.m in Sources */,
@@ -608,14 +614,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		4A0AD1C31C14118800F6737B /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				4A0AD1C41C14118800F6737B /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		4A0AD1C81C14118800F6737B /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
