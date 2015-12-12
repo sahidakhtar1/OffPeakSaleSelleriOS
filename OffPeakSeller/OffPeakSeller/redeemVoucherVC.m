@@ -8,6 +8,8 @@
 
 #import "redeemVoucherVC.h"
 #import "AAHeaderView.h"
+#import "AAOrderHistoryHelper.h"
+#import "AAOrderDetailViewController.h"
 
 @interface redeemVoucherVC ()
 
@@ -42,6 +44,29 @@
 - (IBAction)scanQRCode:(id)sender {
 }
 - (IBAction)goButton:(id)sender {
+    if (self.orderIdField.text ==  nil || [self.orderIdField.text isEqualToString:@""]) {
+        [[[UIAlertView alloc] initWithTitle:@"" message:@"Please enter voucher code" delegate:nil cancelButtonTitle:@"Okay" otherButtonTitles: nil] show];
+    }else{
+        [self getVoucherDetail:self.orderIdField.text];
+    }
+}
+
+-(void)getVoucherDetail:(NSString*)voucherCode{
+    
+    [AAOrderHistoryHelper
+     getOrderDetail : [[NSUserDefaults standardUserDefaults] objectForKey:KEY_EMAIL]
+                           merchantEmail : @""
+                                  orderId:voucherCode
+                      withCompletionBlock:^(NSDictionary *orderDetail) {
+                          AAOrderDetailViewController *orderDetailVC = [self.storyboard instantiateViewControllerWithIdentifier:@"AAOrderDetailViewController"];
+                          orderDetailVC.pageTitle= @"Valid Voucher";
+                          [orderDetailVC setOrderObj:orderDetail];
+                          [self.navigationController pushViewController:orderDetailVC animated:YES];
+                          
+                      } andFailure:^(NSString *error) {
+                          
+                          
+                      }];
 }
 
 #pragma mark - textField
