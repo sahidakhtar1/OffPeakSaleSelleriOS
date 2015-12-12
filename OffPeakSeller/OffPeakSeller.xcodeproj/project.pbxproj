@@ -42,7 +42,6 @@
 		4A5550681C15FC2200872392 /* AAHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A5550661C15FC2200872392 /* AAHeaderView.m */; };
 		4A5550691C15FC2200872392 /* AAHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A5550671C15FC2200872392 /* AAHeaderView.xib */; };
 		4A55506C1C15FC6000872392 /* AAThemeLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A55506B1C15FC6000872392 /* AAThemeLabel.m */; };
-		844CF31F1C1BE8CD00E11759 /* contactVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 844CF31E1C1BE8CD00E11759 /* contactVC.m */; };
 		844CF3241C1C0A8700E11759 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 844CF3231C1C0A8700E11759 /* Main.storyboard */; };
 		844CF3271C1C112400E11759 /* AAThemeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 844CF3261C1C112400E11759 /* AAThemeView.m */; };
 		8465312F1C1AE13E0023871D /* redeemVoucherVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8465312E1C1AE13E0023871D /* redeemVoucherVC.m */; };
@@ -139,8 +138,6 @@
 		4A5550671C15FC2200872392 /* AAHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AAHeaderView.xib; path = Classes/Custom/AAHeaderView.xib; sourceTree = "<group>"; };
 		4A55506A1C15FC6000872392 /* AAThemeLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AAThemeLabel.h; path = Classes/Custom/AAThemeLabel.h; sourceTree = "<group>"; };
 		4A55506B1C15FC6000872392 /* AAThemeLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AAThemeLabel.m; path = Classes/Custom/AAThemeLabel.m; sourceTree = "<group>"; };
-		844CF31D1C1BE8CD00E11759 /* contactVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = contactVC.h; sourceTree = "<group>"; };
-		844CF31E1C1BE8CD00E11759 /* contactVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = contactVC.m; sourceTree = "<group>"; };
 		844CF3231C1C0A8700E11759 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		844CF3251C1C112400E11759 /* AAThemeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAThemeView.h; sourceTree = "<group>"; };
 		844CF3261C1C112400E11759 /* AAThemeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AAThemeView.m; sourceTree = "<group>"; };
@@ -340,8 +337,6 @@
 				8465312E1C1AE13E0023871D /* redeemVoucherVC.m */,
 				846531601C1AFD3E0023871D /* invalidVoucherVC.h */,
 				846531611C1AFD3E0023871D /* invalidVoucherVC.m */,
-				844CF31D1C1BE8CD00E11759 /* contactVC.h */,
-				844CF31E1C1BE8CD00E11759 /* contactVC.m */,
 			);
 			name = SellerAccount;
 			sourceTree = "<group>";
@@ -559,7 +554,6 @@
 				B67B3C4F1C16B4E10008A088 /* splashScreenVC.m in Sources */,
 				4A0AD1C21C14118800F6737B /* ViewController.m in Sources */,
 				4A1A88751C18A14800011510 /* AACountriesHelper.m in Sources */,
-				844CF31F1C1BE8CD00E11759 /* contactVC.m in Sources */,
 				B67B3C521C16E5760008A088 /* loginVC.m in Sources */,
 				4A1A88561C187B0300011510 /* AAUtils.m in Sources */,
 				4A5550621C15FB0500872392 /* SellerAccountVC.m in Sources */,
