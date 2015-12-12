@@ -11,6 +11,8 @@
 #import "SWRevealViewController.h"
 
 #import "AAMenuItem.h"
+#import "SellerAccountVC.h"
+#import "contactVC.h"
 @interface AASideMenuViewController ()
 
 @end
@@ -69,7 +71,16 @@
     switch (menuItem.itemType) {
         case SELLER_ACCOUNT:
             {
-               
+                if ( ![frontVC.topViewController isKindOfClass:[SellerAccountVC class]] )
+                {
+                    SellerAccountVC *activity = [self.storyboard instantiateViewControllerWithIdentifier:@"SellerAccountVC"];
+                    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:activity];
+                    navigationController.navigationBarHidden=YES;
+                    [self.revealViewController pushFrontViewController:navigationController     animated:YES];
+                }else{
+                    [revealController revealToggle:self];
+                }
+
             }
             break;
         case TERMSOFUSE:
@@ -79,18 +90,15 @@
             break;
         case CONTACT:
                 {
-//                    AASecondaryMenuViewController *secondaryOption = [self.storyboard instantiateViewControllerWithIdentifier:@"AASecondaryMenuViewController"];
-//                    secondaryOption.itemType = ESHOP;
-//                    [self.navigationController pushViewController:secondaryOption animated:YES];
-                    
-//                    AACategoryDataModel *item = [[AACategoryDataModel alloc] init];
-//                    item.categoryName = [AAAppGlobals sharedInstance].retailer.retailerName;
-//                    item.categoryId = @"279";
-//                    AAEShopViewController *eshopVC = [self.storyboard instantiateViewControllerWithIdentifier:@"AAEShopViewController"];
-//                    eshopVC.category = item;
-//                    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:eshopVC];
-//                    navigationController.navigationBarHidden=YES;
-//                    [self.revealViewController pushFrontViewController:navigationController animated:YES];
+                    if ( ![frontVC.topViewController isKindOfClass:[contactVC class]] )
+                    {
+                        contactVC *activity = [self.storyboard instantiateViewControllerWithIdentifier:@"contactVC"];
+                        UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:activity];
+                        navigationController.navigationBarHidden=YES;
+                        [self.revealViewController pushFrontViewController:navigationController     animated:YES];
+                    }else{
+                        [revealController revealToggle:self];
+                    }
                 }
             break;
         case LOGOUT:
