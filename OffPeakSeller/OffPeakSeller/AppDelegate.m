@@ -28,24 +28,22 @@
 
     self.window.backgroundColor=[UIColor whiteColor];
     
-    [self showRedeemVoucher];
-    
-//    [[AAAppGlobals sharedInstance] loadDataFromUserDefaults];
-//    [AARetailerInfoHelper processRetailerInformationWithCompletionBlock:^{
-//        
-//        [self showSplashScreen];
-//        
-//    } andFailure:^(NSString *error) {
-//        if([AAAppGlobals sharedInstance].retailer)
-//        {
-//            
-//            [self showSplashScreen];
-//        }
-//        else
-//        {
-//            
-//        }
-//    }];
+    [[AAAppGlobals sharedInstance] loadDataFromUserDefaults];
+    [AARetailerInfoHelper processRetailerInformationWithCompletionBlock:^{
+        
+        [self showSplashScreen];
+        
+    } andFailure:^(NSString *error) {
+        if([AAAppGlobals sharedInstance].retailer)
+        {
+            
+            [self showSplashScreen];
+        }
+        else
+        {
+            
+        }
+    }];
     return YES;
 }
 

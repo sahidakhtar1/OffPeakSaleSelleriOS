@@ -10,13 +10,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "OffPeakSeller/Classes/SellerAccountVC.m"
-            timestampString = "471633961.116554"
+            timestampString = "471687947.8937"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "129"
-            endingLineNumber = "129"
-            landmarkName = "-activateQRCode:"
-            landmarkType = "5">
+            startingLineNumber = "145"
+            endingLineNumber = "145"
+            landmarkName = "@implementation SellerAccountVC"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -81,68 +81,22 @@
             endingLineNumber = "76"
             landmarkName = "-getVoucherDetail:"
             landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__36-[redeemVoucherVC getVoucherDetail:]_block_invoke"
-                  moduleName = "OffPeakSeller"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ShahidAkhtar/Documents/Workspace/Kenny/OffPeakSale/Souce%20Code/iOS/OffPeakSaleSelleriOS/OffPeakSeller/OffPeakSeller/redeemVoucherVC.m"
-                  timestampString = "471637364.598372"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "72"
-                  endingLineNumber = "72"
-                  offsetFromSymbolStart = "556">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__copy_helper_block_"
-                  moduleName = "OffPeakSeller"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ShahidAkhtar/Documents/Workspace/Kenny/OffPeakSale/Souce%20Code/iOS/OffPeakSaleSelleriOS/OffPeakSeller/OffPeakSeller/redeemVoucherVC.m"
-                  timestampString = "471637364.599005"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "0"
-                  endingLineNumber = "0"
-                  offsetFromSymbolStart = "16">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__destroy_helper_block_"
-                  moduleName = "OffPeakSeller"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ShahidAkhtar/Documents/Workspace/Kenny/OffPeakSale/Souce%20Code/iOS/OffPeakSaleSelleriOS/OffPeakSeller/OffPeakSeller/redeemVoucherVC.m"
-                  timestampString = "471637364.601659"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "0"
-                  endingLineNumber = "0"
-                  offsetFromSymbolStart = "16">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__36-[redeemVoucherVC getVoucherDetail:]_block_invoke79"
-                  moduleName = "OffPeakSeller"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ShahidAkhtar/Documents/Workspace/Kenny/OffPeakSale/Souce%20Code/iOS/OffPeakSaleSelleriOS/OffPeakSeller/OffPeakSeller/redeemVoucherVC.m"
-                  timestampString = "471637364.602711"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "72"
-                  endingLineNumber = "72"
-                  offsetFromSymbolStart = "44">
-               </Location>
-            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "OffPeakSeller/Classes/SellerAccountVC.m"
+            timestampString = "471687561.853421"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "74"
+            endingLineNumber = "74"
+            landmarkName = "-viewWillAppear:"
+            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

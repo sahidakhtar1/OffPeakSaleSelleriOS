@@ -15,6 +15,20 @@
 @interface SellerAccountVC ()
 @property (nonatomic, strong) NSDictionary *sellerInfoDict;
 @property (nonatomic, strong) DACircularProgressView *progressView;
+@property (weak, nonatomic) IBOutlet UILabel *lblCompany;
+@property (weak, nonatomic) IBOutlet UILabel *lblCompanyValue;
+@property (weak, nonatomic) IBOutlet UILabel *lblContact;
+@property (weak, nonatomic) IBOutlet UILabel *lblConatctValue;
+@property (weak, nonatomic) IBOutlet UILabel *lblEmail;
+@property (weak, nonatomic) IBOutlet UILabel *lblEmailValue;
+@property (weak, nonatomic) IBOutlet UILabel *lblLocation;
+@property (weak, nonatomic) IBOutlet UIButton *btnLocationValue;
+@property (weak, nonatomic) IBOutlet UILabel *lblStartDate;
+@property (weak, nonatomic) IBOutlet UIButton *btnStartDate;
+@property (weak, nonatomic) IBOutlet UILabel *lblEndDate;
+@property (weak, nonatomic) IBOutlet UIButton *btnEndDate;
+@property (weak, nonatomic) IBOutlet UILabel *lblRedeemed;
+@property (weak, nonatomic) IBOutlet UILabel *lblSold;
 @end
 
 @implementation SellerAccountVC
@@ -33,7 +47,6 @@
     startdateValueButton.titleLabel.textAlignment=NSTextAlignmentRight;
     enddateValueButton.titleLabel.textAlignment=NSTextAlignmentRight;
     
-    percentageLabel.text=@"40 %";
     
     self.progressView = [[DACircularProgressView alloc] initWithFrame:CGRectMake(0, 0, circularProgressView.frame.size.width, circularProgressView.frame.size.height)];
     self.progressView.roundedCorners = NO;
@@ -42,23 +55,14 @@
     [self.progressView setProgress:0.0 animated:YES];
     [circularProgressView addSubview:self.progressView];
 
-//    companyDetailsTableView.rowHeight=companyDetailsTableView.frame.size.height/5-5;
-    companyDetailsTableView.backgroundColor=[UIColor clearColor];
     
     AAHeaderView *headerView = [[AAHeaderView alloc] initWithFrame:self.menuView.frame];
     [self.menuView addSubview:headerView];
     [headerView setTitle:self.pageTitle];
     headerView.showCart = false;
     headerView.showBack = false;
-  //  headerView.delegate = self;
     [headerView setMenuIcons];
     
-    UIButton *closeButton=[UIButton buttonWithType:UIButtonTypeCustom];
-    closeButton.backgroundColor=[UIColor clearColor];
-    closeButton.frame=CGRectMake(headerView.frame.size.width-65,20,60,40);
-    [closeButton setTitle: @"close" forState: UIControlStateNormal];
-    [closeButton setTitleColor:[UIColor greenColor] forState:UIControlStateNormal];
-    [closeButton addTarget:self action:@selector(closeButtonAction) forControlEvents:UIControlEventTouchUpInside];
 }
 -(void)viewWillAppear:(BOOL)animated{
     [SellerDashBoardHelper getSellerInfoEmailId:[[NSUserDefaults standardUserDefaults] objectForKey:KEY_EMAIL] withCompletionBlock:^(NSDictionary *dict) {
@@ -71,6 +75,18 @@
         self.UnitsSoldValueLabel.text = [self.sellerInfoDict valueForKey:@"orders_sold"];
         float percentage = redeemed/sold;
         [self.progressView setProgress:percentage animated:YES];
+        NSString *percetageSymbol= @"%";
+        percentageLabel.text= [NSString stringWithFormat:@"%.0f%@",percentage*100,percetageSymbol];
+        
+        self.lblCompanyValue.text = [self.sellerInfoDict valueForKey:@"company_name"];
+        if ([[self.sellerInfoDict valueForKey:@"phone_num"] isKindOfClass:[NSNull class]]) {
+            
+        }else{
+            self.lblConatctValue.text = [self.sellerInfoDict valueForKey:@"phone_num"];
+        }
+         
+        self.lblEmailValue.text = [self.sellerInfoDict valueForKey:@"email"];
+        [self.btnLocationValue setTitle:[self.sellerInfoDict valueForKey:@"country"] forState:UIControlStateNormal] ;
     } andFailure:^(NSString *msg) {
         
     }];
