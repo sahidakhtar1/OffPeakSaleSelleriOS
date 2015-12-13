@@ -11,7 +11,8 @@
 #import "AAOrderHistoryHelper.h"
 #import "AAOrderDetailViewController.h"
 #import "invalidVoucherVC.h"
-
+#import "AAScannerViewController.h"
+#import "AppDelegate.h"
 @interface redeemVoucherVC ()
 
 @end
@@ -42,7 +43,18 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+-(void)scanningResult:(NSString*)result{
+    NSString *trimmedString = [result stringByTrimmingCharactersInSet:
+                               [NSCharacterSet whitespaceCharacterSet]];
+    NSLog(@"trimmedString = %@",trimmedString);
+    [self getVoucherDetail:[trimmedString uppercaseString]];
+    
+}
 - (IBAction)scanQRCode:(id)sender {
+    AAScannerViewController *scannerVC= [[AAScannerViewController alloc] initWithNibName:@"ScannerView" bundle:nil];
+    scannerVC.delegate = self;
+    AppDelegate *appDelegate = (AppDelegate*) [[UIApplication sharedApplication] delegate];
+    [appDelegate.revealController presentViewController:scannerVC animated:YES completion:nil];
 }
 - (IBAction)goButton:(id)sender {
     if (self.orderIdField.text ==  nil || [self.orderIdField.text isEqualToString:@""]) {

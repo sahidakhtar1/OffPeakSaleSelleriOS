@@ -45,6 +45,8 @@
 		4A8DDC6F1C1D63C40030D136 /* AABasePopupView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A8DDC6A1C1D63C40030D136 /* AABasePopupView.m */; };
 		4A8DDC701C1D63C40030D136 /* AADatePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A8DDC6D1C1D63C40030D136 /* AADatePickerView.m */; };
 		4A8DDC731C1D7E8C0030D136 /* RedeemHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A8DDC721C1D7E8C0030D136 /* RedeemHelper.m */; };
+		4A8DDC781C1D89370030D136 /* AAScannerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A8DDC761C1D89360030D136 /* AAScannerViewController.m */; };
+		4A8DDC791C1D89370030D136 /* ScannerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A8DDC771C1D89370030D136 /* ScannerView.xib */; };
 		4AEBA3A81C1C7A8D0029A4BE /* contactVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AEBA3A71C1C7A8D0029A4BE /* contactVC.m */; };
 		4AEBA3AB1C1C7A9D0029A4BE /* AAContactHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AEBA3AA1C1C7A9D0029A4BE /* AAContactHelper.m */; };
 		4AEBA3AE1C1C7AF80029A4BE /* AAThemeValidationTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AEBA3AD1C1C7AF80029A4BE /* AAThemeValidationTextView.m */; };
@@ -173,6 +175,9 @@
 		4A8DDC6E1C1D63C40030D136 /* AADatePickerViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AADatePickerViewDelegate.h; path = Classes/Custom/AADatePickerViewDelegate.h; sourceTree = "<group>"; };
 		4A8DDC711C1D7E8C0030D136 /* RedeemHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RedeemHelper.h; path = Classes/RedeemHelper.h; sourceTree = "<group>"; };
 		4A8DDC721C1D7E8C0030D136 /* RedeemHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RedeemHelper.m; path = Classes/RedeemHelper.m; sourceTree = "<group>"; };
+		4A8DDC751C1D89360030D136 /* AAScannerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AAScannerViewController.h; path = Classes/AAScannerViewController.h; sourceTree = "<group>"; };
+		4A8DDC761C1D89360030D136 /* AAScannerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AAScannerViewController.m; path = Classes/AAScannerViewController.m; sourceTree = "<group>"; };
+		4A8DDC771C1D89370030D136 /* ScannerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ScannerView.xib; path = Classes/ScannerView.xib; sourceTree = "<group>"; };
 		4AEBA3A61C1C7A8D0029A4BE /* contactVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = contactVC.h; path = Classes/contactVC.h; sourceTree = "<group>"; };
 		4AEBA3A71C1C7A8D0029A4BE /* contactVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = contactVC.m; path = Classes/contactVC.m; sourceTree = "<group>"; };
 		4AEBA3A91C1C7A9D0029A4BE /* AAContactHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AAContactHelper.h; path = Classes/AAContactHelper.h; sourceTree = "<group>"; };
@@ -439,6 +444,7 @@
 		4A5550631C15FC0A00872392 /* Custom */ = {
 			isa = PBXGroup;
 			children = (
+				4A8DDC741C1D891C0030D136 /* Scanner */,
 				4A1A88421C1878B100011510 /* Login */,
 				4A5550641C15FC1300872392 /* Custom Control */,
 			);
@@ -493,6 +499,16 @@
 				4A5550671C15FC2200872392 /* AAHeaderView.xib */,
 			);
 			name = "Custom Control";
+			sourceTree = "<group>";
+		};
+		4A8DDC741C1D891C0030D136 /* Scanner */ = {
+			isa = PBXGroup;
+			children = (
+				4A8DDC751C1D89360030D136 /* AAScannerViewController.h */,
+				4A8DDC761C1D89360030D136 /* AAScannerViewController.m */,
+				4A8DDC771C1D89370030D136 /* ScannerView.xib */,
+			);
+			name = Scanner;
 			sourceTree = "<group>";
 		};
 		4AEBA3BE1C1C95020029A4BE /* OrderDetail */ = {
@@ -643,6 +659,7 @@
 				4A0AD1CA1C14118800F6737B /* LaunchScreen.storyboard in Resources */,
 				4A0AD1C71C14118800F6737B /* Assets.xcassets in Resources */,
 				4A5550691C15FC2200872392 /* AAHeaderView.xib in Resources */,
+				4A8DDC791C1D89370030D136 /* ScannerView.xib in Resources */,
 				4AEBA3C71C1C95170029A4BE /* AAOrderDetailView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -732,6 +749,7 @@
 				844CF3271C1C112400E11759 /* AAThemeView.m in Sources */,
 				4AEBA3EB1C1C970A0029A4BE /* NSData+ImageContentType.m in Sources */,
 				4A1A88591C187B8100011510 /* AAThemeValidationTextField.m in Sources */,
+				4A8DDC781C1D89370030D136 /* AAScannerViewController.m in Sources */,
 				4AEBA3B21C1C7B330029A4BE /* AAValidationTextView.m in Sources */,
 				4AEBA3C91C1C95170029A4BE /* AAOrderItemCell.m in Sources */,
 				4A1A887C1C18A22700011510 /* AADropDownScrollView.m in Sources */,
