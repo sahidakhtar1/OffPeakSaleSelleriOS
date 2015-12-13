@@ -138,6 +138,7 @@ NSString* const GOOGLE_MAPS_API_KEY = @"AIzaSyB3-2-YcL8bw7mqp6PQv4Hr6QsY84oXbpE"
                                       @"TrebuchetMS",@"Trebuchet",
                                      @"Folks-Normal",@"Folks",
                                      @"Aleo-Regular",@"Aleo",
+                                     @"MyriadPro-Regular",@"MYRIADPRO",
                                       nil];
     NSDictionary*  boldFontDict = [NSDictionary dictionaryWithObjectsAndKeys:
                                      @"Arial-BoldMT",@"Arial",
@@ -147,6 +148,7 @@ NSString* const GOOGLE_MAPS_API_KEY = @"AIzaSyB3-2-YcL8bw7mqp6PQv4Hr6QsY84oXbpE"
                                      @"TrebuchetMS-Bold",@"Trebuchet",
                                     @"Aleo-Bold",@"Aleo",
                                     @"Folks-Bold",@"Folks",
+                                   @"MyriadPro-Semibold",@"MYRIADPRO",
                                      nil];
     if ([normalFontDict objectForKey:fontName]) {
         singleInstance.normalFont = [normalFontDict objectForKey:fontName];

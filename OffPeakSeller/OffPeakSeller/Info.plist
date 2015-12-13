@@ -35,6 +35,26 @@
 	<array>
 		<string>armv7</string>
 	</array>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Georgia.ttf</string>
+		<string>Arial.ttf</string>
+		<string>Arial-Bold.ttf</string>
+		<string>OpenSans.ttf</string>
+		<string>OpenSans-Bold.ttf</string>
+		<string>Times New Roman.ttf</string>
+		<string>Trebuchet MS.ttf</string>
+		<string>Georgia-Bold.ttf</string>
+		<string>OpenSans-Semibold.ttf</string>
+		<string>Times New Roman Bold.ttf</string>
+		<string>Trebuchet MS Bold.ttf</string>
+		<string>Aleo-Bold.otf</string>
+		<string>Aleo-Regular.otf</string>
+		<string>Folks-Bold.ttf</string>
+		<string>Folks-Normal.ttf</string>
+		<string>MYRIADPRO-REGULAR.OTF</string>
+		<string>MYRIADPRO-SEMIBOLD.OTF</string>
+	</array>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>

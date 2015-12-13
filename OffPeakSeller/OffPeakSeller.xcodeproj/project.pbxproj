@@ -47,6 +47,30 @@
 		4A8DDC731C1D7E8C0030D136 /* RedeemHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A8DDC721C1D7E8C0030D136 /* RedeemHelper.m */; };
 		4A8DDC781C1D89370030D136 /* AAScannerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A8DDC761C1D89360030D136 /* AAScannerViewController.m */; };
 		4A8DDC791C1D89370030D136 /* ScannerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A8DDC771C1D89370030D136 /* ScannerView.xib */; };
+		4A8DDC7C1C1D8CFA0030D136 /* AAMenuWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A8DDC7B1C1D8CFA0030D136 /* AAMenuWebViewController.m */; };
+		4A8DDC951C1D94150030D136 /* Aleo-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4A8DDC7E1C1D94150030D136 /* Aleo-Bold.otf */; };
+		4A8DDC961C1D94150030D136 /* Aleo-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4A8DDC7F1C1D94150030D136 /* Aleo-Regular.otf */; };
+		4A8DDC971C1D94150030D136 /* american_typewriter_bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4A8DDC801C1D94150030D136 /* american_typewriter_bold.ttf */; };
+		4A8DDC981C1D94150030D136 /* american_typewriter_medium_bt.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4A8DDC811C1D94150030D136 /* american_typewriter_medium_bt.ttf */; };
+		4A8DDC991C1D94150030D136 /* Arial-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4A8DDC821C1D94150030D136 /* Arial-Bold.ttf */; };
+		4A8DDC9A1C1D94150030D136 /* Arial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4A8DDC831C1D94150030D136 /* Arial.ttf */; };
+		4A8DDC9B1C1D94150030D136 /* Bellota-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4A8DDC841C1D94150030D136 /* Bellota-Bold.otf */; };
+		4A8DDC9C1C1D94150030D136 /* Bellota.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4A8DDC851C1D94150030D136 /* Bellota.otf */; };
+		4A8DDC9D1C1D94150030D136 /* elsie.black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4A8DDC861C1D94150030D136 /* elsie.black.ttf */; };
+		4A8DDC9E1C1D94150030D136 /* elsie.regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4A8DDC871C1D94150030D136 /* elsie.regular.ttf */; };
+		4A8DDC9F1C1D94150030D136 /* Folks-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4A8DDC881C1D94150030D136 /* Folks-Bold.ttf */; };
+		4A8DDCA01C1D94150030D136 /* Folks-Normal.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4A8DDC891C1D94150030D136 /* Folks-Normal.ttf */; };
+		4A8DDCA11C1D94150030D136 /* Georgia-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4A8DDC8A1C1D94150030D136 /* Georgia-Bold.ttf */; };
+		4A8DDCA21C1D94150030D136 /* Georgia.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4A8DDC8B1C1D94150030D136 /* Georgia.ttf */; };
+		4A8DDCA31C1D94150030D136 /* MYRIADPRO-REGULAR.OTF in Resources */ = {isa = PBXBuildFile; fileRef = 4A8DDC8C1C1D94150030D136 /* MYRIADPRO-REGULAR.OTF */; };
+		4A8DDCA41C1D94150030D136 /* MYRIADPRO-SEMIBOLD.OTF in Resources */ = {isa = PBXBuildFile; fileRef = 4A8DDC8D1C1D94150030D136 /* MYRIADPRO-SEMIBOLD.OTF */; };
+		4A8DDCA51C1D94150030D136 /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4A8DDC8E1C1D94150030D136 /* OpenSans-Bold.ttf */; };
+		4A8DDCA61C1D94150030D136 /* OpenSans.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4A8DDC8F1C1D94150030D136 /* OpenSans.ttf */; };
+		4A8DDCA71C1D94150030D136 /* Petrona.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4A8DDC901C1D94150030D136 /* Petrona.ttf */; };
+		4A8DDCA81C1D94150030D136 /* Times New Roman-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4A8DDC911C1D94150030D136 /* Times New Roman-Bold.ttf */; };
+		4A8DDCA91C1D94150030D136 /* Times New Roman.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4A8DDC921C1D94150030D136 /* Times New Roman.ttf */; };
+		4A8DDCAA1C1D94150030D136 /* Trebuchet MS-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4A8DDC931C1D94150030D136 /* Trebuchet MS-Bold.ttf */; };
+		4A8DDCAB1C1D94150030D136 /* Trebuchet MS.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4A8DDC941C1D94150030D136 /* Trebuchet MS.ttf */; };
 		4AEBA3A81C1C7A8D0029A4BE /* contactVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AEBA3A71C1C7A8D0029A4BE /* contactVC.m */; };
 		4AEBA3AB1C1C7A9D0029A4BE /* AAContactHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AEBA3AA1C1C7A9D0029A4BE /* AAContactHelper.m */; };
 		4AEBA3AE1C1C7AF80029A4BE /* AAThemeValidationTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AEBA3AD1C1C7AF80029A4BE /* AAThemeValidationTextView.m */; };
@@ -178,6 +202,31 @@
 		4A8DDC751C1D89360030D136 /* AAScannerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AAScannerViewController.h; path = Classes/AAScannerViewController.h; sourceTree = "<group>"; };
 		4A8DDC761C1D89360030D136 /* AAScannerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AAScannerViewController.m; path = Classes/AAScannerViewController.m; sourceTree = "<group>"; };
 		4A8DDC771C1D89370030D136 /* ScannerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ScannerView.xib; path = Classes/ScannerView.xib; sourceTree = "<group>"; };
+		4A8DDC7A1C1D8CFA0030D136 /* AAMenuWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AAMenuWebViewController.h; path = Classes/AAMenuWebViewController.h; sourceTree = "<group>"; };
+		4A8DDC7B1C1D8CFA0030D136 /* AAMenuWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AAMenuWebViewController.m; path = Classes/AAMenuWebViewController.m; sourceTree = "<group>"; };
+		4A8DDC7E1C1D94150030D136 /* Aleo-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Aleo-Bold.otf"; path = "Font/Aleo-Bold.otf"; sourceTree = "<group>"; };
+		4A8DDC7F1C1D94150030D136 /* Aleo-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Aleo-Regular.otf"; path = "Font/Aleo-Regular.otf"; sourceTree = "<group>"; };
+		4A8DDC801C1D94150030D136 /* american_typewriter_bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = american_typewriter_bold.ttf; path = Font/american_typewriter_bold.ttf; sourceTree = "<group>"; };
+		4A8DDC811C1D94150030D136 /* american_typewriter_medium_bt.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = american_typewriter_medium_bt.ttf; path = Font/american_typewriter_medium_bt.ttf; sourceTree = "<group>"; };
+		4A8DDC821C1D94150030D136 /* Arial-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Arial-Bold.ttf"; path = "Font/Arial-Bold.ttf"; sourceTree = "<group>"; };
+		4A8DDC831C1D94150030D136 /* Arial.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Arial.ttf; path = Font/Arial.ttf; sourceTree = "<group>"; };
+		4A8DDC841C1D94150030D136 /* Bellota-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Bellota-Bold.otf"; path = "Font/Bellota-Bold.otf"; sourceTree = "<group>"; };
+		4A8DDC851C1D94150030D136 /* Bellota.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Bellota.otf; path = Font/Bellota.otf; sourceTree = "<group>"; };
+		4A8DDC861C1D94150030D136 /* elsie.black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = elsie.black.ttf; path = Font/elsie.black.ttf; sourceTree = "<group>"; };
+		4A8DDC871C1D94150030D136 /* elsie.regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = elsie.regular.ttf; path = Font/elsie.regular.ttf; sourceTree = "<group>"; };
+		4A8DDC881C1D94150030D136 /* Folks-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Folks-Bold.ttf"; path = "Font/Folks-Bold.ttf"; sourceTree = "<group>"; };
+		4A8DDC891C1D94150030D136 /* Folks-Normal.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Folks-Normal.ttf"; path = "Font/Folks-Normal.ttf"; sourceTree = "<group>"; };
+		4A8DDC8A1C1D94150030D136 /* Georgia-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Georgia-Bold.ttf"; path = "Font/Georgia-Bold.ttf"; sourceTree = "<group>"; };
+		4A8DDC8B1C1D94150030D136 /* Georgia.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Georgia.ttf; path = Font/Georgia.ttf; sourceTree = "<group>"; };
+		4A8DDC8C1C1D94150030D136 /* MYRIADPRO-REGULAR.OTF */ = {isa = PBXFileReference; lastKnownFileType = file; name = "MYRIADPRO-REGULAR.OTF"; path = "Font/MYRIADPRO-REGULAR.OTF"; sourceTree = "<group>"; };
+		4A8DDC8D1C1D94150030D136 /* MYRIADPRO-SEMIBOLD.OTF */ = {isa = PBXFileReference; lastKnownFileType = file; name = "MYRIADPRO-SEMIBOLD.OTF"; path = "Font/MYRIADPRO-SEMIBOLD.OTF"; sourceTree = "<group>"; };
+		4A8DDC8E1C1D94150030D136 /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "OpenSans-Bold.ttf"; path = "Font/OpenSans-Bold.ttf"; sourceTree = "<group>"; };
+		4A8DDC8F1C1D94150030D136 /* OpenSans.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = OpenSans.ttf; path = Font/OpenSans.ttf; sourceTree = "<group>"; };
+		4A8DDC901C1D94150030D136 /* Petrona.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Petrona.ttf; path = Font/Petrona.ttf; sourceTree = "<group>"; };
+		4A8DDC911C1D94150030D136 /* Times New Roman-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Times New Roman-Bold.ttf"; path = "Font/Times New Roman-Bold.ttf"; sourceTree = "<group>"; };
+		4A8DDC921C1D94150030D136 /* Times New Roman.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Times New Roman.ttf"; path = "Font/Times New Roman.ttf"; sourceTree = "<group>"; };
+		4A8DDC931C1D94150030D136 /* Trebuchet MS-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Trebuchet MS-Bold.ttf"; path = "Font/Trebuchet MS-Bold.ttf"; sourceTree = "<group>"; };
+		4A8DDC941C1D94150030D136 /* Trebuchet MS.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Trebuchet MS.ttf"; path = "Font/Trebuchet MS.ttf"; sourceTree = "<group>"; };
 		4AEBA3A61C1C7A8D0029A4BE /* contactVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = contactVC.h; path = Classes/contactVC.h; sourceTree = "<group>"; };
 		4AEBA3A71C1C7A8D0029A4BE /* contactVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = contactVC.m; path = Classes/contactVC.m; sourceTree = "<group>"; };
 		4AEBA3A91C1C7A9D0029A4BE /* AAContactHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AAContactHelper.h; path = Classes/AAContactHelper.h; sourceTree = "<group>"; };
@@ -282,6 +331,7 @@
 		4A0AD1AE1C14118700F6737B = {
 			isa = PBXGroup;
 			children = (
+				4A8DDC7D1C1D93CF0030D136 /* Fonts */,
 				B66903BA1C156B1D002C9470 /* Security.framework */,
 				B66903B81C156B17002C9470 /* CoreLocation.framework */,
 				B66903B61C156B09002C9470 /* SystemConfiguration.framework */,
@@ -425,6 +475,8 @@
 		4A55505F1C15FACF00872392 /* SellerAccount */ = {
 			isa = PBXGroup;
 			children = (
+				4A8DDC7A1C1D8CFA0030D136 /* AAMenuWebViewController.h */,
+				4A8DDC7B1C1D8CFA0030D136 /* AAMenuWebViewController.m */,
 				4AEBA3A61C1C7A8D0029A4BE /* contactVC.h */,
 				4AEBA3A71C1C7A8D0029A4BE /* contactVC.m */,
 				4A5550601C15FB0500872392 /* SellerAccountVC.h */,
@@ -509,6 +561,36 @@
 				4A8DDC771C1D89370030D136 /* ScannerView.xib */,
 			);
 			name = Scanner;
+			sourceTree = "<group>";
+		};
+		4A8DDC7D1C1D93CF0030D136 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				4A8DDC7E1C1D94150030D136 /* Aleo-Bold.otf */,
+				4A8DDC7F1C1D94150030D136 /* Aleo-Regular.otf */,
+				4A8DDC801C1D94150030D136 /* american_typewriter_bold.ttf */,
+				4A8DDC811C1D94150030D136 /* american_typewriter_medium_bt.ttf */,
+				4A8DDC821C1D94150030D136 /* Arial-Bold.ttf */,
+				4A8DDC831C1D94150030D136 /* Arial.ttf */,
+				4A8DDC841C1D94150030D136 /* Bellota-Bold.otf */,
+				4A8DDC851C1D94150030D136 /* Bellota.otf */,
+				4A8DDC861C1D94150030D136 /* elsie.black.ttf */,
+				4A8DDC871C1D94150030D136 /* elsie.regular.ttf */,
+				4A8DDC881C1D94150030D136 /* Folks-Bold.ttf */,
+				4A8DDC891C1D94150030D136 /* Folks-Normal.ttf */,
+				4A8DDC8A1C1D94150030D136 /* Georgia-Bold.ttf */,
+				4A8DDC8B1C1D94150030D136 /* Georgia.ttf */,
+				4A8DDC8C1C1D94150030D136 /* MYRIADPRO-REGULAR.OTF */,
+				4A8DDC8D1C1D94150030D136 /* MYRIADPRO-SEMIBOLD.OTF */,
+				4A8DDC8E1C1D94150030D136 /* OpenSans-Bold.ttf */,
+				4A8DDC8F1C1D94150030D136 /* OpenSans.ttf */,
+				4A8DDC901C1D94150030D136 /* Petrona.ttf */,
+				4A8DDC911C1D94150030D136 /* Times New Roman-Bold.ttf */,
+				4A8DDC921C1D94150030D136 /* Times New Roman.ttf */,
+				4A8DDC931C1D94150030D136 /* Trebuchet MS-Bold.ttf */,
+				4A8DDC941C1D94150030D136 /* Trebuchet MS.ttf */,
+			);
+			name = Fonts;
 			sourceTree = "<group>";
 		};
 		4AEBA3BE1C1C95020029A4BE /* OrderDetail */ = {
@@ -654,13 +736,36 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A8DDC9B1C1D94150030D136 /* Bellota-Bold.otf in Resources */,
+				4A8DDC971C1D94150030D136 /* american_typewriter_bold.ttf in Resources */,
+				4A8DDCA51C1D94150030D136 /* OpenSans-Bold.ttf in Resources */,
+				4A8DDC991C1D94150030D136 /* Arial-Bold.ttf in Resources */,
+				4A8DDC9E1C1D94150030D136 /* elsie.regular.ttf in Resources */,
 				4A1A88471C1878C600011510 /* AALoginDailogView.xib in Resources */,
 				844CF3241C1C0A8700E11759 /* Main.storyboard in Resources */,
+				4A8DDC9A1C1D94150030D136 /* Arial.ttf in Resources */,
+				4A8DDC9F1C1D94150030D136 /* Folks-Bold.ttf in Resources */,
+				4A8DDCAA1C1D94150030D136 /* Trebuchet MS-Bold.ttf in Resources */,
 				4A0AD1CA1C14118800F6737B /* LaunchScreen.storyboard in Resources */,
+				4A8DDCA21C1D94150030D136 /* Georgia.ttf in Resources */,
+				4A8DDC9C1C1D94150030D136 /* Bellota.otf in Resources */,
+				4A8DDCA41C1D94150030D136 /* MYRIADPRO-SEMIBOLD.OTF in Resources */,
+				4A8DDC9D1C1D94150030D136 /* elsie.black.ttf in Resources */,
+				4A8DDC951C1D94150030D136 /* Aleo-Bold.otf in Resources */,
+				4A8DDC981C1D94150030D136 /* american_typewriter_medium_bt.ttf in Resources */,
 				4A0AD1C71C14118800F6737B /* Assets.xcassets in Resources */,
+				4A8DDCAB1C1D94150030D136 /* Trebuchet MS.ttf in Resources */,
 				4A5550691C15FC2200872392 /* AAHeaderView.xib in Resources */,
+				4A8DDCA81C1D94150030D136 /* Times New Roman-Bold.ttf in Resources */,
+				4A8DDCA61C1D94150030D136 /* OpenSans.ttf in Resources */,
+				4A8DDCA01C1D94150030D136 /* Folks-Normal.ttf in Resources */,
+				4A8DDCA11C1D94150030D136 /* Georgia-Bold.ttf in Resources */,
+				4A8DDCA31C1D94150030D136 /* MYRIADPRO-REGULAR.OTF in Resources */,
 				4A8DDC791C1D89370030D136 /* ScannerView.xib in Resources */,
+				4A8DDCA91C1D94150030D136 /* Times New Roman.ttf in Resources */,
 				4AEBA3C71C1C95170029A4BE /* AAOrderDetailView.xib in Resources */,
+				4A8DDCA71C1D94150030D136 /* Petrona.ttf in Resources */,
+				4A8DDC961C1D94150030D136 /* Aleo-Regular.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -727,6 +832,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B67B3C4F1C16B4E10008A088 /* splashScreenVC.m in Sources */,
+				4A8DDC7C1C1D8CFA0030D136 /* AAMenuWebViewController.m in Sources */,
 				4A0AD1C21C14118800F6737B /* ViewController.m in Sources */,
 				4A1A88751C18A14800011510 /* AACountriesHelper.m in Sources */,
 				B67B3C521C16E5760008A088 /* loginVC.m in Sources */,

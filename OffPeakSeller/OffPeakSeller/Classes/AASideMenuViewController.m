@@ -13,6 +13,8 @@
 #import "AAMenuItem.h"
 #import "SellerAccountVC.h"
 #import "contactVC.h"
+#import "AAMenuWebViewController.h"
+#import "AppDelegate.h"
 @interface AASideMenuViewController ()
 
 @end
@@ -86,7 +88,12 @@
             break;
         case TERMSOFUSE:
             {
-               
+                AAMenuWebViewController* vcRetailerStore = [self.storyboard instantiateViewControllerWithIdentifier:@"AAMenuWebViewController"];
+                [vcRetailerStore setWebPageUrl:[AAAppGlobals sharedInstance].retailer.termsUrl];
+                [vcRetailerStore setWebPageTitle:menuItem.itemName];
+                UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:vcRetailerStore];
+                navigationController.navigationBarHidden=YES;
+                [self.revealViewController pushFrontViewController:navigationController     animated:YES];
             }
             break;
         case CONTACT:
@@ -104,13 +111,24 @@
                 }
             break;
         case LOGOUT:
+        {
+            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:nil message:@"Do you want to logout?" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Logout", nil];
+            [alertView show];
+        }
         
             break;
         default:
             break;
     }
 }
-
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    if (buttonIndex ==  1) {
+        [[NSUserDefaults standardUserDefaults] removeObjectForKey:KEY_EMAIL];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+        AppDelegate *appDelegate = (AppDelegate*)[UIApplication sharedApplication].delegate;
+        [appDelegate splashFinished];
+    }
+}
 -(void)populateMenuItems{
     
     [arrMenuItems removeAllObjects];
@@ -118,14 +136,14 @@
     eshop.itemName = @"Seller Account";
     eshop.itemType = SELLER_ACCOUNT;
     eshop.showArrow = NO;
-    eshop.iconName = @"eshop-1";
+    eshop.iconName = @"home-1";
     [arrMenuItems addObject:eshop];
     
     AAMenuItem *voucher = [[AAMenuItem alloc] init];
     voucher.itemName = @"Terms of Use";
     voucher.itemType = TERMSOFUSE;
     voucher.showArrow = NO;
-    voucher.iconName = @"voucher-1";
+    voucher.iconName = @"termsofuse";
     [arrMenuItems addObject:voucher];
     
     
@@ -133,15 +151,15 @@
     myOrder.itemName = @"Contact";
     myOrder.itemType = CONTACT;
     myOrder.showArrow = NO;
-    myOrder.iconName = @"icon_cart_black.png";
+    myOrder.iconName = @"about_us";
     [arrMenuItems addObject:myOrder];
     
     
     AAMenuItem *profile = [[AAMenuItem alloc] init];
     profile.itemName = @"Logout";
     profile.itemType = LOGOUT;
-    profile.showArrow = YES;
-    profile.iconName = @"my_profile";
+    profile.showArrow = NO;
+    profile.iconName = @"logout";
     [arrMenuItems addObject:profile];
 
     [self.tbMenu reloadData];
