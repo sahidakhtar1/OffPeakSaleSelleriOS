@@ -10,6 +10,9 @@
 #import "AAHeaderView.h"
 
 @interface invalidVoucherVC ()
+@property (weak, nonatomic) IBOutlet UIImageView *imgResult;
+@property (weak, nonatomic) IBOutlet UILabel *lblMsg;
+@property (weak, nonatomic) IBOutlet UILabel *lblDateMsg;
 
 @end
 
@@ -34,11 +37,27 @@
 //    UILabel *titleLabel1=[[UILabel alloc]initWithFrame:CGRectMake(3*headerView.frame.size.width/10,20,4*headerView.frame.size.width/10,40)];
 //    titleLabel1=titleLabel;
 //    [headerView addSubview:titleLabel1];
-    self.voucherUsedLabel.text = self.msg;
-    self.voucherDateLabel.text = [NSString stringWithFormat:@"On %@",self.dateMsg];
+    self.lblMsg.text = self.msg;
+    if (self.dateMsg) {
+        self.lblDateMsg.text = [NSString stringWithFormat:@"%@ On %@",self.msg,self.dateMsg];
+    }else{
+        self.lblDateMsg.hidden = true;
+    }
+    if (self.isSucess) {
+        self.lblMsg.textColor = [AAColor sharedInstance].retailerThemeBackgroundColor;
+        self.imgResult.image = [UIImage imageNamed:@"smily_happy"];
+    }else{
+        self.lblMsg.textColor = [UIColor colorWithRed:236/255.0f green:110/255.0f blue:38/255.0f alpha:1];
+        self.imgResult.image = [UIImage imageNamed:@"smily_sad"];
+    }
     
 }
 - (IBAction)Ok:(id)sender {
+    if (self.isSucess) {
+        [self.navigationController popToRootViewControllerAnimated:YES];
+    }else{
+        [self.navigationController popViewControllerAnimated:YES];
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -56,7 +75,11 @@
 }
 */
 -(void)backButtonTapped{
-    [self.navigationController popViewControllerAnimated:YES];
+    if (self.isSucess) {
+        [self.navigationController popToRootViewControllerAnimated:YES];
+    }else{
+        [self.navigationController popViewControllerAnimated:YES];
+    }
 }
 
 @end

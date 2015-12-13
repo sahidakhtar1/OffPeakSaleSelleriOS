@@ -12,6 +12,8 @@
 #import "UIImageView+WebCache.h"
 #import "AAOrderDetailView.h"
 #import "AAThemeGlossyButton.h"
+#import "RedeemHelper.h"
+#import "invalidVoucherVC.h"
 static NSString *name = @"name";
 static NSString *new_price = @"new_price";
 static NSString *product_img = @"product_img";
@@ -77,7 +79,7 @@ static NSString *products = @"products";
     self.orderDetailView.delegate = self;
     [self populateOrderInfo];
     [self.tbOrderItems setTableHeaderView:self.orderDetailView];
-    
+    [self adjustButtons];
     
     
     
@@ -87,6 +89,20 @@ static NSString *products = @"products";
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+-(void)adjustButtons{
+    float maxWidth = self.view.frame.size.width/2;
+    CGRect btnCancelFrame = self.btnCancel.frame;
+    btnCancelFrame.origin.x = 30;
+    btnCancelFrame.size.width = maxWidth-40;
+    self.btnCancel.frame =btnCancelFrame;
+    
+    CGRect btnRedeemFrame = self.btnRedeem.frame;
+    btnRedeemFrame.origin.x = maxWidth+10;
+    btnRedeemFrame.size.width = btnCancelFrame.size.width;
+    self.btnRedeem.frame =btnRedeemFrame;
+    
+    
 }
 
 /*
@@ -107,9 +123,38 @@ static NSString *products = @"products";
 }
 
 - (IBAction)btnCancelTapped:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (IBAction)btnRedeemTapped:(id)sender {
+    NSString *orderId = [self.orderObj valueForKey:@"qrCode"];
+    [RedeemHelper redeemOrderWithEmailId:[[NSUserDefaults standardUserDefaults]
+                                          objectForKey:KEY_EMAIL] qrCode:orderId
+     
+                     withCompletionBlock:^(NSDictionary *orderDetail) {
+                         
+                         if ([[orderDetail objectForKey:@"errorCode"] isEqualToString:@"1"]) {
+                             NSString *errorMessage = [orderDetail valueForKey:@"errorMessage"];
+//                             NSString *usedOn = [orderDetail valueForKey:@"usedOn"];
+                             invalidVoucherVC *orderDetailVC = [self.storyboard instantiateViewControllerWithIdentifier:@"invalidVoucherVC"];
+                             orderDetailVC.pageTitle= @"Voucher Redeemed";
+                             orderDetailVC.isSucess = true;
+                             orderDetailVC.msg =errorMessage;
+                             [self.navigationController pushViewController:orderDetailVC animated:YES];
+                         }else{
+                             NSString *errorMessage = [orderDetail valueForKey:@"errorMessage"];
+                             NSString *usedOn = [orderDetail valueForKey:@"usedOn"];
+                             invalidVoucherVC *orderDetailVC = [self.storyboard instantiateViewControllerWithIdentifier:@"invalidVoucherVC"];
+                             orderDetailVC.pageTitle= @"Invalid Voucher";
+                             orderDetailVC.isSucess = false;
+                             orderDetailVC.msg =errorMessage;
+                             orderDetailVC.dateMsg =usedOn;
+                             [self.navigationController pushViewController:orderDetailVC animated:YES];
+                         }
+                         
+                     } andFailure:^(NSString *msg) {
+                         
+                     }];
 }
 -(void)nameTappaed{
 }

@@ -44,6 +44,7 @@
 		4A55506C1C15FC6000872392 /* AAThemeLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A55506B1C15FC6000872392 /* AAThemeLabel.m */; };
 		4A8DDC6F1C1D63C40030D136 /* AABasePopupView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A8DDC6A1C1D63C40030D136 /* AABasePopupView.m */; };
 		4A8DDC701C1D63C40030D136 /* AADatePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A8DDC6D1C1D63C40030D136 /* AADatePickerView.m */; };
+		4A8DDC731C1D7E8C0030D136 /* RedeemHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A8DDC721C1D7E8C0030D136 /* RedeemHelper.m */; };
 		4AEBA3A81C1C7A8D0029A4BE /* contactVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AEBA3A71C1C7A8D0029A4BE /* contactVC.m */; };
 		4AEBA3AB1C1C7A9D0029A4BE /* AAContactHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AEBA3AA1C1C7A9D0029A4BE /* AAContactHelper.m */; };
 		4AEBA3AE1C1C7AF80029A4BE /* AAThemeValidationTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AEBA3AD1C1C7AF80029A4BE /* AAThemeValidationTextView.m */; };
@@ -170,6 +171,8 @@
 		4A8DDC6C1C1D63C40030D136 /* AADatePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AADatePickerView.h; path = Classes/Custom/AADatePickerView.h; sourceTree = "<group>"; };
 		4A8DDC6D1C1D63C40030D136 /* AADatePickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AADatePickerView.m; path = Classes/Custom/AADatePickerView.m; sourceTree = "<group>"; };
 		4A8DDC6E1C1D63C40030D136 /* AADatePickerViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AADatePickerViewDelegate.h; path = Classes/Custom/AADatePickerViewDelegate.h; sourceTree = "<group>"; };
+		4A8DDC711C1D7E8C0030D136 /* RedeemHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RedeemHelper.h; path = Classes/RedeemHelper.h; sourceTree = "<group>"; };
+		4A8DDC721C1D7E8C0030D136 /* RedeemHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RedeemHelper.m; path = Classes/RedeemHelper.m; sourceTree = "<group>"; };
 		4AEBA3A61C1C7A8D0029A4BE /* contactVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = contactVC.h; path = Classes/contactVC.h; sourceTree = "<group>"; };
 		4AEBA3A71C1C7A8D0029A4BE /* contactVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = contactVC.m; path = Classes/contactVC.m; sourceTree = "<group>"; };
 		4AEBA3A91C1C7A9D0029A4BE /* AAContactHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AAContactHelper.h; path = Classes/AAContactHelper.h; sourceTree = "<group>"; };
@@ -369,6 +372,8 @@
 				4A1A886B1C18933F00011510 /* AARetailerInfoHelper.m */,
 				4AEBA3B61C1C84AA0029A4BE /* SellerDashBoardHelper.h */,
 				4AEBA3B71C1C84AA0029A4BE /* SellerDashBoardHelper.m */,
+				4A8DDC711C1D7E8C0030D136 /* RedeemHelper.h */,
+				4A8DDC721C1D7E8C0030D136 /* RedeemHelper.m */,
 			);
 			name = DataHelper;
 			sourceTree = "<group>";
@@ -730,6 +735,7 @@
 				4AEBA3B21C1C7B330029A4BE /* AAValidationTextView.m in Sources */,
 				4AEBA3C91C1C95170029A4BE /* AAOrderItemCell.m in Sources */,
 				4A1A887C1C18A22700011510 /* AADropDownScrollView.m in Sources */,
+				4A8DDC731C1D7E8C0030D136 /* RedeemHelper.m in Sources */,
 				4AEBA3F51C1C970A0029A4BE /* UIImage+MultiFormat.m in Sources */,
 				4AEBA3F71C1C970A0029A4BE /* UIImageView+WebCache.m in Sources */,
 				4A0AD1BF1C14118700F6737B /* AppDelegate.m in Sources */,

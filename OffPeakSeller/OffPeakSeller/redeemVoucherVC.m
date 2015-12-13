@@ -70,7 +70,7 @@
                               invalidVoucherVC *orderDetailVC = [self.storyboard instantiateViewControllerWithIdentifier:@"invalidVoucherVC"];
                               orderDetailVC.pageTitle= @"Invalid Voucher";
                               orderDetailVC.isSucess = false;
-                              orderDetailVC.dateMsg =[orderDetail objectForKey:@"errorMessage"];
+                              orderDetailVC.msg =[orderDetail objectForKey:@"errorMessage"];
                               orderDetailVC.dateMsg =[orderDetail objectForKey:@"usedOn"];
                               [self.navigationController pushViewController:orderDetailVC animated:YES];
                           }
@@ -86,19 +86,19 @@
 
 -(void)textFieldDidBeginEditing:(UITextField *)textField
 {
-    [UIView beginAnimations:nil context:nil];
-    [UIView setAnimationDuration:0.6];
-    [self.view setFrame:CGRectMake(0, -200, self.view.frame.size.width, self.view.frame.size.height)];
-    [UIView commitAnimations];
+//    [UIView beginAnimations:nil context:nil];
+//    [UIView setAnimationDuration:0.6];
+//    [self.view setFrame:CGRectMake(0, -200, self.view.frame.size.width, self.view.frame.size.height)];
+//    [UIView commitAnimations];
 }
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField
 {
     [textField resignFirstResponder];
-    [UIView beginAnimations:nil context:nil];
-    [UIView setAnimationDuration:0.6];
-    [self.view setFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
-    [UIView commitAnimations];
+//    [UIView beginAnimations:nil context:nil];
+//    [UIView setAnimationDuration:0.6];
+//    [self.view setFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
+//    [UIView commitAnimations];
     return YES;
 }
 
