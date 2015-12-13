@@ -218,16 +218,30 @@ static NSString* const DATE_FORMAT = @"dd-MM-yyyy";
 {
     if (self.datePickerView.tag == 101) {
         if ([date compare:self.startDate] == NSOrderedAscending) {
-            
+            NSString *selectedDate = [[AAAppGlobals sharedInstance] convertDateToString:date];
+            NSString *startDateStr = [[AAAppGlobals sharedInstance] convertDateToString:self.startDate];
+            if ([selectedDate isEqualToString:startDateStr]) {
+                self.endDate = date;
+            }else{
+                
+            }
         }else{
             self.endDate = date;
-            
         }
     }else{
         if ([date compare:self.endDate] == NSOrderedAscending) {
             self.startDate = date;
+            self.btnStartDate.selected = false;
         }else{
-            
+            NSString *selectedDate = [[AAAppGlobals sharedInstance] convertDateToString:date];
+            NSString *endDateStr = [[AAAppGlobals sharedInstance] convertDateToString:self.endDate];
+
+            if ([selectedDate isEqualToString:endDateStr]) {
+                self.startDate = date;
+                self.btnStartDate.selected = false;
+            }else{
+                
+            }
         }
     }
 }
