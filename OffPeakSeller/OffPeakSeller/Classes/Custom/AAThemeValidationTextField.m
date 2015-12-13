@@ -62,6 +62,7 @@
     self.layer.borderWidth = 1.0f;
     self.layer.cornerRadius = 4.0f;
     self.layer.backgroundColor = [UIColor clearColor].CGColor;
+    [self setFont:[UIFont fontWithName:[AAAppGlobals sharedInstance].normalFont size:CONATCT_FIELD_TEXT_SIZE]];
 //    self.layer.borderColor = [UIColor greenColor].CGColor;
     
 }

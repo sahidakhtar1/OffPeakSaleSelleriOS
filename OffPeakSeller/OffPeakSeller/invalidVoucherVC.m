@@ -50,7 +50,12 @@
         self.lblMsg.textColor = [UIColor colorWithRed:236/255.0f green:110/255.0f blue:38/255.0f alpha:1];
         self.imgResult.image = [UIImage imageNamed:@"smily_sad"];
     }
+    [self setFont];
     
+}
+-(void)setFont{
+    [self.lblMsg setFont:[UIFont fontWithName:[AAAppGlobals sharedInstance].boldFont size:VOUCHER_MSG_TEXT_SIZE]];
+    [self.lblDateMsg setFont:[UIFont fontWithName:[AAAppGlobals sharedInstance].normalFont size:VOUCHER__DATE_MSG_TEXT_SIZE]];
 }
 - (IBAction)Ok:(id)sender {
     if (self.isSucess) {

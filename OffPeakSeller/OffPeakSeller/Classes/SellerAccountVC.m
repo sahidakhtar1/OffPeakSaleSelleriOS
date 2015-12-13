@@ -72,6 +72,32 @@ static NSString* const DATE_FORMAT = @"dd-MM-yyyy";
 //    NSString *scheduledDate =[[AAAppGlobals sharedInstance] convertDateToString:self.endDate];
 //    [self.btnEndDate setTitle:scheduledDate forState:UIControlStateNormal];
     
+    [self setFont];
+}
+-(void)setFont{
+    [self.lblCompany setFont:[UIFont fontWithName:[AAAppGlobals sharedInstance].boldFont size:DASHBOARD_FIELD_TEXT_SIZE]];
+    [self.lblCompanyValue setFont:[UIFont fontWithName:[AAAppGlobals sharedInstance].normalFont size:DASHBOARD_FIELD_TEXT_SIZE]];
+    [self.lblContact setFont:[UIFont fontWithName:[AAAppGlobals sharedInstance].boldFont size:DASHBOARD_FIELD_TEXT_SIZE]];
+    [self.lblConatctValue setFont:[UIFont fontWithName:[AAAppGlobals sharedInstance].normalFont size:DASHBOARD_FIELD_TEXT_SIZE]];
+    [self.lblEmail setFont:[UIFont fontWithName:[AAAppGlobals sharedInstance].boldFont size:DASHBOARD_FIELD_TEXT_SIZE]];
+    [self.lblEmailValue setFont:[UIFont fontWithName:[AAAppGlobals sharedInstance].normalFont size:DASHBOARD_FIELD_TEXT_SIZE]];
+    [self.lblLocation setFont:[UIFont fontWithName:[AAAppGlobals sharedInstance].boldFont size:DASHBOARD_FIELD_TEXT_SIZE]];
+    [self.btnLocationValue.titleLabel setFont:[UIFont fontWithName:[AAAppGlobals sharedInstance].normalFont size:DASHBOARD_FIELD_TEXT_SIZE]];
+    [self.lblStartDate setFont:[UIFont fontWithName:[AAAppGlobals sharedInstance].boldFont size:DASHBOARD_FIELD_TEXT_SIZE]];
+    [self.btnStartDate.titleLabel setFont:[UIFont fontWithName:[AAAppGlobals sharedInstance].normalFont size:DASHBOARD_FIELD_TEXT_SIZE]];
+    [self.lblEndDate setFont:[UIFont fontWithName:[AAAppGlobals sharedInstance].boldFont size:DASHBOARD_FIELD_TEXT_SIZE]];
+    [self.btnEndDate.titleLabel setFont:[UIFont fontWithName:[AAAppGlobals sharedInstance].normalFont size:DASHBOARD_FIELD_TEXT_SIZE]];
+    
+    [self.lblRedeemed setFont:[UIFont fontWithName:[AAAppGlobals sharedInstance].normalFont size:DASHBOARD_FIELD_TEXT_SIZE]];
+    [self.lblSold setFont:[UIFont fontWithName:[AAAppGlobals sharedInstance].normalFont size:DASHBOARD_FIELD_TEXT_SIZE]];
+    
+    [self.RedeemedValueLabel setFont:[UIFont fontWithName:[AAAppGlobals sharedInstance].normalFont size:DASHBOARD_STATS_TEXT_SIZE]];
+    [self.UnitsSoldValueLabel setFont:[UIFont fontWithName:[AAAppGlobals sharedInstance].normalFont size:DASHBOARD_STATS_TEXT_SIZE]];
+    
+    [self.percentageLabel setFont:[UIFont fontWithName:[AAAppGlobals sharedInstance].normalFont size:DASHBOARD_PERCENTAGE_TEXT_SIZE]];
+    
+    [self.lblRedeemed setTextColor:[AAColor sharedInstance].retailerThemeBackgroundColor];
+    [self.lblSold setTextColor:[AAColor sharedInstance].retailerThemeBackgroundColor];
 }
 -(void)setStartDate:(NSDate *)startDate{
     _startDate = startDate;

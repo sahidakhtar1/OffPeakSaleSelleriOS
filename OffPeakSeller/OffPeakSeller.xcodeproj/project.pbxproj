@@ -966,6 +966,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "23b143c3-9a09-4974-9dab-1094368c7151";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -1002,6 +1003,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PROVISIONING_PROFILE = "23b143c3-9a09-4974-9dab-1094368c7151";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -1020,9 +1022,9 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = com.offpeaksale.OffPeakSeller;
+				PRODUCT_BUNDLE_IDENTIFIER = com.offpeaksale.seller;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "23b143c3-9a09-4974-9dab-1094368c7151";
 			};
 			name = Debug;
 		};
@@ -1039,9 +1041,9 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = com.offpeaksale.OffPeakSeller;
+				PRODUCT_BUNDLE_IDENTIFIER = com.offpeaksale.seller;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "23b143c3-9a09-4974-9dab-1094368c7151";
 			};
 			name = Release;
 		};

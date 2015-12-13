@@ -27,14 +27,6 @@
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
-	<key>UILaunchStoryboardName</key>
-	<string>LaunchScreen</string>
-	<key>UIMainStoryboardFile</key>
-	<string>Main</string>
-	<key>UIRequiredDeviceCapabilities</key>
-	<array>
-		<string>armv7</string>
-	</array>
 	<key>UIAppFonts</key>
 	<array>
 		<string>Georgia.ttf</string>
@@ -54,6 +46,14 @@
 		<string>Folks-Normal.ttf</string>
 		<string>MYRIADPRO-REGULAR.OTF</string>
 		<string>MYRIADPRO-SEMIBOLD.OTF</string>
+	</array>
+	<key>UILaunchStoryboardName</key>
+	<string>LaunchScreen</string>
+	<key>UIMainStoryboardFile</key>
+	<string>Main</string>
+	<key>UIRequiredDeviceCapabilities</key>
+	<array>
+		<string>armv7</string>
 	</array>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>

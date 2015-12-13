@@ -56,6 +56,8 @@ static NSString* const COUNTRY_NAME_KEY = @"countryName";
     self.tfCountry.leftViewMode = UITextFieldViewModeAlways;
     
     _btnFBLogin.layer.cornerRadius = 4.0f;
+    self.btnForgotPassword.font = [UIFont fontWithName:[AAAppGlobals sharedInstance].normalFont size:BUTTON_FONTSIZE];
+    self.btnNeedHelp.font = [UIFont fontWithName:[AAAppGlobals sharedInstance].normalFont size:BUTTON_FONTSIZE];
 }
 -(UIView*)getLeftImageViewWithImage:(NSString*)imageName{
     UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake(5, 0, 20, 20)];

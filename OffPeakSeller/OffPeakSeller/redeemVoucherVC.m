@@ -14,6 +14,8 @@
 #import "AAScannerViewController.h"
 #import "AppDelegate.h"
 @interface redeemVoucherVC ()
+@property (weak, nonatomic) IBOutlet UILabel *lblOr;
+@property (weak, nonatomic) IBOutlet UILabel *lblEnterCode;
 
 @end
 
@@ -33,12 +35,13 @@
     headerView.showBack = true;
     headerView.delegate = self;
     [headerView setMenuIcons];
-    
-//    UILabel *titleLabel1=[[UILabel alloc]initWithFrame:CGRectMake(3*headerView.frame.size.width/10,20,4*headerView.frame.size.width/10,40)];
-//    titleLabel1=titleLabel;
-//    [headerView addSubview:titleLabel1];
+    [self setFont];
 }
 
+-(void)setFont{
+    [self.lblOr setFont:[UIFont fontWithName:[AAAppGlobals sharedInstance].normalFont size:DASHBOARD_FIELD_TEXT_SIZE]];
+    [self.lblEnterCode setFont:[UIFont fontWithName:[AAAppGlobals sharedInstance].normalFont size:DASHBOARD_FIELD_TEXT_SIZE]];
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -98,19 +101,18 @@
 
 -(void)textFieldDidBeginEditing:(UITextField *)textField
 {
-//    [UIView beginAnimations:nil context:nil];
-//    [UIView setAnimationDuration:0.6];
-//    [self.view setFrame:CGRectMake(0, -200, self.view.frame.size.width, self.view.frame.size.height)];
-//    [UIView commitAnimations];
+    [UIView beginAnimations:nil context:nil];
+   [UIView setAnimationDuration:0.6];
+    [self.view setFrame:CGRectMake(0, -70, self.view.frame.size.width, self.view.frame.size.height)]; [UIView commitAnimations];
 }
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField
 {
     [textField resignFirstResponder];
-//    [UIView beginAnimations:nil context:nil];
-//    [UIView setAnimationDuration:0.6];
-//    [self.view setFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
-//    [UIView commitAnimations];
+    [UIView beginAnimations:nil context:nil];
+    [UIView setAnimationDuration:0.6];
+    [self.view setFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
+    [UIView commitAnimations];
     return YES;
 }
 
