@@ -12,6 +12,7 @@
 #import "redeemVoucherVC.h"
 #import "AAThemeLabel.h"
 #import "SellerDashBoardHelper.h"
+#import "AADatePickerView.h"
 @interface SellerAccountVC ()
 @property (nonatomic, strong) NSDictionary *sellerInfoDict;
 @property (nonatomic, strong) DACircularProgressView *progressView;
@@ -29,8 +30,13 @@
 @property (weak, nonatomic) IBOutlet UIButton *btnEndDate;
 @property (weak, nonatomic) IBOutlet UILabel *lblRedeemed;
 @property (weak, nonatomic) IBOutlet UILabel *lblSold;
-@end
 
+@property (nonatomic,strong) AADatePickerView* datePickerView;
+
+@property (nonatomic,strong) NSDate *startDate;
+@property (nonatomic, strong) NSDate *endDate;
+@end
+static NSString* const DATE_FORMAT = @"dd-MM-yyyy";
 @implementation SellerAccountVC
 @synthesize menuView,circularProgressView,RedeemedValueLabel,companyDetailsTableView,UnitsSoldValueLabel,titleLabel,percentageLabel,locationValueButton,startdateValueButton,enddateValueButton,companyNameValueLabel,contactValueLabel,EmailValueLabel;
 
@@ -38,6 +44,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    self.endDate = [NSDate date];
     companyKeyArray=[[NSMutableArray alloc]initWithObjects:@"Company Name",@"Contact",@"Email",@"Location",@"Start Date",@"End Date", nil];
     dictioanaryKeys=[[NSMutableArray alloc]initWithObjects:@"company_name",@"phone_num",@"email",@"country", nil];
     
@@ -62,13 +69,33 @@
     headerView.showCart = false;
     headerView.showBack = false;
     [headerView setMenuIcons];
+//    NSString *scheduledDate =[[AAAppGlobals sharedInstance] convertDateToString:self.endDate];
+//    [self.btnEndDate setTitle:scheduledDate forState:UIControlStateNormal];
     
 }
--(void)viewWillAppear:(BOOL)animated{
-    [SellerDashBoardHelper getSellerInfoEmailId:[[NSUserDefaults standardUserDefaults] objectForKey:KEY_EMAIL] withCompletionBlock:^(NSDictionary *dict) {
+-(void)setStartDate:(NSDate *)startDate{
+    _startDate = startDate;
+    NSString *scheduledDate =[[AAAppGlobals sharedInstance] convertDateToString:startDate];
+    [self.btnStartDate setTitle:scheduledDate forState:UIControlStateNormal];
+    [self refreshData];
+}
+-(void)setEndDate:(NSDate *)endDate{
+    _endDate = endDate;
+    NSString *scheduledDate =[[AAAppGlobals sharedInstance] convertDateToString:endDate];
+    [self.btnEndDate setTitle:scheduledDate forState:UIControlStateNormal];
+    [self refreshData];
+}
+-(void)refreshData{
+    NSString *endDate =[[AAAppGlobals sharedInstance] convertDateToString:self.endDate];
+    NSString *startDate =[[AAAppGlobals sharedInstance] convertDateToString:self.startDate];
+    [SellerDashBoardHelper
+     getSellerInfoEmailId:[[NSUserDefaults standardUserDefaults] objectForKey:KEY_EMAIL]
+     startDate:startDate
+     endDate:endDate
+     withCompletionBlock:^(NSDictionary *dict) {
         self.sellerInfoDict = dict;
-//        [self.companyDetailsTableView setDataSource:self];
-//        [self.companyDetailsTableView reloadData];
+        //        [self.companyDetailsTableView setDataSource:self];
+        //        [self.companyDetailsTableView reloadData];
         float redeemed = [[self.sellerInfoDict valueForKey:@"orders_redeemed"] floatValue];
         float sold = [[self.sellerInfoDict valueForKey:@"orders_sold"] floatValue];
         self.RedeemedValueLabel.text = [self.sellerInfoDict valueForKey:@"orders_redeemed"];
@@ -84,12 +111,15 @@
         }else{
             self.lblConatctValue.text = [self.sellerInfoDict valueForKey:@"phone_num"];
         }
-         
+        
         self.lblEmailValue.text = [self.sellerInfoDict valueForKey:@"email"];
         [self.btnLocationValue setTitle:[self.sellerInfoDict valueForKey:@"country"] forState:UIControlStateNormal] ;
     } andFailure:^(NSString *msg) {
         
     }];
+}
+-(void)viewWillAppear:(BOOL)animated{
+    [self refreshData];
 }
 -(void)closeButtonAction
 {
@@ -148,9 +178,58 @@
 }
 
 - (IBAction)startDate:(id)sender {
+    self.datePickerView = [AADatePickerView createDatePickerViewWithBackgroundFrameRect:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
+    ;
+    self.datePickerView.tag =100;
+    
+    [self.datePickerView.datePicker setMaximumDate:[NSDate date]];
+    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+    [dateFormat setDateFormat:DATE_FORMAT];
+    if (self.startDate) {
+        [self.datePickerView setDatepickerDate:self.startDate];
+    }
+    self.datePickerView.datePickerDelegate = self;
+    [self.view addSubview:self.datePickerView];
 }
 
 - (IBAction)endDate:(id)sender {
+    self.datePickerView = [AADatePickerView createDatePickerViewWithBackgroundFrameRect:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
+    ;
+     self.datePickerView.tag =101;
+    if (self.startDate) {
+        [self.datePickerView.datePicker setMinimumDate:self.startDate];
+    }
+    
+    [self.datePickerView.datePicker setMaximumDate:[NSDate date]];
+    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+    [dateFormat setDateFormat:DATE_FORMAT];
+    
+    [self.datePickerView setDatepickerDate:self.endDate];
+    
+    self.datePickerView.datePickerDelegate = self;
+    [self.view addSubview:self.datePickerView];
+}
+#pragma mark - Date Picker Callbacks
+-(void)onDateCancelled
+{
+    
+}
+-(void)onDateSelected:(NSDate *)date
+{
+    if (self.datePickerView.tag == 101) {
+        if ([date compare:self.startDate] == NSOrderedAscending) {
+            
+        }else{
+            self.endDate = date;
+            
+        }
+    }else{
+        if ([date compare:self.endDate] == NSOrderedAscending) {
+            self.startDate = date;
+        }else{
+            
+        }
+    }
 }
 
 - (IBAction)activateQRCode:(id)sender {

@@ -42,6 +42,8 @@
 		4A5550681C15FC2200872392 /* AAHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A5550661C15FC2200872392 /* AAHeaderView.m */; };
 		4A5550691C15FC2200872392 /* AAHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A5550671C15FC2200872392 /* AAHeaderView.xib */; };
 		4A55506C1C15FC6000872392 /* AAThemeLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A55506B1C15FC6000872392 /* AAThemeLabel.m */; };
+		4A8DDC6F1C1D63C40030D136 /* AABasePopupView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A8DDC6A1C1D63C40030D136 /* AABasePopupView.m */; };
+		4A8DDC701C1D63C40030D136 /* AADatePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A8DDC6D1C1D63C40030D136 /* AADatePickerView.m */; };
 		4AEBA3A81C1C7A8D0029A4BE /* contactVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AEBA3A71C1C7A8D0029A4BE /* contactVC.m */; };
 		4AEBA3AB1C1C7A9D0029A4BE /* AAContactHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AEBA3AA1C1C7A9D0029A4BE /* AAContactHelper.m */; };
 		4AEBA3AE1C1C7AF80029A4BE /* AAThemeValidationTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AEBA3AD1C1C7AF80029A4BE /* AAThemeValidationTextView.m */; };
@@ -162,6 +164,12 @@
 		4A5550671C15FC2200872392 /* AAHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AAHeaderView.xib; path = Classes/Custom/AAHeaderView.xib; sourceTree = "<group>"; };
 		4A55506A1C15FC6000872392 /* AAThemeLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AAThemeLabel.h; path = Classes/Custom/AAThemeLabel.h; sourceTree = "<group>"; };
 		4A55506B1C15FC6000872392 /* AAThemeLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AAThemeLabel.m; path = Classes/Custom/AAThemeLabel.m; sourceTree = "<group>"; };
+		4A8DDC691C1D63AC0030D136 /* AABasePopupView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AABasePopupView.h; path = Classes/Custom/AABasePopupView.h; sourceTree = "<group>"; };
+		4A8DDC6A1C1D63C40030D136 /* AABasePopupView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AABasePopupView.m; path = Classes/Custom/AABasePopupView.m; sourceTree = "<group>"; };
+		4A8DDC6B1C1D63C40030D136 /* AABasePopupViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AABasePopupViewDelegate.h; path = Classes/Custom/AABasePopupViewDelegate.h; sourceTree = "<group>"; };
+		4A8DDC6C1C1D63C40030D136 /* AADatePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AADatePickerView.h; path = Classes/Custom/AADatePickerView.h; sourceTree = "<group>"; };
+		4A8DDC6D1C1D63C40030D136 /* AADatePickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AADatePickerView.m; path = Classes/Custom/AADatePickerView.m; sourceTree = "<group>"; };
+		4A8DDC6E1C1D63C40030D136 /* AADatePickerViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AADatePickerViewDelegate.h; path = Classes/Custom/AADatePickerViewDelegate.h; sourceTree = "<group>"; };
 		4AEBA3A61C1C7A8D0029A4BE /* contactVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = contactVC.h; path = Classes/contactVC.h; sourceTree = "<group>"; };
 		4AEBA3A71C1C7A8D0029A4BE /* contactVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = contactVC.m; path = Classes/contactVC.m; sourceTree = "<group>"; };
 		4AEBA3A91C1C7A9D0029A4BE /* AAContactHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AAContactHelper.h; path = Classes/AAContactHelper.h; sourceTree = "<group>"; };
@@ -435,6 +443,12 @@
 		4A5550641C15FC1300872392 /* Custom Control */ = {
 			isa = PBXGroup;
 			children = (
+				4A8DDC6A1C1D63C40030D136 /* AABasePopupView.m */,
+				4A8DDC6B1C1D63C40030D136 /* AABasePopupViewDelegate.h */,
+				4A8DDC6C1C1D63C40030D136 /* AADatePickerView.h */,
+				4A8DDC6D1C1D63C40030D136 /* AADatePickerView.m */,
+				4A8DDC6E1C1D63C40030D136 /* AADatePickerViewDelegate.h */,
+				4A8DDC691C1D63AC0030D136 /* AABasePopupView.h */,
 				4AEBA3AF1C1C7B330029A4BE /* AAValidationTextView.h */,
 				4AEBA3B01C1C7B330029A4BE /* AAValidationTextView.m */,
 				4AEBA3B11C1C7B330029A4BE /* AAValidationTextViewDelegate.h */,
@@ -696,6 +710,7 @@
 				B67B3C521C16E5760008A088 /* loginVC.m in Sources */,
 				4AEBA3BD1C1C94F70029A4BE /* AAOrderHistoryHelper.m in Sources */,
 				4AEBA3F11C1C970A0029A4BE /* SDWebImageManager.m in Sources */,
+				4A8DDC6F1C1D63C40030D136 /* AABasePopupView.m in Sources */,
 				4A1A88561C187B0300011510 /* AAUtils.m in Sources */,
 				4A5550621C15FB0500872392 /* SellerAccountVC.m in Sources */,
 				4AEBA3EE1C1C970A0029A4BE /* SDWebImageDecoder.m in Sources */,
@@ -739,6 +754,7 @@
 				846531621C1AFD3E0023871D /* invalidVoucherVC.m in Sources */,
 				4A5550501C15F53500872392 /* AASideMenuViewController.m in Sources */,
 				4AEBA3AB1C1C7A9D0029A4BE /* AAContactHelper.m in Sources */,
+				4A8DDC701C1D63C40030D136 /* AADatePickerView.m in Sources */,
 				4AEBA3F01C1C970A0029A4BE /* SDWebImageDownloaderOperation.m in Sources */,
 				4A1A886F1C18962900011510 /* AANetworkHandler.m in Sources */,
 				4A55505D1C15F70B00872392 /* AAAppGlobals.m in Sources */,

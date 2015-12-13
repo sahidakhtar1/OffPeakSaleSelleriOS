@@ -10,6 +10,8 @@
 
 @interface SellerDashBoardHelper : NSObject
 +(void)getSellerInfoEmailId:(NSString*)emailId
-         withCompletionBlock : (void(^)(NSDictionary *))success
-                  andFailure : (void(^)(NSString*)) failure;
+                  startDate:(NSString*)startDate
+                    endDate:(NSString*)endDate
+       withCompletionBlock : (void(^)(NSDictionary *))success
+                andFailure : (void(^)(NSString*)) failure;
 @end

@@ -278,7 +278,7 @@ NSString* const GOOGLE_MAPS_API_KEY = @"AIzaSyB3-2-YcL8bw7mqp6PQv4Hr6QsY84oXbpE"
 
 -(NSString*)convertDateToString:(NSDate*)date{
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    [formatter setDateFormat:@"dd-MMM-YYYY"];
+    [formatter setDateFormat:@"dd-MM-YYYY"];
     NSString *dateStr = [formatter stringFromDate:date];
     return dateStr;
 }

@@ -13,11 +13,15 @@ static NSString* const JSON_RETAILER_ID_KEY = @"retailerId";
 static NSString* const JSON_ERROR_CODE_KEY = @"errorCode";
 static NSString* const JSON_DATA_KEY = @"data";
 +(void)getSellerInfoEmailId:(NSString*)emailId
+                  startDate:(NSString*)startDate
+                    endDate:(NSString*)endDate
          withCompletionBlock : (void(^)(NSDictionary *))success
                   andFailure : (void(^)(NSString*)) failure{
     
     NSMutableDictionary* params = [[NSMutableDictionary alloc] init];
     [params setObject:emailId forKey:@"email"];
+    [params setValue:startDate forKey:@"startDate"];
+    [params setValue:endDate forKey:@"endDate"];
     [params setObject:RETAILER_ID forKey:JSON_RETAILER_ID_KEY];
     
     [[UIApplication sharedApplication] beginIgnoringInteractionEvents];
