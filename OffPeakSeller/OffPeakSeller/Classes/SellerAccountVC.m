@@ -18,7 +18,7 @@
 @end
 
 @implementation SellerAccountVC
-@synthesize menuView,circularProgressView,RedeemedValueLabel,companyDetailsTableView,UnitsSoldValueLabel,titleLabel;
+@synthesize menuView,circularProgressView,RedeemedValueLabel,companyDetailsTableView,UnitsSoldValueLabel,titleLabel,percentageLabel,locationValueButton,startdateValueButton,enddateValueButton,companyNameValueLabel,contactValueLabel,EmailValueLabel;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -28,6 +28,12 @@
     dictioanaryKeys=[[NSMutableArray alloc]initWithObjects:@"company_name",@"phone_num",@"email",@"country", nil];
     
     circularProgressView.backgroundColor=[UIColor clearColor];
+    
+    locationValueButton.titleLabel.textAlignment=NSTextAlignmentRight;
+    startdateValueButton.titleLabel.textAlignment=NSTextAlignmentRight;
+    enddateValueButton.titleLabel.textAlignment=NSTextAlignmentRight;
+    
+    percentageLabel.text=@"40 %";
     
     self.progressView = [[DACircularProgressView alloc] initWithFrame:CGRectMake(0, 0, circularProgressView.frame.size.width, circularProgressView.frame.size.height)];
     self.progressView.roundedCorners = NO;
@@ -121,6 +127,15 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+- (IBAction)location:(id)sender {
+}
+
+- (IBAction)startDate:(id)sender {
+}
+
+- (IBAction)endDate:(id)sender {
+}
 
 - (IBAction)activateQRCode:(id)sender {
    

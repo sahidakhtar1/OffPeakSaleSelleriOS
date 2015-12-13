@@ -28,24 +28,24 @@
 
     self.window.backgroundColor=[UIColor whiteColor];
     
-   // [self showRedeemVoucher];
+    [self showRedeemVoucher];
     
-    [[AAAppGlobals sharedInstance] loadDataFromUserDefaults];
-    [AARetailerInfoHelper processRetailerInformationWithCompletionBlock:^{
-        
-        [self showSplashScreen];
-        
-    } andFailure:^(NSString *error) {
-        if([AAAppGlobals sharedInstance].retailer)
-        {
-            
-            [self showSplashScreen];
-        }
-        else
-        {
-            
-        }
-    }];
+//    [[AAAppGlobals sharedInstance] loadDataFromUserDefaults];
+//    [AARetailerInfoHelper processRetailerInformationWithCompletionBlock:^{
+//        
+//        [self showSplashScreen];
+//        
+//    } andFailure:^(NSString *error) {
+//        if([AAAppGlobals sharedInstance].retailer)
+//        {
+//            
+//            [self showSplashScreen];
+//        }
+//        else
+//        {
+//            
+//        }
+//    }];
     return YES;
 }
 
@@ -77,7 +77,7 @@
     
     UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     //    AAHomeViewController* mainViewController = [storyboard instantiateViewControllerWithIdentifier:@"AAHomeViewController"];
-    invalidVoucherVC *splashVC = [storyboard instantiateViewControllerWithIdentifier:@"invalidVoucherVC"];
+    SellerAccountVC *splashVC = [storyboard instantiateViewControllerWithIdentifier:@"SellerAccountVC"];
     UINavigationController *splashController=[[UINavigationController alloc]initWithRootViewController:splashVC];
     [self.window setRootViewController:splashController];
     

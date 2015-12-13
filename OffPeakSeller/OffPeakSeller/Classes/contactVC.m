@@ -71,8 +71,6 @@
     self.nameTextFiled.leftView=[self getLeftPadding];
     self.emailTextField.leftView=[self getLeftPadding];
     self.subjectTextfield.leftView=[self getLeftPadding];
-    
-    
 }
 
 - (void)didReceiveMemoryWarning {
