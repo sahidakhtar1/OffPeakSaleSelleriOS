@@ -11,6 +11,7 @@
 #import "AAOrderItemCell.h"
 #import "UIImageView+WebCache.h"
 #import "AAOrderDetailView.h"
+#import "AAThemeGlossyButton.h"
 static NSString *name = @"name";
 static NSString *new_price = @"new_price";
 static NSString *product_img = @"product_img";
@@ -27,10 +28,14 @@ static NSString *products = @"products";
 @property (weak, nonatomic) IBOutlet UITableView *tbOrderItems;
 @property (nonatomic, strong) NSArray *orderedItems;
 @property (nonatomic, strong) UIImageView *imgQRCode;
+@property (weak, nonatomic) IBOutlet UIButton *btnCancel;
+@property (weak, nonatomic) IBOutlet AAThemeGlossyButton *btnRedeem;
 
 @property (nonatomic, strong) AAOrderDetailView *orderDetailView;
 - (IBAction)btnBackTapped:(id)sender;
 - (IBAction)btnQRCodeTapped:(id)sender;
+- (IBAction)btnCancelTapped:(id)sender;
+- (IBAction)btnRedeemTapped:(id)sender;
 
 @end
 
@@ -40,6 +45,11 @@ static NSString *products = @"products";
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.lblTitle.text = self.pageTitle;
+    [self.btnCancel.layer setCornerRadius:4.0];
+    self.btnCancel.backgroundColor = [UIColor colorWithRed:28/255.0f green:99/255.0f blue:178/255.0f alpha:1];
+    self.btnCancel.titleLabel.textColor = [UIColor whiteColor];
+    [self.btnCancel.titleLabel setFont:[UIFont fontWithName:[AAAppGlobals sharedInstance].boldFont size:BUTTON_FONTSIZE]];
+    [self.btnRedeem.titleLabel setFont:[UIFont fontWithName:[AAAppGlobals sharedInstance].boldFont size:BUTTON_FONTSIZE]];
     [self.lblTitle setFont:[UIFont fontWithName:[AAAppGlobals sharedInstance].boldFont size:TITLE_FONTSIZE]];
     [self.btnQRCode.titleLabel setFont:[UIFont fontWithName:[AAAppGlobals sharedInstance].normalFont size:BUTTON_FONTSIZE]];
     [self.btnQRCode setTitleColor:[AAColor sharedInstance].retailerThemeTextColor forState:UIControlStateNormal];
@@ -51,6 +61,7 @@ static NSString *products = @"products";
         
         [self.btnBack setImage:[UIImage imageNamed:@"back_button_black"] forState:UIControlStateNormal];
     }
+    
     self.imgQRCode = [[UIImageView alloc] initWithFrame:CGRectMake(0, 40, 150, 150)];
     CGPoint center = self.imgQRCode.center;
     center.x = self.view.frame.size.width/2;
@@ -93,6 +104,12 @@ static NSString *products = @"products";
 }
 
 - (IBAction)btnQRCodeTapped:(id)sender {
+}
+
+- (IBAction)btnCancelTapped:(id)sender {
+}
+
+- (IBAction)btnRedeemTapped:(id)sender {
 }
 -(void)nameTappaed{
 }

@@ -72,4 +72,5 @@ NSString* const NOTIFICATION_THEME_CHANGED = @"ThemeChanged";
         return [super automaticallyNotifiesObserversForKey:key];
     }
 }
+
 @end
