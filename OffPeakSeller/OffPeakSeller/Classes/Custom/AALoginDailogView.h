@@ -10,6 +10,9 @@
 #import "AAThemeGlossyButton.h"
 #import "AAThemeValidationTextField.h"
 #import "AAFilterDropDownScrollView.h"
+
+@class  contactVC;
+
 @protocol AALoginDailogDelegate <NSObject>
 
 -(void)loginButtonTappedwithemailId:(NSString*)email andPassword:(NSString*)password;
@@ -55,5 +58,7 @@ typedef enum FormType{
 - (IBAction)btnForgotPasswordTapped:(id)sender;
 - (IBAction)btnCloseTapped:(id)sender;
 -(void)refreshView;
+
+@property (nonatomic, strong) contactVC *contactVC;
 
 @end

@@ -42,6 +42,10 @@
     [self.lblOr setFont:[UIFont fontWithName:[AAAppGlobals sharedInstance].normalFont size:DASHBOARD_FIELD_TEXT_SIZE]];
     [self.lblEnterCode setFont:[UIFont fontWithName:[AAAppGlobals sharedInstance].normalFont size:DASHBOARD_FIELD_TEXT_SIZE]];
 }
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [self.orderIdField resignFirstResponder];
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -60,6 +64,7 @@
     [appDelegate.revealController presentViewController:scannerVC animated:YES completion:nil];
 }
 - (IBAction)goButton:(id)sender {
+    [self.orderIdField resignFirstResponder];
     if (self.orderIdField.text ==  nil || [self.orderIdField.text isEqualToString:@""]) {
         [[[UIAlertView alloc] initWithTitle:@"" message:@"Please enter voucher code" delegate:nil cancelButtonTitle:@"Okay" otherButtonTitles: nil] show];
     }else{

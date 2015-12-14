@@ -132,10 +132,10 @@ static NSString* const DATE_FORMAT = @"dd-MM-yyyy";
         percentageLabel.text= [NSString stringWithFormat:@"%.0f%@",percentage*100,percetageSymbol];
         
         self.lblCompanyValue.text = [self.sellerInfoDict valueForKey:@"company_name"];
-        if ([[self.sellerInfoDict valueForKey:@"phone_num"] isKindOfClass:[NSNull class]]) {
+        if ([[self.sellerInfoDict valueForKey:@"phone"] isKindOfClass:[NSNull class]]) {
             
         }else{
-            self.lblConatctValue.text = [self.sellerInfoDict valueForKey:@"phone_num"];
+            self.lblConatctValue.text = [self.sellerInfoDict valueForKey:@"phone"];
         }
         
         self.lblEmailValue.text = [self.sellerInfoDict valueForKey:@"email"];

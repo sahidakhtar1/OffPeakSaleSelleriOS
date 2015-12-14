@@ -33,10 +33,10 @@
     self.urlLinkLabel.text=[AAAppGlobals sharedInstance].retailer.retailerPoweredBy;
     self.urlLinkLabel.textColor=[UIColor blueColor];
     self.splashScreenImageURL = [AAAppGlobals sharedInstance].retailer.splashScreenURLString;
-    
+    [self adjustLabels];
     if(self.splashScreenImageURL)
     {
-//        [self adjustLabels];
+       
         NSString *compLogoName = [self.splashScreenImageURL lastPathComponent];
         NSArray *paths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
         NSString *path = [paths objectAtIndex:0];
@@ -144,4 +144,22 @@
     self.urlLinkLabel.frame = frameRetailerPoweredBy;
     [self.urlLinkLabel setText:[AAAppGlobals sharedInstance].retailer.retailerPoweredBy];
 }
+//-(void)adjustLabels
+//{
+//    CGFloat labelWidth = self.poweredByLabel.frame.size.width;
+//    
+//    CGSize lblRetailerPoweredBySize = [AAUtils getTextSizeWithFont:self.urlLinkLabel.font andText:[AAAppGlobals sharedInstance].retailer.retailerPoweredBy andMaxWidth:self.view.frame.size.width];
+//    CGFloat totalWidth = labelWidth + lblRetailerPoweredBySize.width;
+//    
+//    CGFloat originX = ceilf((self.view.frame.size.width - totalWidth)/2);
+//    
+//    CGRect framePoweredBy = self.poweredByLabel.frame;
+//    framePoweredBy.origin.x = originX;
+//    self.poweredByLabel.frame = framePoweredBy;
+//    CGRect frameRetailerPoweredBy = self.urlLinkLabel.frame;
+//    frameRetailerPoweredBy.size.width = lblRetailerPoweredBySize.width;
+//    frameRetailerPoweredBy.origin.x = framePoweredBy.origin.x + framePoweredBy.size.width;
+//    self.urlLinkLabel.frame = frameRetailerPoweredBy;
+//    [self.urlLinkLabel setText:[AAAppGlobals sharedInstance].retailer.retailerPoweredBy];
+//}
 @end

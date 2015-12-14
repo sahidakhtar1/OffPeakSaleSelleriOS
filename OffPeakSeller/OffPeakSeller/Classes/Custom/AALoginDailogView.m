@@ -10,6 +10,7 @@
 #import "AALoginHelper.h"
 #import "AACountriesHelper.h"
 #import "AppDelegate.h"
+#import "contactVC.h"
 
 static NSString* const JSON_RETAILER_ID_KEY = @"retailerId";
 static NSString* const COUNTRY_CODE_KEY = @"countryCode";
@@ -39,6 +40,9 @@ static NSString* const COUNTRY_NAME_KEY = @"countryName";
     [super viewDidLoad];
     [self refreshView];
     [self populateCountries];
+//    CGRect frame  = self.view.frame;
+//    frame.origin.y = -20;
+//    self.view.frame = frame;
 }
 
 -(void)refreshView{
@@ -94,7 +98,14 @@ static NSString* const COUNTRY_NAME_KEY = @"countryName";
 }
 
 - (IBAction)btnNeedHelpTapped:(id)sender {
-    
+    UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    self.contactVC = [storyboard instantiateViewControllerWithIdentifier:@"contactVC"];
+    self.contactVC.pageTitle = @"Need Help";
+    self.contactVC.fromLogin = true;
+//    [self.navigationController pushViewController:contactVC animated:YES];
+    [self presentViewController:self.contactVC animated:YES completion:^{
+        
+    }];
 }
 
 - (IBAction)btnLogintapped:(id)sender {
@@ -172,44 +183,16 @@ static NSString* const COUNTRY_NAME_KEY = @"countryName";
         [self showCountriesDropDownMenu];
         return false;
     }
+    [self performSelector:@selector(removeCountryDropDwon) withObject:nil afterDelay:1];
     return true;
 }
 -(void)textFieldDidBeginEditing:(UITextField *)textField{
-//    CGRect rect = [UIScreen mainScreen].bounds;
-//    if (textField == self.tfemailaddress || textField == self.tfPassword) {
-//        [UIView animateWithDuration:.5 animations:^(void){
-//            CGRect frame = self.vwContainerView.frame;
-//            
-//            float endPoint = frame.origin.y + frame.size.height;
-//            if ((rect.size.height - 216)<endPoint) {
-//                frame.origin.y -= endPoint - (rect.size.height -216);
-//            }
-//            self.vwContainerView.frame = frame;
-//        }
-//                         completion:nil];
-//       
-//    }else if(textField == self.tfFPEmailId){
-//        [UIView animateWithDuration:.5 animations:^(void){
-//            CGRect frame = self.veForgotPasswordView.frame;
-//            
-//            float endPoint = frame.origin.y + frame.size.height;
-//            if ((rect.size.height - 216)<endPoint) {
-//                frame.origin.y -= endPoint - (rect.size.height -216);
-//            }
-//            self.veForgotPasswordView.frame = frame;
-//        }
-//                         completion:nil];
-//    }
+    
     
 }
 -(BOOL)textFieldShouldReturn:(UITextField *)textField{
     [textField resignFirstResponder];
-//    CGRect rect = [UIScreen mainScreen].bounds;
-//    if (textField == self.tfemailaddress || textField == self.tfPassword) {
-//        self.vwContainerView.center = CGPointMake(self.vwContainerView.center.x, rect.size.height/2);
-//    }else if (textField == self.tfFPEmailId){
-//        self.veForgotPasswordView.center = CGPointMake(self.vwContainerView.center.x, rect.size.height/2);
-//    }
+    [self performSelector:@selector(removeCountryDropDwon) withObject:nil afterDelay:1];
     return YES;
 }
 -(void)userLoginSucessfully{
@@ -274,9 +257,14 @@ static NSString* const COUNTRY_NAME_KEY = @"countryName";
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     [self.tfemailaddress resignFirstResponder];
     [self.tfPassword resignFirstResponder];
-    [self.dropDownScrollViewCountries removeFromSuperview];
+    [self performSelector:@selector(removeCountryDropDwon) withObject:nil afterDelay:1];
 }
-
+-(void)removeCountryDropDwon{
+    [self.dropDownScrollViewCountries removeFromSuperview];
+    CGRect frame =self.view.frame;
+    frame.origin.y = 0;
+    self.view.frame  =frame;
+}
 -(void)populateCountries
 {
     
@@ -311,12 +299,27 @@ static NSString* const COUNTRY_NAME_KEY = @"countryName";
     [self.view addSubview:self.dropDownScrollViewCountries];
     [self.scrollViewFieldsContainter scrollRectToVisible:self.dropDownScrollViewCountries.frame animated:YES];
     [self.dropDownScrollViewCountries.hiddenTexfield becomeFirstResponder];
+    
+    float dropDownEnd = self.tfCountry.frame.origin.y+self.tfCountry.frame.size.height + 90;
+    if (dropDownEnd+260>self.view.frame.size.height) {
+        float diff = (dropDownEnd +260) - self.view.frame.size.height;
+        [UIView animateWithDuration:.5 animations:^{
+            CGRect frame =self.view.frame;
+            frame.origin.y = -diff;
+            self.view.frame  =frame;
+        } completion:^(BOOL finished) {
+            
+        }];
+    }
 }
 #pragma mark - Scroll view delegate callbacks
 -(void)onDropDownMenuItemSelected:(id)dropDownScrollView withItemName:(NSString *)itemName
 {
     self.tfCountry.text = itemName;
     [dropDownScrollView removeFromSuperview];
+    CGRect frame =self.view.frame;
+    frame.origin.y = 0;
+    self.view.frame  =frame;
     
 }
 -(NSString*)getCountryCodeWithCountryName:(NSString*)countryName

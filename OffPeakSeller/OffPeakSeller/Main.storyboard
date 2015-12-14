@@ -579,7 +579,7 @@
                         <outlet property="lblEnterCode" destination="sq3-d2-k21" id="7I3-vq-Pyq"/>
                         <outlet property="lblOr" destination="fZ0-S3-okT" id="g0j-cg-Qcm"/>
                         <outlet property="menuView" destination="etD-Zu-OSE" id="MdM-T8-xLN"/>
-                        <outlet property="orderIdField" destination="bCF-LT-gdI" id="bNz-ar-xRg"/>
+                        <outlet property="orderIdField" destination="bCF-LT-gdI" id="hW6-nP-OJt"/>
                         <outlet property="titleLabel" destination="sAo-a4-Ktg" id="B5s-bJ-ykP"/>
                     </connections>
                 </viewController>

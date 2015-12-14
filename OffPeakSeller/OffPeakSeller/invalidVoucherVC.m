@@ -54,7 +54,7 @@
     
 }
 -(void)setFont{
-    [self.lblMsg setFont:[UIFont fontWithName:[AAAppGlobals sharedInstance].boldFont size:VOUCHER_MSG_TEXT_SIZE]];
+    [self.lblMsg setFont:[UIFont fontWithName:[AAAppGlobals sharedInstance].normalFont size:VOUCHER_MSG_TEXT_SIZE]];
     [self.lblDateMsg setFont:[UIFont fontWithName:[AAAppGlobals sharedInstance].normalFont size:VOUCHER__DATE_MSG_TEXT_SIZE]];
 }
 - (IBAction)Ok:(id)sender {

@@ -116,6 +116,9 @@
     NSString *emilId = [[NSUserDefaults standardUserDefaults] objectForKey:KEY_EMAIL];
     if (emilId == nil || [emilId isEqualToString:@""]) {
         AALoginDailogView *loginView = [[AALoginDailogView alloc] initWithNibName:nil bundle:nil];
+        UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:loginView];
+//        SWRevealViewController *revealController1 = [[SWRevealViewController alloc] initWithRearViewController:nil frontViewController:nav];
+        nav.navigationBarHidden = true;
         [self.window setRootViewController:loginView];
     }else{
         [self showMainScreen];

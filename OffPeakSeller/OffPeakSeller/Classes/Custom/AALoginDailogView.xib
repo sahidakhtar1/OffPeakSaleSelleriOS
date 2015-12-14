@@ -137,8 +137,9 @@
             <animations/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <nil key="simulatedStatusBarMetrics"/>
+            <nil key="simulatedTopBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="-524" y="47"/>
+            <point key="canvasLocation" x="-637" y="-165"/>
         </view>
         <view contentMode="scaleToFill" id="BQU-MZ-Xtd">
             <rect key="frame" x="0.0" y="0.0" width="280" height="148"/>

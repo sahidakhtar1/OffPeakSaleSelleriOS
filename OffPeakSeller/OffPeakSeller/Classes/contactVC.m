@@ -28,7 +28,13 @@
     [self.menuView addSubview:headerView];
     [headerView setTitle:self.pageTitle];
     headerView.showCart = false;
-    headerView.showBack = false;
+    if (self.fromLogin) {
+       headerView.showBack = true;
+        headerView.delegate = self;
+    }else{
+       headerView.showBack = false;
+    }
+    
     [headerView setMenuIcons];
     self.messageTextView.placeHolderText = @"Message";
     self.messageTextView.textColor = [UIColor blackColor];
@@ -72,7 +78,11 @@
     self.emailTextField.leftView=[self getLeftPadding];
     self.subjectTextfield.leftView=[self getLeftPadding];
 }
-
+-(void)backButtonTapped{
+    if (self.fromLogin) {
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -133,6 +143,9 @@
             UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:@"" message:msg delegate:self cancelButtonTitle:@"Okay" otherButtonTitles: nil];
             [alertView show];
             [self clearFields];
+            if (self.fromLogin) {
+                [self dismissViewControllerAnimated:YES completion:nil];
+            }
         } andFailure:^(NSString *msg) {
             UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:@"" message:msg delegate:self cancelButtonTitle:@"Okay" otherButtonTitles: nil];
             [alertView show];

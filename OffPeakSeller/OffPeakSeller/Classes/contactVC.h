@@ -27,5 +27,6 @@
 @property (nonatomic,retain) IBOutlet UIView *menuView;
 
 @property (nonatomic, strong) NSString *pageTitle;
+@property (nonatomic) BOOL fromLogin;
 
 @end
