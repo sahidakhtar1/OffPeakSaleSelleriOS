@@ -129,7 +129,7 @@ static NSString* const DATE_FORMAT = @"dd-MM-yyyy";
         float percentage = redeemed/sold;
         [self.progressView setProgress:percentage animated:YES];
         NSString *percetageSymbol= @"%";
-        percentageLabel.text= [NSString stringWithFormat:@"%.0f%@",percentage*100,percetageSymbol];
+        percentageLabel.text= [NSString stringWithFormat:@"%.0f",percentage*100];
         
         self.lblCompanyValue.text = [self.sellerInfoDict valueForKey:@"company_name"];
         if ([[self.sellerInfoDict valueForKey:@"phone"] isKindOfClass:[NSNull class]]) {
