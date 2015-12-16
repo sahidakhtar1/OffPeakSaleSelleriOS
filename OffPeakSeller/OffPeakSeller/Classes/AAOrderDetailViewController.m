@@ -208,6 +208,7 @@ static NSString *products = @"products";
     frame.size.height = productTextSize.height;
     cell.lblDescription.frame  = frame;
     cell.lblDescription.text = productShortDescription;
+    cell.lblDescription.textColor = [AAColor sharedInstance].retailerThemeBackgroundColor;
     
     float cellHieght = frame.origin.y + frame.size.height+ITEM_GAP+5;
     if ([oprionValue length] == 0) {
@@ -317,9 +318,8 @@ static NSString *products = @"products";
      setAttributedText:[self getAttributedString:@"Telephone" andValue:outletContact]];
 //    [self.orderDetailView.lblDistance
 //     setAttributedText:[self getAttributedString:@"Telephone" andValue:outletContact]];
-    [self.orderDetailView.lblStatus
-     setAttributedText:[self getAttributedString:@"Status" andValue:orderStatus]];
     
+    NSString *statusValue = orderStatus;
     if ([orderStatus isEqualToString:@"Redeemed"]) {
         self.orderDetailView.lblExpiry.attributedText =[self getAttributedString:@"Redeemed On" andValue:orderUsedOn];
         [self.imgQRCode setImage:[UIImage imageNamed:@"redeemed_icon"]];
@@ -338,13 +338,11 @@ static NSString *products = @"products";
             date = [dateComp objectAtIndex:0];
         }
         self.orderDetailView.lblExpiry.attributedText = [self getAttributedString:@"Expiry Date" andValue:date];
-//        NSString *qrCodeUrl = [NSString stringWithFormat:@"https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=%@",orderId];
-//        [self.imgQRCode setImageWithURL:[NSURL URLWithString:qrCodeUrl]
-//                              completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType) {
-//                              }];
+        statusValue = @"Active";
     }
     
-    
+    [self.orderDetailView.lblStatus
+     setAttributedText:[self getAttributedString:@"Status" andValue:orderStatus]];
     CGRect frame = self.orderDetailView.vwDevider.frame;
     frame.origin.y = self.orderDetailView.lblExpiry.frame.origin.y + self.orderDetailView.lblExpiry.frame.size.height+10;
     self.orderDetailView.vwDevider.frame = frame;

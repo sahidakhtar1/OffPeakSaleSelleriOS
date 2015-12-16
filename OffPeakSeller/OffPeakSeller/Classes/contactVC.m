@@ -77,6 +77,8 @@
     self.nameTextFiled.leftView=[self getLeftPadding];
     self.emailTextField.leftView=[self getLeftPadding];
     self.subjectTextfield.leftView=[self getLeftPadding];
+    self.messageTextView.layer.borderColor = [AAColor sharedInstance].textFieldDefaultBorader.CGColor;
+    self.messageTextView.layer.backgroundColor = [UIColor whiteColor].CGColor;
 }
 -(void)backButtonTapped{
     if (self.fromLogin) {
