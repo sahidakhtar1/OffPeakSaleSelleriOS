@@ -20,7 +20,7 @@ static NSString* const JSON_DATA_KEY = @"data";
     NSDictionary* params = [[NSDictionary alloc]
                             initWithObjectsAndKeys:RETAILER_ID,JSON_RETAILER_ID_KEY,
                             emailID,@"email",
-                            retailerMail,@"retailerMail",
+                            emailID,@"sellerId",
                             orderId,@"transactionId", nil];
     AANetworkHandler *networkHandler = [[AANetworkHandler alloc] init];
     [networkHandler

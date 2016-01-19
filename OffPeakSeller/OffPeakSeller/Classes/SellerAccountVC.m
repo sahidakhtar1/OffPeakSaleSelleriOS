@@ -13,6 +13,8 @@
 #import "AAThemeLabel.h"
 #import "SellerDashBoardHelper.h"
 #import "AADatePickerView.h"
+#import "AAThemeGlossyButton.h"
+
 @interface SellerAccountVC ()
 @property (nonatomic, strong) NSDictionary *sellerInfoDict;
 @property (nonatomic, strong) DACircularProgressView *progressView;
@@ -35,6 +37,28 @@
 
 @property (nonatomic,strong) NSDate *startDate;
 @property (nonatomic, strong) NSDate *endDate;
+
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+@property (weak, nonatomic) IBOutlet UIView *vwDetailContainer;
+@property (weak, nonatomic) IBOutlet UIView *vwStats;
+@property (weak, nonatomic) IBOutlet AAThemeGlossyButton *btnShowHideDetails;
+
+@property (weak, nonatomic) IBOutlet UILabel *lblListPrice;
+@property (weak, nonatomic) IBOutlet UILabel *lblListPriceValue;
+@property (weak, nonatomic) IBOutlet UILabel *lblDiscount;
+@property (weak, nonatomic) IBOutlet UILabel *lblDiscountValue;
+@property (weak, nonatomic) IBOutlet UILabel *lblGateway;
+@property (weak, nonatomic) IBOutlet UILabel *lblGateWayValue;
+@property (weak, nonatomic) IBOutlet UILabel *lblSalesComission;
+@property (weak, nonatomic) IBOutlet UILabel *lblSalesComisstionValue;
+@property (weak, nonatomic) IBOutlet UILabel *lblUnitProceed;
+@property (weak, nonatomic) IBOutlet UILabel *lblUnitProceedValue;
+@property (weak, nonatomic) IBOutlet UILabel *lblTotalProceed;
+@property (weak, nonatomic) IBOutlet UILabel *lblTotalProceedValue;
+
+
+- (IBAction)btnShowHideTapped:(id)sender;
+
 @end
 static NSString* const DATE_FORMAT = @"dd-MM-yyyy";
 @implementation SellerAccountVC
@@ -88,6 +112,24 @@ static NSString* const DATE_FORMAT = @"dd-MM-yyyy";
     [self.lblEndDate setFont:[UIFont fontWithName:[AAAppGlobals sharedInstance].boldFont size:DASHBOARD_FIELD_TEXT_SIZE]];
     [self.btnEndDate.titleLabel setFont:[UIFont fontWithName:[AAAppGlobals sharedInstance].normalFont size:DASHBOARD_FIELD_TEXT_SIZE]];
     
+    [self.lblListPrice setFont:[UIFont fontWithName:[AAAppGlobals sharedInstance].boldFont size:DASHBOARD_FIELD_TEXT_SIZE]];
+    [self.lblListPriceValue setFont:[UIFont fontWithName:[AAAppGlobals sharedInstance].normalFont size:DASHBOARD_FIELD_TEXT_SIZE]];
+    
+    [self.lblDiscount setFont:[UIFont fontWithName:[AAAppGlobals sharedInstance].boldFont size:DASHBOARD_FIELD_TEXT_SIZE]];
+    [self.lblDiscountValue setFont:[UIFont fontWithName:[AAAppGlobals sharedInstance].normalFont size:DASHBOARD_FIELD_TEXT_SIZE]];
+    
+    [self.lblGateway setFont:[UIFont fontWithName:[AAAppGlobals sharedInstance].boldFont size:DASHBOARD_FIELD_TEXT_SIZE]];
+    [self.lblGateWayValue setFont:[UIFont fontWithName:[AAAppGlobals sharedInstance].normalFont size:DASHBOARD_FIELD_TEXT_SIZE]];
+    
+    [self.lblSalesComission setFont:[UIFont fontWithName:[AAAppGlobals sharedInstance].boldFont size:DASHBOARD_FIELD_TEXT_SIZE]];
+    [self.lblSalesComisstionValue setFont:[UIFont fontWithName:[AAAppGlobals sharedInstance].normalFont size:DASHBOARD_FIELD_TEXT_SIZE]];
+    
+    [self.lblUnitProceed setFont:[UIFont fontWithName:[AAAppGlobals sharedInstance].boldFont size:DASHBOARD_FIELD_TEXT_SIZE]];
+    [self.lblUnitProceedValue setFont:[UIFont fontWithName:[AAAppGlobals sharedInstance].normalFont size:DASHBOARD_FIELD_TEXT_SIZE]];
+    
+    [self.lblTotalProceed setFont:[UIFont fontWithName:[AAAppGlobals sharedInstance].boldFont size:DASHBOARD_FIELD_TEXT_SIZE]];
+    [self.lblTotalProceedValue setFont:[UIFont fontWithName:[AAAppGlobals sharedInstance].normalFont size:DASHBOARD_FIELD_TEXT_SIZE]];
+    
     [self.lblRedeemed setFont:[UIFont fontWithName:[AAAppGlobals sharedInstance].normalFont size:DASHBOARD_FIELD_TEXT_SIZE]];
     [self.lblSold setFont:[UIFont fontWithName:[AAAppGlobals sharedInstance].normalFont size:DASHBOARD_FIELD_TEXT_SIZE]];
     
@@ -140,6 +182,15 @@ static NSString* const DATE_FORMAT = @"dd-MM-yyyy";
         
         self.lblEmailValue.text = [self.sellerInfoDict valueForKey:@"email"];
         [self.btnLocationValue setTitle:[self.sellerInfoDict valueForKey:@"country"] forState:UIControlStateNormal] ;
+         
+         
+         self.lblListPriceValue.text = [NSString stringWithFormat:@"$%@",[self.sellerInfoDict valueForKey:@"listPrice"]];
+         self.lblDiscountValue.text = [NSString stringWithFormat:@"%@%@",[self.sellerInfoDict valueForKey:@"discount"],percetageSymbol];
+         self.lblGateWayValue.text = [NSString stringWithFormat:@"%@%@",[self.sellerInfoDict valueForKey:@"payComm"],percetageSymbol];
+         self.lblSalesComisstionValue.text = [NSString stringWithFormat:@"%@%@",[self.sellerInfoDict valueForKey:@"saleComm"],percetageSymbol];
+         self.lblUnitProceedValue.text = [NSString stringWithFormat:@"$%@",[self.sellerInfoDict valueForKey:@"unitPrice"]];
+         self.lblTotalProceedValue.text = [NSString stringWithFormat:@"$%@",[self.sellerInfoDict valueForKey:@"totalAmtSold"]];
+         
     } andFailure:^(NSString *msg) {
         
     }];
@@ -277,5 +328,24 @@ static NSString* const DATE_FORMAT = @"dd-MM-yyyy";
     //    AAHomeViewController* mainViewController = [storyboard instantiateViewControllerWithIdentifier:@"AAHomeViewController"];
     redeemVoucherVC *redeemVC = [self.storyboard instantiateViewControllerWithIdentifier:@"redeemVoucherVC"];
     [self.navigationController pushViewController:redeemVC animated:YES];
+}
+- (IBAction)btnShowHideTapped:(id)sender {
+    float yCod;
+    if (self.btnShowHideDetails.selected) {
+        self.btnShowHideDetails.selected = NO;
+        self.vwDetailContainer.hidden = YES;
+        yCod = self.btnShowHideDetails.frame.origin.y + self.btnShowHideDetails.frame.size.height + 20;
+    }else{
+        self.btnShowHideDetails.selected = YES;
+        self.vwDetailContainer.hidden = NO;
+        yCod = self.vwDetailContainer.frame.origin.y + self.vwDetailContainer.frame.size.height + 8;
+    }
+    CGRect frame = self.vwStats.frame;
+    frame.origin.y = yCod;
+    self.vwStats.frame = frame;
+    CGSize contentSize = self.scrollView.contentSize;
+    contentSize.height = yCod + frame.size.height + 10;
+    self.scrollView.contentSize = contentSize;
+    
 }
 @end
