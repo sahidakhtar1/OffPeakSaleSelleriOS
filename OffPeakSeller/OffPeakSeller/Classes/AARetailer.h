@@ -56,6 +56,8 @@ extern NSString* const STOP_TIMER;
 @property (nonatomic, copy) NSString* enableDiscovery;
 @property (nonatomic, copy) NSString *contactAddr;
 @property (nonatomic, copy) NSString *contactPhone;
+@property (nonatomic, strong) NSString *contactName;
+@property (nonatomic, strong) NSString *contactInstr;
 @property (nonatomic,copy) NSString* button_color;
 
 

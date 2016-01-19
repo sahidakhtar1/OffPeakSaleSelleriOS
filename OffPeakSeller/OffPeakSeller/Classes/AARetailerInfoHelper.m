@@ -273,8 +273,15 @@ static NSString* const JSON_PRODUCT_SHORT_DESCRIPTION_KEY = @"short_desc";
                 {
                     retailer.contactPhone = [dictRetailer objectForKey:@"contactPhone"];
                 }
+                if([dictRetailer objectForKey:@"contactName"])
+                {
+                    retailer.contactName = [dictRetailer objectForKey:@"contactName"];
+                }
     
-    
+                if([dictRetailer objectForKey:@"contactInstr"])
+                {
+                    retailer.contactInstr = [dictRetailer objectForKey:@"contactInstr"];
+                }
     //added new fields
                 if([dictRetailer objectForKey:JSON_RETAILER_SPLASH_SCREEN_KEY])
                 {

@@ -33,7 +33,7 @@
     self.urlLinkLabel.text=[AAAppGlobals sharedInstance].retailer.retailerPoweredBy;
     self.urlLinkLabel.textColor=[UIColor blueColor];
     self.splashScreenImageURL = [AAAppGlobals sharedInstance].retailer.splashScreenURLString;
-    [self adjustLabels];
+//    [self adjustLabels];
     if(self.splashScreenImageURL)
     {
        
@@ -45,8 +45,8 @@
         UIImage *logoImage;
         if ([filemanager fileExistsAtPath:path]) {
             logoImage = [UIImage imageWithContentsOfFile:path];
-            [self.urlLinkLabel setHidden:NO];
-            [self.poweredByLabel setHidden:NO];
+            [self.urlLinkLabel setHidden:YES];
+            [self.poweredByLabel setHidden:YES];
             [self setUpTimer];
         }else{
             [self startImageDownload:[AAAppGlobals sharedInstance].retailer.splashScreenURLString forIndexPath:[NSIndexPath indexPathForRow:1 inSection:0]];
@@ -91,8 +91,8 @@
                 [filemanager createFileAtPath:path contents:imageData attributes:nil];
             }
             self.imgSplash.image = prodImage;
-            [self.urlLinkLabel setHidden:NO];
-            [self.poweredByLabel setHidden:NO];
+            [self.urlLinkLabel setHidden:YES];
+            [self.poweredByLabel setHidden:YES];
             [self setUpTimer];
         }
     }

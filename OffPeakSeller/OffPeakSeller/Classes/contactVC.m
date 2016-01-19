@@ -46,6 +46,8 @@
     
     self.btnPhone.titleLabel.font = [UIFont fontWithName:[AAAppGlobals sharedInstance].normalFont size:CONATCT_FIELD_TEXT_SIZE];
     
+    self.lblInstruction.font = [UIFont fontWithName:[AAAppGlobals sharedInstance].normalFont size:CONATCT_FIELD_TEXT_SIZE];
+    
     self.nameTextFiled.font = [UIFont fontWithName:[AAAppGlobals sharedInstance].normalFont size:CONATCT_FIELD_TEXT_SIZE];
     
     self.emailTextField.font = [UIFont fontWithName:[AAAppGlobals sharedInstance].normalFont size:CONATCT_FIELD_TEXT_SIZE];
@@ -54,7 +56,9 @@
     
      self.messageTextView.font = [UIFont fontWithName:[AAAppGlobals sharedInstance].normalFont size:CONATCT_FIELD_TEXT_SIZE];
     
+    self.titleLabel.text = [AAAppGlobals sharedInstance].retailer.contactName;
     self.addressLabel.text = [AAAppGlobals sharedInstance].retailer.contactAddr;
+    self.lblInstruction.text = [AAAppGlobals sharedInstance].retailer.contactInstr;
     [self.btnPhone setTitle:[NSString stringWithFormat:@"Phone  %@",[AAAppGlobals sharedInstance].retailer.contactPhone] forState:UIControlStateNormal];
     
     CGSize lblRetailerPoweredBySize = [AAUtils
@@ -70,8 +74,18 @@
     phoneFrame.origin.y = frame.origin.y + frame.size.height + 20;
     self.btnPhone.frame = phoneFrame;
     
+    CGSize lblInstructionSize = [AAUtils
+                                 getTextSizeWithFont:self.lblInstruction.font
+                                 andText:self.lblInstruction.text
+                                 andMaxWidth:self.lblInstruction.frame.size.width];
+    
+    CGRect instructionFrame = self.lblInstruction.frame;
+    instructionFrame.origin.y = phoneFrame.origin.y + phoneFrame.size.height + 15;
+    instructionFrame.size.height = lblInstructionSize.height;
+    self.lblInstruction.frame = instructionFrame;
+    
     CGRect containerViewFrame = self.vwFormContainer.frame;
-    containerViewFrame.origin.y = phoneFrame.origin.y + phoneFrame.size.height+ 15;
+    containerViewFrame.origin.y = instructionFrame.origin.y + instructionFrame.size.height+ 5;
     self.vwFormContainer.frame = containerViewFrame;
     
     self.nameTextFiled.leftView=[self getLeftPadding];
@@ -79,6 +93,7 @@
     self.subjectTextfield.leftView=[self getLeftPadding];
     self.messageTextView.layer.borderColor = [AAColor sharedInstance].textFieldDefaultBorader.CGColor;
     self.messageTextView.layer.backgroundColor = [UIColor whiteColor].CGColor;
+    
 }
 -(void)backButtonTapped{
     if (self.fromLogin) {
@@ -134,14 +149,12 @@
        errorMSG = @"Please enter name";
     }else if(email == nil || [email length] == 0 || ![self validateEmailId:email]){
         errorMSG = @"Please enter valid email id";
-    }else if(subject == nil || [subject length]==0){
-        errorMSG = @"Please enter subject";
     }else if(message ==  nil || [message length] == 0){
         errorMSG = @"Please enter message";
     }
     
     if (errorMSG == nil) {
-        [AAContactHelper sendContactMailWithName:name emailId:email subject:subject andMessage:message withCompletionBlock:^(NSString *msg) {
+        [AAContactHelper sendContactMailWithName:name emailId:email subject:@"" andMessage:message withCompletionBlock:^(NSString *msg) {
             UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:@"" message:msg delegate:self cancelButtonTitle:@"Okay" otherButtonTitles: nil];
             [alertView show];
             [self clearFields];

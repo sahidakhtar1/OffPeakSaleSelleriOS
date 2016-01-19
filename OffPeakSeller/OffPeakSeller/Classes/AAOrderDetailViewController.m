@@ -145,7 +145,7 @@ static NSString *products = @"products";
                              NSString *errorMessage = [orderDetail valueForKey:@"errorMessage"];
                              NSString *usedOn = [orderDetail valueForKey:@"usedOn"];
                              invalidVoucherVC *orderDetailVC = [self.storyboard instantiateViewControllerWithIdentifier:@"invalidVoucherVC"];
-                             orderDetailVC.pageTitle= @"Invalid Voucher";
+                             orderDetailVC.pageTitle= @"Invalid Order";
                              orderDetailVC.isSucess = false;
                              orderDetailVC.msg =errorMessage;
                              orderDetailVC.dateMsg =usedOn;
@@ -305,13 +305,13 @@ static NSString *products = @"products";
         NSDictionary* item = [self.orderedItems objectAtIndex:0];
         NSString *name = [item valueForKey:@"name"];
         [self.orderDetailView.lblName
-         setAttributedText:[self getAttributedString:@"Resturant name" andValue:name]];
+         setAttributedText:[self getAttributedString:@"Resturant Name" andValue:name]];
     }
     
     
     
     [self.orderDetailView.lblOrderId
-     setText:[NSString stringWithFormat:@"Order %@",orderId]];
+     setText:[NSString stringWithFormat:@"Order # %@",orderId]];
     [self.orderDetailView.lblAddress
      setAttributedText:[self getAttributedString:@"Address" andValue:outletAddr]];
     [self.orderDetailView.lblTelephone
@@ -343,7 +343,44 @@ static NSString *products = @"products";
     
     [self.orderDetailView.lblStatus
      setAttributedText:[self getAttributedString:@"Status" andValue:orderStatus]];
-    CGRect frame = self.orderDetailView.vwDevider.frame;
+    
+    CGSize size = [AAUtils getTextSizeWithFont:self.orderDetailView.lblName.font andText:self.orderDetailView.lblName.text andMaxWidth:self.orderDetailView.lblName.frame.size.width];
+    CGRect frame = self.orderDetailView.lblName.frame;
+    frame.size.height =size.height;
+    self.orderDetailView.lblName.frame = frame;
+
+    float itemGap = 5;
+    float yCod = frame.origin.y+frame.size.height + itemGap;
+    
+    size =  [AAUtils getTextSizeWithFont:self.orderDetailView.lblAddress.font andText:self.orderDetailView.lblAddress.text andMaxWidth:self.orderDetailView.lblAddress.frame.size.width];
+    frame = self.orderDetailView.lblAddress.frame;
+    frame.size.height =size.height;
+    frame.origin.y = yCod;
+    self.orderDetailView.lblAddress.frame = frame;
+    yCod += frame.size.height + itemGap;
+    
+    size =  [AAUtils getTextSizeWithFont:self.orderDetailView.lblTelephone.font andText:self.orderDetailView.lblTelephone.text andMaxWidth:self.orderDetailView.lblTelephone.frame.size.width];
+    frame = self.orderDetailView.lblTelephone.frame;
+    frame.size.height =size.height;
+    frame.origin.y = yCod;
+    self.orderDetailView.lblTelephone.frame = frame;
+    yCod += frame.size.height + itemGap;
+    
+    size =  [AAUtils getTextSizeWithFont:self.orderDetailView.lblStatus.font andText:self.orderDetailView.lblStatus.text andMaxWidth:self.orderDetailView.lblStatus.frame.size.width];
+    frame = self.orderDetailView.lblStatus.frame;
+    frame.size.height =size.height;
+    frame.origin.y = yCod;
+    self.orderDetailView.lblStatus.frame = frame;
+    yCod += frame.size.height + itemGap;
+    
+    size =  [AAUtils getTextSizeWithFont:self.orderDetailView.lblExpiry.font andText:self.orderDetailView.lblExpiry.text andMaxWidth:self.orderDetailView.lblExpiry.frame.size.width];
+    frame = self.orderDetailView.lblExpiry.frame;
+    frame.size.height =size.height;
+    frame.origin.y = yCod;
+    self.orderDetailView.lblExpiry.frame = frame;
+    yCod += frame.size.height + itemGap;
+    
+    frame = self.orderDetailView.vwDevider.frame;
     frame.origin.y = self.orderDetailView.lblExpiry.frame.origin.y + self.orderDetailView.lblExpiry.frame.size.height+10;
     self.orderDetailView.vwDevider.frame = frame;
     

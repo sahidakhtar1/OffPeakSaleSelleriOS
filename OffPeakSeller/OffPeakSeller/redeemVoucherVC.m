@@ -30,7 +30,7 @@
     
     AAHeaderView *headerView = [[AAHeaderView alloc] initWithFrame:self.menuView.frame];
     [self.menuView addSubview:headerView];
-    [headerView setTitle:@"Redeem Voucher"];
+    [headerView setTitle:@"Redeem Order"];
     headerView.showCart = false;
     headerView.showBack = true;
     headerView.delegate = self;
@@ -81,14 +81,14 @@
                       withCompletionBlock:^(NSDictionary *orderDetail) {
                           if ([[orderDetail objectForKey:@"errorCode"] isEqualToString:@"1"]) {
                               AAOrderDetailViewController *orderDetailVC = [self.storyboard instantiateViewControllerWithIdentifier:@"AAOrderDetailViewController"];
-                              orderDetailVC.pageTitle= @"Valid Voucher";
+                              orderDetailVC.pageTitle= @"Valid Order";
                               [orderDetailVC setOrderObj:[orderDetail objectForKey:@"data"]];
                               [self.navigationController pushViewController:orderDetailVC animated:YES];
                           }else{
                               NSString *errorMessage = [orderDetail valueForKey:@"errorMessage"];
                               NSString *usedOn = [orderDetail valueForKey:@"usedOn"];
                               invalidVoucherVC *orderDetailVC = [self.storyboard instantiateViewControllerWithIdentifier:@"invalidVoucherVC"];
-                              orderDetailVC.pageTitle= @"Invalid Voucher";
+                              orderDetailVC.pageTitle= @"Invalid Order";
                               orderDetailVC.isSucess = false;
                               orderDetailVC.msg =[orderDetail objectForKey:@"errorMessage"];
                               orderDetailVC.dateMsg =[orderDetail objectForKey:@"usedOn"];
