@@ -28,6 +28,8 @@
     //Powered by:
     //http://www.smartcommerce.asia
     
+    [self.urlLinkLabel setHidden:YES];
+    [self.poweredByLabel setHidden:YES];
     self.imageDownloadsInProgress = [[NSMutableDictionary alloc] init];
     self.poweredByLabel.text=@"Powered by:";
     self.urlLinkLabel.text=[AAAppGlobals sharedInstance].retailer.retailerPoweredBy;

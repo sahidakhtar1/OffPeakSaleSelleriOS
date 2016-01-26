@@ -164,32 +164,43 @@ static NSString* const DATE_FORMAT = @"dd-MM-yyyy";
         self.sellerInfoDict = dict;
         //        [self.companyDetailsTableView setDataSource:self];
         //        [self.companyDetailsTableView reloadData];
-        float redeemed = [[self.sellerInfoDict valueForKey:@"orders_redeemed"] floatValue];
-        float sold = [[self.sellerInfoDict valueForKey:@"orders_sold"] floatValue];
-        self.RedeemedValueLabel.text = [self.sellerInfoDict valueForKey:@"orders_redeemed"];
-        self.UnitsSoldValueLabel.text = [self.sellerInfoDict valueForKey:@"orders_sold"];
-        float percentage = redeemed/sold;
-        [self.progressView setProgress:percentage animated:YES];
-        NSString *percetageSymbol= @"%";
-        percentageLabel.text= [NSString stringWithFormat:@"%.0f",percentage*100];
-        
-        self.lblCompanyValue.text = [self.sellerInfoDict valueForKey:@"company_name"];
-        if ([[self.sellerInfoDict valueForKey:@"phone"] isKindOfClass:[NSNull class]]) {
-            
-        }else{
-            self.lblConatctValue.text = [self.sellerInfoDict valueForKey:@"phone"];
-        }
-        
-        self.lblEmailValue.text = [self.sellerInfoDict valueForKey:@"email"];
-        [self.btnLocationValue setTitle:[self.sellerInfoDict valueForKey:@"country"] forState:UIControlStateNormal] ;
-         
-         
-         self.lblListPriceValue.text = [NSString stringWithFormat:@"$%@",[self.sellerInfoDict valueForKey:@"listPrice"]];
-         self.lblDiscountValue.text = [NSString stringWithFormat:@"%@%@",[self.sellerInfoDict valueForKey:@"discount"],percetageSymbol];
-         self.lblGateWayValue.text = [NSString stringWithFormat:@"%@%@",[self.sellerInfoDict valueForKey:@"payComm"],percetageSymbol];
-         self.lblSalesComisstionValue.text = [NSString stringWithFormat:@"%@%@",[self.sellerInfoDict valueForKey:@"saleComm"],percetageSymbol];
-         self.lblUnitProceedValue.text = [NSString stringWithFormat:@"$%@",[self.sellerInfoDict valueForKey:@"unitPrice"]];
-         self.lblTotalProceedValue.text = [NSString stringWithFormat:@"$%@",[self.sellerInfoDict valueForKey:@"totalAmtSold"]];
+         @try {
+             
+             float redeemed = [[self.sellerInfoDict valueForKey:@"orders_redeemed"] floatValue];
+             float sold = [[self.sellerInfoDict valueForKey:@"orders_sold"] floatValue];
+             self.RedeemedValueLabel.text = [self.sellerInfoDict valueForKey:@"orders_redeemed"];
+             self.UnitsSoldValueLabel.text = [self.sellerInfoDict valueForKey:@"orders_sold"];
+             float percentage = redeemed/sold;
+             [self.progressView setProgress:percentage animated:YES];
+             NSString *percetageSymbol= @"%";
+             percentageLabel.text= [NSString stringWithFormat:@"%.0f",percentage*100];
+             
+             self.lblCompanyValue.text = [self.sellerInfoDict valueForKey:@"company_name"];
+             if ([[self.sellerInfoDict valueForKey:@"phone"] isKindOfClass:[NSNull class]]) {
+                 
+             }else{
+                 self.lblConatctValue.text = [self.sellerInfoDict valueForKey:@"phone"];
+             }
+             
+             self.lblEmailValue.text = [self.sellerInfoDict valueForKey:@"email"];
+             [self.btnLocationValue setTitle:[self.sellerInfoDict valueForKey:@"country"] forState:UIControlStateNormal] ;
+             
+             
+             self.lblListPriceValue.text = [NSString stringWithFormat:@"$%@",[self.sellerInfoDict valueForKey:@"listPrice"]];
+             self.lblDiscountValue.text = [NSString stringWithFormat:@"%@%@",[self.sellerInfoDict valueForKey:@"discount"],percetageSymbol];
+             self.lblGateWayValue.text = [NSString stringWithFormat:@"%@%@",[self.sellerInfoDict valueForKey:@"payComm"],percetageSymbol];
+             self.lblSalesComisstionValue.text = [NSString stringWithFormat:@"%@%@",[self.sellerInfoDict valueForKey:@"saleComm"],percetageSymbol];
+             self.lblUnitProceedValue.text = [NSString stringWithFormat:@"$%@",[self.sellerInfoDict valueForKey:@"unitPrice"]];
+             self.lblTotalProceedValue.text = [NSString stringWithFormat:@"$%@",[self.sellerInfoDict valueForKey:@"totalAmtSold"]];
+         }
+         @catch (NSException *exception) {
+             
+             
+         }
+         @finally {
+             
+             
+         }
          
     } andFailure:^(NSString *msg) {
         
